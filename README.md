@@ -1,6 +1,14 @@
 ﻿<div align="center">
 
-# AgentCrew 🚀
+<pre>
+     _                    _    ____                   
+    / \   __ _  ___ _ __ | |_ / ___|_ __ _____      __
+   / _ \ / _` |/ _ \ '_ \| __| |   | '__/ _ \ \ /\ / /
+  / ___ \ (_| |  __/ | | | |_| |___| | |  __/\ V  V / 
+ /_/   \_\__, |\___|_| |_|\__|\____|_|  \___| \_/\_/  
+         |___/                                        
+</pre>
+
 ### Autonomous AI Squads That Ship Production Software
 
 **16 specialized roles · 7 lifecycle objectives · Solo · Squad · Orchestrated**
