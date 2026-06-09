@@ -98,6 +98,32 @@
     <tr><td><strong>Meeting</strong></td><td><em>"/meeting brainstorm [topic]"</em></td><td>Dynamic roles assembled, structured brainstorm, decisions, action items</td></tr>
   </table>
 
+  <h2>Hybrid Format</h2>
+  <p>Every file uses <strong>YAML frontmatter + markdown body</strong> — structured data and narrative prose in one file.</p>
+  <pre><code>---
+role: Backend
+needs:
+  - artifact: API contracts
+    from: Architect
+  - artifact: DB design
+    from: Architect
+produces:
+  - artifact: API endpoints
+    to: Frontend, QA
+---
+
+# Backend Contract
+
+## Artifact Templates
+...</code></pre>
+  <table>
+    <tr><th>Section</th><th>Format</th><th>Agent Benefit</th></tr>
+    <tr><td>Needs/Produces, Skills</td><td>YAML frontmatter</td><td>Parse in 1ms, schema-enforced</td></tr>
+    <tr><td>Procedures, Process (DAG)</td><td>YAML frontmatter</td><td>Skip prose parsing, direct to reasoning</td></tr>
+    <tr><td>Artifact Templates, Light Variant</td><td>Markdown body</td><td>Human-readable, backward compatible</td></tr>
+  </table>
+  <p><strong>Zero dependencies.</strong> Old agents ignore the <code>---</code> block. New agents parse it natively.</p>
+
   <h2>The Crew (18 Roles)</h2>
 
   <table>
@@ -144,11 +170,11 @@ cp -r .agentcrew ./your-project/
 
   <h2>Project Structure</h2>
   <pre><code>.agentcrew/
-&#9500;&#9472;&#9472; 00-objectives.md       # Routing table — start here
-&#9500;&#9472;&#9472; 00-team.md             # Crew orchestration hub
+&#9500;&#9472;&#9472; 00-objectives.md       # YAML frontmatter routing table
+&#9500;&#9472;&#9472; 00-team.md             # YAML frontmatter crew roster
 &#9500;&#9472;&#9472; 00-roles.md            # 18 role definitions
 &#9500;&#9472;&#9472; objectives/            # 8 lifecycle objectives
-&#9500;&#9472;&#9472; roles/                 # 18 role contracts + workflows
+&#9500;&#9472;&#9472; roles/                 # 18 contracts + workflows (YAML frontmatter)
 &#9500;&#9472;&#9472; procedures/            # Step-by-step guides
 &#9500;&#9472;&#9472; debate/                # Decision framework
 &#9500;&#9472;&#9472; meeting/               # Meeting mode workflow (5 steps)

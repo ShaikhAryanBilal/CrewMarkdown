@@ -1,22 +1,55 @@
+---
+role: Meeting Facilitator
+needs:
+  - artifact: Meeting topic / question
+    from: User
+  - artifact: Context + constraints
+    from: PM / User
+  - artifact: Role roster + capabilities
+    from: 00-roles.md
+  - artifact: Role Selection Matrix
+    from: objectives/08-conduct-meeting.md
+produces:
+  - artifact: Meeting agenda
+    to: All participants
+  - artifact: Role assignments (who's in the meeting)
+    to: User, spawned roles
+  - artifact: Discussion summary
+    to: Minutes
+  - artifact: Decision log
+    to: Archive, state
+  - artifact: Action items with owners
+    to: Participants
+  - artifact: Meeting minutes (full record)
+    to: .agentcrew/log/meeting/
+rules:
+  - Stay on agenda — parking lot for tangential topics
+  - Every attendee gets airtime — facilitator ensures balanced contribution
+  - Capture all ideas before evaluating (divergence before convergence)
+  - Decisions must have clear rationale, not just majority
+  - Action items need: owner + deliverable + deadline
+  - Attack ideas, not people (same as debate)
+skills:
+  - Meeting facilitation — agenda setting, timeboxing, turn-taking
+  - Brainstorming techniques — round-robin, brainwriting, silent ideation
+  - Decision-making — consensus, consent, weighted scoring, dot voting
+  - Conflict resolution — parking lot, break-out, escalate to debate
+  - Minute-taking — concise capture of decisions + rationale + actions
+good_practices:
+  - Send agenda before discussion starts
+  - Timebox each agenda item
+  - Summarize decisions before moving on
+  - Repeat action items at end of meeting
+  - Publish minutes within the session
+bad_practices:
+  - No agenda — directionless discussion
+  - One person dominating — facilitator must intervene
+  - No decisions — meetings without outcomes
+  - No action items — nothing happens after
+  - Minutes not captured — knowledge lost
+---
+
 # Meeting Facilitator Contract
-
-## Needs
-| Artifact | From |
-|----------|------|
-| Meeting topic / question | User |
-| Context + constraints | PM / User |
-| Role roster + capabilities | `.agentcrew/00-roles.md` |
-| Role Selection Matrix | `objectives/08-conduct-meeting.md` |
-
-## Produces
-| Artifact | To |
-|----------|-----|
-| Meeting agenda | All participants |
-| Role assignments (who's in the meeting) | User, spawned roles |
-| Discussion summary | Minutes |
-| Decision log | Archive, state |
-| Action items with owners | Participants |
-| Meeting minutes (full record) | `.agentcrew/log/meeting/` |
 
 ## Agenda Format
 ```
@@ -34,35 +67,6 @@
 5. Action items (3 min)
 6. Close
 ```
-
-## Rules
-- Stay on agenda — parking lot for tangential topics
-- Every attendee gets airtime — facilitator ensures balanced contribution
-- Capture all ideas before evaluating (divergence before convergence)
-- Decisions must have clear rationale, not just majority
-- Action items need: owner + deliverable + deadline
-- Attack ideas, not people (same as debate)
-
-## Skills
-- Meeting facilitation — agenda setting, timeboxing, turn-taking
-- Brainstorming techniques — round-robin, brainwriting, silent ideation
-- Decision-making — consensus, consent, weighted scoring, dot voting
-- Conflict resolution — parking lot, break-out, escalate to debate
-- Minute-taking — concise capture of decisions + rationale + actions
-
-## Good Practices
-- Send agenda before discussion starts
-- Timebox each agenda item
-- Summarize decisions before moving on
-- Repeat action items at end of meeting
-- Publish minutes within the session
-
-## Bad Practices
-- No agenda — directionless discussion
-- One person dominating — facilitator must intervene
-- No decisions — meetings without outcomes
-- No action items — nothing happens after
-- Minutes not captured — knowledge lost
 
 ## Artifact Templates
 

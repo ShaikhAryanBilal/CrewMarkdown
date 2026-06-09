@@ -1,17 +1,51 @@
-﻿# Orchestrator Workflow
+﻿---
+role: Orchestrator
+trigger: User request spans multiple objectives (e.g., "build this feature", "full SDLC", "develop from scratch")
+process:
+  - Decompose Request — parse request, map to objectives
+  - Order Objectives — determine dependency order, parallel vs sequential
+  - Assign Squads — assemble squad per objective from role roster
+  - Execute & Monitor — launch squads, track progress, resolve blockers
+  - Verify & Assemble — verify acceptance criteria, run security gates
+  - Report — completion report, update state, log
+done_when: All objectives achieved and acceptance criteria met, all artifacts logged, state updated, final report delivered
+needs:
+  - what: User request
+    from: User
+  - what: Objective definitions
+    from: objectives/
+  - what: Role roster
+    from: 00-team.md
+  - what: Previous state
+    from: .agentcrew/state/workflow.json
+gives:
+  - what: Objective breakdown + schedule
+    to: User, Squads
+  - what: Squad assignments
+    to: Each assigned role
+  - what: Status reports
+    to: User
+  - what: Final completion report
+    to: User, State
+quality_checklist:
+  - Each objective has clear, verifiable acceptance criteria
+  - Squad composition matches objective needs (no missing roles)
+  - Dependencies between objectives explicitly mapped before execution starts
+  - State updated after every objective completion
+  - Security gates verified at every objective boundary (SG1-SG4)
+  - Risks documented in risk register, not just tracked mentally
+  - Final report delivered to user with artifacts list and any open items
+---
 
-## Trigger
-User request spans multiple objectives (e.g., "build this feature", "full SDLC", "develop from scratch")
-
-## Process
+# Orchestrator Workflow
 
 ### Step 1: Decompose Request
 Input: User request
 Action:
 - Parse request into logical components
 - Map each component to an objective from `00-objectives.md` routing table
-- If request maps to a single objective â†’ skip orchestration, assign directly
-- If request maps to multiple objectives â†’ continue
+- If request maps to a single objective → skip orchestration, assign directly
+- If request maps to multiple objectives → continue
 
 ### Step 2: Order Objectives
 Input: Objective list
@@ -35,14 +69,14 @@ Example dependency order:
 Input: Ordered objectives, role roster
 Action:
 - For each objective, assemble squad per objective's squad definition
-- Load each role's contract.md â†’ verify they have what they need
+- Load each role's contract.md → verify they have what they need
 - Communicate assignments + expected artifacts
 
 ### Step 4: Execute & Monitor
 Input: Active squads
 Action:
 - Launch squads per schedule
-- Track progress: not started â†’ in progress â†’ artifact produced â†’ verified
+- Track progress: not started → in progress → artifact produced → verified
 - Watch for blockers, cross-objective conflicts
 - Blockers: unblock or re-prioritize
 - Conflicts: trigger debate
@@ -61,24 +95,9 @@ Action:
 - Update state: `.agentcrew/state/workflow.json`
 - Log orchestration record: `.agentcrew/log/orchestrator/<timestamp>.md`
 
-## Done When
-- All objectives achieved and acceptance criteria met
-- All artifacts logged
-- State updated
-- Final report delivered to user
-
 ## Outcome Options
 | Outcome | Meaning | Next |
 |---------|---------|------|
 | All objectives achieved | Full lifecycle complete | Operate & Learn (ongoing) |
 | Partial completion | Some objectives done, remaining deferred | User decides next |
 | Blocked | Dependency missing or conflict unresolved | Escalate to user |
-
-## Quality Checklist
-- [ ] Each objective has clear, verifiable acceptance criteria
-- [ ] Squad composition matches objective needs (no missing roles)
-- [ ] Dependencies between objectives explicitly mapped before execution starts
-- [ ] State updated after every objective completion
-- [ ] Security gates verified at every objective boundary (SG1-SG4)
-- [ ] Risks documented in risk register, not just tracked mentally
-- [ ] Final report delivered to user with artifacts list and any open items

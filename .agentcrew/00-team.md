@@ -1,32 +1,85 @@
-﻿# AgentCrew — Crew Orchestration Hub
+﻿---
+roles:
+  - name: Product Manager
+    contract: roles/product-manager/contract.md
+    workflow: roles/product-manager/workflow.md
+    specialty: Requirements, priorities, sign-off
+  - name: Business Analyst
+    contract: roles/ba/contract.md
+    workflow: roles/ba/workflow.md
+    specialty: Requirements analysis, user stories
+  - name: Solution Architect
+    contract: roles/architect/contract.md
+    workflow: roles/architect/workflow.md
+    specialty: Architecture, tech stack
+  - name: Tech Lead
+    contract: roles/tech-lead/contract.md
+    workflow: roles/tech-lead/workflow.md
+    specialty: Standards, code quality, ADRs
+  - name: Frontend Developer
+    contract: roles/frontend/contract.md
+    workflow: roles/frontend/workflow.md
+    specialty: UI, client logic
+  - name: Backend Developer
+    contract: roles/backend/contract.md
+    workflow: roles/backend/workflow.md
+    specialty: API, data, services
+  - name: Mobile Developer
+    contract: roles/mobile-dev/contract.md
+    workflow: roles/mobile-dev/workflow.md
+    specialty: iOS/Android, offline, push
+  - name: UX Designer
+    contract: roles/ux-designer/contract.md
+    workflow: roles/ux-designer/workflow.md
+    specialty: Research, wireframes, visual
+  - name: Data Engineer
+    contract: roles/data-engineer/contract.md
+    workflow: roles/data-engineer/workflow.md
+    specialty: ETL/ELT, data warehouse, pipelines
+  - name: ML Engineer
+    contract: roles/ml-engineer/contract.md
+    workflow: roles/ml-engineer/workflow.md
+    specialty: Models, training, serving, drift
+  - name: QA Engineer
+    contract: roles/qa/contract.md
+    workflow: roles/qa/workflow.md
+    specialty: Testing, quality, sign-off
+  - name: Security Engineer
+    contract: roles/security/contract.md
+    workflow: roles/security/workflow.md
+    specialty: Threat model, pentest, SBOM
+  - name: DevOps Engineer
+    contract: roles/devops/contract.md
+    workflow: roles/devops/workflow.md
+    specialty: Infrastructure, CI/CD
+  - name: Engineering Manager
+    contract: roles/engineering-manager/contract.md
+    workflow: roles/engineering-manager/workflow.md
+    specialty: Sprint planning, capacity, retro
+  - name: Technical Writer
+    contract: roles/technical-writer/contract.md
+    workflow: roles/technical-writer/workflow.md
+    specialty: API docs, user guides, release notes
+  - name: Debate Facilitator
+    contract: roles/debator/contract.md
+    workflow: roles/debator/workflow.md
+    specialty: Neutral debate moderator
+  - name: Orchestrator
+    contract: roles/orchestrator/contract.md
+    workflow: roles/orchestrator/workflow.md
+    specialty: Multi-objective coordinator
+  - name: Meeting Facilitator
+    contract: roles/meeting-facilitator/contract.md
+    workflow: roles/meeting-facilitator/workflow.md
+    specialty: Meeting mode, agenda, brainstorm, decisions, action items
+---
+
+# AgentCrew — Crew Orchestration Hub
 
 ## Overview
 
 AgentCrew is a full software development crew of 18 AI roles, each invocable solo or in squads toward shared objectives.
 Each role is self-contained with a contract (inputs/outputs) and workflow (process).
-
-## Role Roster
-
-| Role | Contract | Workflow | Specialty |
-|------|----------|----------|-----------|
-| Product Manager | roles/product-manager/contract.md | roles/product-manager/workflow.md | Requirements, priorities, sign-off |
-| Business Analyst | roles/ba/contract.md | roles/ba/workflow.md | Requirements analysis, user stories |
-| Solution Architect | roles/architect/contract.md | roles/architect/workflow.md | Architecture, tech stack |
-| Tech Lead | roles/tech-lead/contract.md | roles/tech-lead/workflow.md | Standards, code quality, ADRs |
-| Frontend Developer | roles/frontend/contract.md | roles/frontend/workflow.md | UI, client logic |
-| Backend Developer | roles/backend/contract.md | roles/backend/workflow.md | API, data, services |
-| Mobile Developer | roles/mobile-dev/contract.md | roles/mobile-dev/workflow.md | iOS/Android, offline, push |
-| UX Designer | roles/ux-designer/contract.md | roles/ux-designer/workflow.md | Research, wireframes, visual |
-| Data Engineer | roles/data-engineer/contract.md | roles/data-engineer/workflow.md | ETL/ELT, data warehouse, pipelines |
-| ML Engineer | roles/ml-engineer/contract.md | roles/ml-engineer/workflow.md | Models, training, serving, drift |
-| QA Engineer | roles/qa/contract.md | roles/qa/workflow.md | Testing, quality, sign-off |
-| Security Engineer | roles/security/contract.md | roles/security/workflow.md | Threat model, pentest, SBOM |
-| DevOps Engineer | roles/devops/contract.md | roles/devops/workflow.md | Infrastructure, CI/CD |
-| Engineering Manager | roles/engineering-manager/contract.md | roles/engineering-manager/workflow.md | Sprint planning, capacity, retro |
-| Technical Writer | roles/technical-writer/contract.md | roles/technical-writer/workflow.md | API docs, user guides, release notes |
-| Debate Facilitator | roles/debator/contract.md | roles/debator/workflow.md | Neutral debate moderator |
-| Orchestrator | roles/orchestrator/contract.md | roles/orchestrator/workflow.md | Multi-objective coordinator |
-| Meeting Facilitator | roles/meeting-facilitator/contract.md | roles/meeting-facilitator/workflow.md | Meeting mode, agenda, brainstorm, decisions, action items |
 
 ## Invocation Patterns
 
@@ -50,9 +103,9 @@ Examples:
 - "Debate Facilitator, run a debate on tech stack"
 
 **Effect:**
-1. Load role's contract.md â†’ identify inputs needed and outputs expected
-2. Load role's workflow.md â†’ know execution process
-3. Load relevant objective file (if applicable) â†’ know goal + acceptance
+1. Load role's contract.md → identify inputs needed and outputs expected
+2. Load role's workflow.md → know execution process
+3. Load relevant objective file (if applicable) → know goal + acceptance
 4. Load relevant step files as procedure reference
 5. Role executes, produces artifact
 6. Log to `.agentcrew/log/<objective-id>/<role>/<timestamp>.md`
@@ -74,7 +127,7 @@ Examples:
 - "Squad (DevOps, PM), ship the release to production"
 
 **Effect:**
-1. Load objective file â†’ know goal, squad, schedule, artifacts, acceptance
+1. Load objective file → know goal, squad, schedule, artifacts, acceptance
 2. Each role loads their contract + workflow
 3. Roles work **in parallel** where dependency graph allows
 4. Roles work **in sequence** where dependencies exist
@@ -86,12 +139,12 @@ Examples:
 **Parallel vs Sequential within Objective:**
 
 ```
-Parallel:     Role A â”€â”€> Artifact A
-              Role B â”€â”€> Artifact B
-              Role C â”€â”€> Artifact C
-              Assembly: A + B + C â†’ Objective Output
+Parallel:     Role A ──> Artifact A
+              Role B ──> Artifact B
+              Role C ──> Artifact C
+              Assembly: A + B + C → Objective Output
 
-Sequential:   Role A â”€â”€> Artifact A â”€â”€> Role B â”€â”€> Artifact B
+Sequential:   Role A ──> Artifact A ──> Role B ──> Artifact B
 ```
 
 Objective files define which paths are parallel vs sequential.
@@ -124,20 +177,20 @@ Examples:
 
 ```
 User Request
-    â†“
-Orchestrator: Parse â†’ "How many objectives does this need?"
-    â†“
-   [Single objective?] â†’ Assign squad directly â†’ Done (skip orchestration)
-    â†“
-   [Multiple objectives?] â†’ Map to objectives â†’ Order by dependencies
-    â†“
+    ↓
+Orchestrator: Parse → "How many objectives does this need?"
+    ↓
+   [Single objective?] → Assign squad directly → Done (skip orchestration)
+    ↓
+   [Multiple objectives?] → Map to objectives → Order by dependencies
+    ↓
    For each objective:
-     â†’ Assign squad
-     â†’ Set acceptance criteria
-     â†’ Track progress
-     â†’ Resolve blockers (use debate if needed)
-    â†“
-   All objectives achieved â†’ Report to user
+     → Assign squad
+     → Set acceptance criteria
+     → Track progress
+     → Resolve blockers (use debate if needed)
+    ↓
+   All objectives achieved → Report to user
 ```
 
 ## Role Independence Principle

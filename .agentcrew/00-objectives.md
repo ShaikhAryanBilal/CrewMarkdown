@@ -1,4 +1,155 @@
-﻿# Objective-Based SDLC â€” Router
+﻿---
+routing:
+  - request: Build this feature / Full SDLC
+    objective: Orchestrator routes O1→O2→...→O6
+    squad: All roles
+    mode: Orchestrate
+  - request: Define requirements / Write PRD
+    objective: Clarify Vision
+    squad: PM, BA
+    mode: Squad
+  - request: Design the system / Architecture
+    objective: Design Solution
+    squad: Architect, UX, Security
+    mode: Squad
+  - request: Plan the sprint / Break down work
+    objective: Plan Work
+    squad: EM, PM, Tech Lead
+    mode: Squad
+  - request: Implement X / Write code for X
+    objective: Build Feature
+    squad: Dev(s), Tech Lead, Mobile Dev
+    mode: Solo/Squad
+  - request: Build a mobile app / iOS/Android feature
+    objective: Build Feature
+    squad: Mobile Dev, Backend
+    mode: Solo/Squad
+  - request: Build data pipeline / ETL
+    objective: Build Feature
+    squad: Data Engineer
+    mode: Solo
+  - request: Train a model / ML pipeline
+    objective: Build Feature
+    squad: ML Engineer, Data Engineer
+    mode: Solo/Squad
+  - request: Write API docs / Document the API
+    objective: Build Feature
+    squad: Technical Writer, Backend
+    mode: Solo/Squad
+  - request: Write release notes / Changelog
+    objective: Ship Release
+    squad: Technical Writer, DevOps, PM
+    mode: Solo/Squad
+  - request: Write user guide / Onboarding docs
+    objective: Solo role call → Technical Writer
+    squad: Technical Writer
+    mode: Solo
+  - request: Test this / QA sign-off / Security audit
+    objective: Verify Quality
+    squad: QA, Security, Dev(s), ML Engineer
+    mode: Squad
+  - request: Deploy to prod / Release
+    objective: Ship Release
+    squad: DevOps, PM, Technical Writer
+    mode: Solo/Squad
+  - request: Set up monitoring / Hotfix / Feedback
+    objective: Operate & Learn
+    squad: DevOps, EM, PM
+    mode: Solo/Squad
+  - request: Model monitoring / Data quality alert
+    objective: Operate & Learn
+    squad: ML Engineer, Data Engineer
+    mode: Solo
+  - request: Meeting mode / /meeting / brainstorm [topic]
+    objective: Conduct Meeting
+    squad: Meeting Facilitator + dynamic roles
+    mode: Meeting
+  - request: Retro / retrospective
+    objective: Operate & Learn / Conduct Meeting
+    squad: EM, PM, Meeting Facilitator
+    mode: Meeting
+  - request: Single role call: "[Role], do X"
+    objective: Load role's contract.md directly
+    squad: That role only
+    mode: Solo
+objectives_index:
+  - id: obj/clarify-vision
+    file: objectives/01-clarify-vision.md
+    squad: PM, BA
+    default_mode: Squad
+  - id: obj/design-solution
+    file: objectives/02-design-solution.md
+    squad: Architect, UX, Security, Data Engineer
+    default_mode: Squad
+  - id: obj/plan-work
+    file: objectives/03-plan-work.md
+    squad: EM, PM, Tech Lead
+    default_mode: Squad
+  - id: obj/build-feature
+    file: objectives/04-build-feature.md
+    squad: Dev(s), Mobile Dev, Data Engineer, ML Engineer, Tech Lead, Technical Writer
+    default_mode: Squad
+  - id: obj/verify-quality
+    file: objectives/05-verify-quality.md
+    squad: QA, Security, Dev(s), ML Engineer
+    default_mode: Squad
+  - id: obj/ship-release
+    file: objectives/06-ship-release.md
+    squad: DevOps, PM, Technical Writer
+    default_mode: Squad
+  - id: obj/operate-learn
+    file: objectives/07-operate-learn.md
+    squad: DevOps, EM, PM, ML Engineer, Data Engineer
+    default_mode: Solo/Squad
+  - id: obj/conduct-meeting
+    file: objectives/08-conduct-meeting.md
+    squad: Meeting Facilitator + dynamic roles
+    default_mode: Meeting
+phase_mapping:
+  - phase: procedures/01-requirements/
+    maps_to: Clarify Vision
+    used_by: PM, BA
+  - phase: procedures/02-design/
+    maps_to: Design Solution
+    used_by: Architect, UX, Security
+  - phase: procedures/03-development/
+    maps_to: Plan Work + Build Feature
+    used_by: EM, Tech Lead, Dev(s)
+  - phase: procedures/04-qa/
+    maps_to: Verify Quality
+    used_by: QA, Security
+  - phase: procedures/05-deployment/
+    maps_to: Ship Release
+    used_by: DevOps, PM
+  - phase: procedures/06-maintenance/
+    maps_to: Operate & Learn
+    used_by: DevOps, EM, PM
+  - phase: debate/
+    maps_to: Cross-cutting (any objective)
+    used_by: Facilitator, Panelists
+  - phase: meeting/
+    maps_to: Meeting mode (any topic)
+    used_by: Meeting Facilitator, dynamic roles
+security_gates:
+  - gate: SG1
+    before: Design review
+    in_objective: Design Solution
+    must_pass: Threat model complete, high threats mitigated
+  - gate: SG2
+    before: Merge to main
+    in_objective: Build Feature
+    must_pass: SAST + secret scan + dependency scan clean
+  - gate: SG3
+    before: QA sign-off
+    in_objective: Verify Quality
+    must_pass: DAST + pentest + supply chain scan — no Critical/High
+  - gate: SG4
+    before: Production deploy
+    in_objective: Ship Release
+    must_pass: All scans clean, no Critical/High bugs, SBOM verified
+---
+
+# Objective-Based SDLC — Router
 
 ## Shift
 
@@ -8,7 +159,7 @@ Instead of "what step are we on?", ask **"what objective are we achieving?"**
 ## Core Model
 
 ```
-Request â†’ Objective(s) â†’ Squad(s) â†’ Artifacts â†’ Done
+Request → Objective(s) → Squad(s) → Artifacts → Done
 ```
 
 ## Invocation Modes
@@ -33,98 +184,20 @@ Each objective is a **self-contained unit** with:
 ### Solo Mode
 No orchestration needed. Role executes autonomously.
 ```
-User â†’ "[Role], do [task]" â†’ Role invokes contract â†’ Artifact produced
+User → "[Role], do [task]" → Role invokes contract → Artifact produced
 ```
 
 ### Squad Mode
 Roles within one objective work in parallel where possible, sequential where needed.
 ```
-User â†’ "[Objective]" â†’ Squad â†’ Parallel work â†’ Assembly â†’ Acceptance
+User → "[Objective]" → Squad → Parallel work → Assembly → Acceptance
 ```
 
 ### Orchestrate Mode
 Orchestrator breaks request into multiple objectives, assigns squads, tracks progress.
 ```
-User â†’ "Build this product" â†’ Orchestrator â†’ [Obj1, Obj2, ...] â†’ Squads â†’ Coordination â†’ Done
+User → "Build this product" → Orchestrator → [Obj1, Obj2, ...] → Squads → Coordination → Done
 ```
-
-## Request â†’ Objective
-
-| You Say | Objective | Squad | Default Mode |
-|---------|-----------|-------|-------------|
-| "Build this feature" / "Full SDLC" | Orchestrator routes: O1â†’O2â†’...â†’O6 | All roles | Orchestrate |
-| "Define requirements" / "Write PRD" | Clarify Vision | PM, BA | Squad |
-| "Design the system" / "Architecture" | Design Solution | Architect, UX, Security | Squad |
-| "Plan the sprint" / "Break down work" | Plan Work | EM, PM, Tech Lead | Squad |
-| "Implement X" / "Write code for X" | Build Feature | Dev(s), Tech Lead, Mobile Dev | Solo/Squad |
-| "Build a mobile app" / "iOS/Android feature" | Build Feature | Mobile Dev, Backend | Solo/Squad |
-| "Build data pipeline" / "ETL" | Build Feature | Data Engineer | Solo |
-| "Train a model" / "ML pipeline" | Build Feature | ML Engineer, Data Engineer | Solo/Squad |
-| "Write API docs" / "Document the API" | Build Feature | Technical Writer, Backend | Solo/Squad |
-| "Write release notes" / "Changelog" | Ship Release | Technical Writer, DevOps, PM | Solo/Squad |
-| "Write user guide" / "Onboarding docs" | Solo role call → Technical Writer | Technical Writer | Solo |
-| "Test this" / "QA sign-off" / "Security audit" | Verify Quality | QA, Security, Dev(s), ML Engineer | Squad |
-| "Deploy to prod" / "Release" | Ship Release | DevOps, PM, Technical Writer | Solo/Squad |
-| "Set up monitoring" / "Hotfix" / "Feedback" | Operate & Learn | DevOps, EM, PM | Solo/Squad |
-| "Model monitoring" / "Data quality alert" | Operate & Learn | ML Engineer, Data Engineer | Solo |
-| "Meeting mode" / "/meeting" / "brainstorm [topic]" | Conduct Meeting | Meeting Facilitator + dynamic roles | Meeting |
-| "Retro" / "retrospective" | Operate & Learn / Conduct Meeting | EM, PM, Meeting Facilitator | Meeting |
-| Single role call: "[Role], do X" | → Load role's contract.md directly | That role only | Solo |
-| No match? | → Ask "Which objective are we pursuing?" | — | — |
-
-## Objectives Index
-
-| # | ID | File | Squad | Default Mode |
-|---|----|------|-------|-------------|
-| 1 | obj/clarify-vision | objectives/01-clarify-vision.md | PM, BA | Squad |
-| 2 | obj/design-solution | objectives/02-design-solution.md | Architect, UX, Security, Data Engineer | Squad |
-| 3 | obj/plan-work | objectives/03-plan-work.md | EM, PM, Tech Lead | Squad |
-| 4 | obj/build-feature | objectives/04-build-feature.md | Dev(s), Mobile Dev, Data Engineer, ML Engineer, Tech Lead, Technical Writer | Squad |
-| 5 | obj/verify-quality | objectives/05-verify-quality.md | QA, Security, Dev(s), ML Engineer | Squad |
-| 6 | obj/ship-release | objectives/06-ship-release.md | DevOps, PM, Technical Writer | Squad |
-| 7 | obj/operate-learn | objectives/07-operate-learn.md | DevOps, EM, PM, ML Engineer, Data Engineer | Solo/Squad |
-| 8 | obj/conduct-meeting | objectives/08-conduct-meeting.md | Meeting Facilitator + dynamic roles | Meeting |
-
-## Phase â†’ Objective Mapping
-
-Old step files become **procedure references** for roles:
-
-| Phase (Old) | Maps To (New) | Used By |
-|-------------|---------------|---------|
-| procedures/01-requirements/ | Clarify Vision | PM, BA |
-| procedures/02-design/ | Design Solution | Architect, UX, Security |
-| procedures/03-development/ | Plan Work + Build Feature | EM, Tech Lead, Dev(s) |
-| procedures/04-qa/ | Verify Quality | QA, Security |
-| procedures/05-deployment/ | Ship Release | DevOps, PM |
-| procedures/06-maintenance/ | Operate & Learn | DevOps, EM, PM |
-| debate/ | Cross-cutting (any objective) | Facilitator, Panelists |
-| meeting/ | Meeting mode (any topic) | Meeting Facilitator, dynamic roles |
-
-## Security Gates
-
-Unchanged. Same gates (SG1-SG4) apply at objective boundaries.
-
-| Gate | Before | In Objective | Must Pass |
-|------|--------|-------------|-----------|
-| SG1 | Design review | Design Solution | Threat model complete, high threats mitigated |
-| SG2 | Merge to main | Build Feature | SAST + secret scan + dependency scan clean |
-| SG3 | QA sign-off | Verify Quality | DAST + pentest + supply chain scan — no Critical/High |
-| SG4 | Production deploy | Ship Release | All scans clean, no Critical/High bugs, SBOM verified |
-
-## Debate Integration
-
-Debate remains cross-cutting. Activated at decision points within any objective.
-
-| In Objective | Typical Debate | Panel |
-|-------------|----------------|-------|
-| Clarify Vision | Scope trade-off, priority | PM, BA, Architect |
-| Design Solution | Tech stack, architecture fork | Architect, Backend, Frontend, Security |
-| Plan Work | Sprint scope, capacity | EM, PM, Tech Lead |
-| Build Feature | Implementation approach, library | Tech Lead, Dev, QA |
-| Verify Quality | Test strategy, automation | QA, Dev, DevOps |
-| Ship Release | Rollout strategy, rollback | DevOps, PM, Tech Lead |
-| Operate & Learn | Refactor vs rewrite, tooling | Tech Lead, Architect, DevOps |
-| Conduct Meeting | Decision point, brainstorm topic, retro | Meeting Facilitator + dynamic roles |
 
 ## State Tracking
 

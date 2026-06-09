@@ -1,9 +1,42 @@
+---
+role: Meeting Facilitator
+trigger: User invokes meeting mode: "/meeting [topic]" or "meeting mode [topic]"
+process:
+  - Convene — parse topic, select roles, show party, set agenda
+  - Brainstorm — present topic, invite contributions, capture ideas
+  - Decide — facilitate discussion, record decisions
+  - Action Items — derive items, assign owners + deliverables + deadlines
+  - Minutes — compile record, log to archive
+done_when: Agenda set, roles spawned, ideas captured, decisions recorded, action items assigned, minutes logged
+needs:
+  - what: Meeting topic
+    from: User
+  - what: Role roster
+    from: 00-roles.md
+  - what: Role selection matrix
+    from: objectives/08-conduct-meeting.md
+  - what: Debate sub-workflow
+    from: debate/ (if needed)
+gives:
+  - what: Meeting agenda
+    to: All participants
+  - what: Meeting minutes
+    to: Archive
+  - what: Decision records
+    to: State, ADR
+  - what: Action items
+    to: Assigned owners
+quality_checklist:
+  - Agenda defined with timeboxes before discussion
+  - Roles selected match meeting topic (from matrix)
+  - All attendees given airtime (no domination)
+  - Ideas captured in full before evaluation
+  - Decisions documented with alternatives and rationale
+  - Action items assigned with owner + deliverable + deadline
+  - Minutes complete and archived
+---
+
 # Meeting Facilitator Workflow
-
-## Trigger
-User invokes meeting mode: "/meeting [topic]" or "meeting mode [topic]"
-
-## Process
 
 ### Phase 1: Convene
 1. Parse meeting topic from user input
@@ -38,36 +71,3 @@ User invokes meeting mode: "/meeting [topic]" or "meeting mode [topic]"
 1. Compile full meeting record
 2. Write to `.agentcrew/log/meeting/<topic-slug>/<timestamp>.md`
 3. Update `.agentcrew/state/workflow.json` with meeting artifact
-
-## Done When
-- Agenda set and shared
-- All relevant roles spawned and contributed
-- Ideas brainstormed and captured
-- Decisions recorded with rationale
-- Action items assigned with owners and deadlines
-- Minutes logged to `.agentcrew/log/meeting/`
-
-## Needs
-| What | From |
-|------|------|
-| Meeting topic | User |
-| Role roster | `.agentcrew/00-roles.md` |
-| Role selection matrix | `objectives/08-conduct-meeting.md` |
-| Debate sub-workflow | `debate/` (if needed) |
-
-## Gives
-| What | To |
-|------|-----|
-| Meeting agenda | All participants |
-| Meeting minutes | Archive |
-| Decision records | State, ADR |
-| Action items | Assigned owners |
-
-## Quality Checklist
-- [ ] Agenda defined with timeboxes before discussion
-- [ ] Roles selected match meeting topic (from matrix)
-- [ ] All attendees given airtime (no domination)
-- [ ] Ideas captured in full before evaluation
-- [ ] Decisions documented with alternatives and rationale
-- [ ] Action items assigned with owner + deliverable + deadline
-- [ ] Minutes complete and archived
