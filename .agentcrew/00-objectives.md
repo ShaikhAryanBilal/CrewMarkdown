@@ -60,8 +60,11 @@ User â†’ "Build this product" â†’ Orchestrator â†’ [Obj1, Obj2, .
 | "Build a mobile app" / "iOS/Android feature" | Build Feature | Mobile Dev, Backend | Solo/Squad |
 | "Build data pipeline" / "ETL" | Build Feature | Data Engineer | Solo |
 | "Train a model" / "ML pipeline" | Build Feature | ML Engineer, Data Engineer | Solo/Squad |
+| "Write API docs" / "Document the API" | Build Feature | Technical Writer, Backend | Solo/Squad |
+| "Write release notes" / "Changelog" | Ship Release | Technical Writer, DevOps, PM | Solo/Squad |
+| "Write user guide" / "Onboarding docs" | Solo role call → Technical Writer | Technical Writer | Solo |
 | "Test this" / "QA sign-off" / "Security audit" | Verify Quality | QA, Security, Dev(s), ML Engineer | Squad |
-| "Deploy to prod" / "Release" | Ship Release | DevOps, PM | Solo/Squad |
+| "Deploy to prod" / "Release" | Ship Release | DevOps, PM, Technical Writer | Solo/Squad |
 | "Set up monitoring" / "Hotfix" / "Feedback" | Operate & Learn | DevOps, EM, PM | Solo/Squad |
 | "Model monitoring" / "Data quality alert" | Operate & Learn | ML Engineer, Data Engineer | Solo |
 | Single role call: "[Role], do X" | â†’ Load role's contract.md directly | That role only | Solo |
@@ -74,9 +77,9 @@ User â†’ "Build this product" â†’ Orchestrator â†’ [Obj1, Obj2, .
 | 1 | obj/clarify-vision | objectives/01-clarify-vision.md | PM, BA | Squad |
 | 2 | obj/design-solution | objectives/02-design-solution.md | Architect, UX, Security, Data Engineer | Squad |
 | 3 | obj/plan-work | objectives/03-plan-work.md | EM, PM, Tech Lead | Squad |
-| 4 | obj/build-feature | objectives/04-build-feature.md | Dev(s), Mobile Dev, Data Engineer, ML Engineer, Tech Lead | Squad |
+| 4 | obj/build-feature | objectives/04-build-feature.md | Dev(s), Mobile Dev, Data Engineer, ML Engineer, Tech Lead, Technical Writer | Squad |
 | 5 | obj/verify-quality | objectives/05-verify-quality.md | QA, Security, Dev(s), ML Engineer | Squad |
-| 6 | obj/ship-release | objectives/06-ship-release.md | DevOps, PM | Squad |
+| 6 | obj/ship-release | objectives/06-ship-release.md | DevOps, PM, Technical Writer | Squad |
 | 7 | obj/operate-learn | objectives/07-operate-learn.md | DevOps, EM, PM, ML Engineer, Data Engineer | Solo/Squad |
 
 ## Phase â†’ Objective Mapping

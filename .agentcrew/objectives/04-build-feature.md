@@ -10,6 +10,7 @@ Implement, review, unit test, and integrate working code for a feature according
 | Backend Developer | API, services, data layer, business logic |
 | Full Stack Developer | End-to-end implementation (both FE + BE) |
 | Tech Lead | Code review, standards enforcement, merge approval |
+| Technical Writer | API documentation, user-facing feature docs |
 
 **Note**: Assign specific developer role(s) based on feature scope. Not all dev roles are needed for every feature.
 
@@ -39,6 +40,7 @@ Dev:                                              Unit Tests ──> Integration
 | Dev | Integration tests (API, DB, auth) | Test files |
 | Tech Lead | Code review comments | Markdown/PR |
 | Tech Lead | Merge commit | Git |
+| Technical Writer | API reference docs / user guides | Markdown / OpenAPI |
 
 ## Acceptance
 - Code follows coding standards (lint + format pass)
@@ -69,3 +71,4 @@ Dev:                                              Unit Tests ──> Integration
 - "Backend Dev, implement the [endpoint] API" → BE implements, reviews, tests
 - "Tech Lead, review PR #[num]" → Tech Lead reviews only
 - "Dev, write unit tests for [module]" → Dev writes tests only
+- "Technical Writer, write API docs for [endpoint]" → Technical Writer writes API docs

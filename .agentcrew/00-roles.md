@@ -109,14 +109,21 @@ See `00-team.md` for invocation patterns and `00-objectives.md` for routing.
 **Invoke:** "UX Designer, [do task]" — Solo on wireframes/prototypes. Squad with Architect for Design Solution.
 **Contracts:** `roles/ux-designer/contract.md` | `roles/ux-designer/workflow.md`
 
-### 15. Engineering Manager
+### 15. Technical Writer
+**Owns:** User-facing docs, API reference, architecture docs, release notes, onboarding guides
+**Provides:** API docs, user guides, architecture docs, release notes, README, changelog
+**Consumes:** Technical specs, architecture diagrams, PRD, UI mockups, release scope
+**Invoke:** "Technical Writer, [do task]" — Solo on docs. Squad with Backend for Build Feature (API docs), Squad with DevOps+PM for Ship Release (release notes).
+**Contracts:** `roles/technical-writer/contract.md` | `roles/technical-writer/workflow.md`
+
+### 16. Engineering Manager
 **Owns:** Sprint planning, team process, retrospectives, capacity
 **Provides:** Sprint plan, capacity allocation, task breakdown, retro report
 **Consumes:** Team capacity, velocity data, priority from PM
 **Invoke:** "EM, [do task]" — Solo on sprint planning/retro. Squad with PM+Tech Lead for Plan Work.
 **Contracts:** `roles/engineering-manager/contract.md` | `roles/engineering-manager/workflow.md`
 
-### 16. Debate Facilitator
+### 17. Debate Facilitator
 **Owns:** Debate process, neutrality, timebox enforcement, resolution
 **Provides:** Debate brief, panel assembly, scoring leadership, decision record
 **Consumes:** Decision question, viable options, role stances
@@ -124,13 +131,13 @@ See `00-team.md` for invocation patterns and `00-objectives.md` for routing.
 **Invoke:** "Facilitator, run debate on [topic]" — Cross-cutting, invoked from any objective.
 **Contracts:** `roles/debator/contract.md` | `roles/debator/workflow.md`
 
-### 17. Panelist (any role wearing debate hat)
+### 18. Panelist (any role wearing debate hat)
 **Owns:** Stance from role perspective, evidence-based argument, rebuttal
 **Provides:** Opening statement, cross-examination, criteria scores, final recommendation
 **Consumes:** Decision brief, option descriptions, scoring criteria
 **Rule:** Argue the role's interest, not personal preference
 
-### 18. Orchestrator
+### 19. Orchestrator
 **Owns:** Multi-objective decomposition, squad assembly, cross-objective coordination
 **Provides:** Objective breakdown, squad assignments, status reports, completion summary
 **Consumes:** High-level user request, role roster, objective definitions
@@ -161,9 +168,9 @@ Objectives → Role ownership:
 | Clarify Vision | PM | BA |
 | Design Solution | Architect | UX, Security |
 | Plan Work | EM | PM, Tech Lead |
-| Build Feature | Tech Lead | Dev(s) |
+| Build Feature | Tech Lead | Dev(s), Technical Writer (API docs) |
 | Verify Quality | QA | Security, Dev(s) |
-| Ship Release | DevOps | PM |
+| Ship Release | DevOps | PM, Technical Writer (release notes) |
 | Operate & Learn | DevOps | EM, PM |
 
 ### Old Step → Role Reference

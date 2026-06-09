@@ -8,6 +8,7 @@ Plan, deploy, and verify a production release with rollback capability and post-
 |------|---------------|
 | DevOps Engineer | Infrastructure, CI/CD, deployment, monitoring |
 | PM | Release planning, stakeholder communication, rollback decision |
+| Technical Writer | Release notes, changelog, upgrade guides |
 
 ## Schedule
 ```
@@ -27,8 +28,8 @@ DevOps:              Staging deploy ──> Prod deploy ──> Post-deploy moni
 | Role | Produces | Format |
 |------|----------|--------|
 | PM | Release plan (scope, schedule, stakeholders) | Markdown |
-| PM | Release notes | Markdown |
 | PM | Rollback approval | Markdown |
+| Technical Writer | Release notes / changelog | Markdown |
 | DevOps | Staging deployment + validation | Status |
 | DevOps | Production deployment + health checks | Status |
 | DevOps | Post-deployment monitoring report | Markdown |
@@ -60,5 +61,5 @@ DevOps:              Staging deploy ──> Prod deploy ──> Post-deploy moni
 ## Solo Invocation
 - "DevOps, deploy [build] to staging" → DevOps runs staging deploy only
 - "DevOps, deploy [build] to production" → DevOps runs prod deploy only
-- "PM, write release notes for version [x]" → PM writes notes only
+- "Technical Writer, write release notes for version [x]" → Technical Writer writes release notes
 - "DevOps, run post-deploy monitoring for [release]" → DevOps monitors only

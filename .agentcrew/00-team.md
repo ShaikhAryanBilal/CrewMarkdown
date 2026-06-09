@@ -2,7 +2,7 @@
 
 ## Overview
 
-AgentCrew is a full software development crew of 16 AI roles, each invocable solo or in squads toward shared objectives.
+AgentCrew is a full software development crew of 17 AI roles, each invocable solo or in squads toward shared objectives.
 Each role is self-contained with a contract (inputs/outputs) and workflow (process).
 
 ## Role Roster
@@ -23,6 +23,7 @@ Each role is self-contained with a contract (inputs/outputs) and workflow (proce
 | Security Engineer | roles/security/contract.md | roles/security/workflow.md | Threat model, pentest, SBOM |
 | DevOps Engineer | roles/devops/contract.md | roles/devops/workflow.md | Infrastructure, CI/CD |
 | Engineering Manager | roles/engineering-manager/contract.md | roles/engineering-manager/workflow.md | Sprint planning, capacity, retro |
+| Technical Writer | roles/technical-writer/contract.md | roles/technical-writer/workflow.md | API docs, user guides, release notes |
 | Debate Facilitator | roles/debator/contract.md | roles/debator/workflow.md | Neutral debate moderator |
 | Orchestrator | roles/orchestrator/contract.md | roles/orchestrator/workflow.md | Multi-objective coordinator |
 
