@@ -36,10 +36,12 @@
 
 <main class="content">
   <h1>Objectives</h1>
-  <p class="page-subtitle">8 lifecycle objectives &mdash; each with goal, squad, schedule, artifacts, and acceptance criteria.</p>
+  <p class="page-subtitle">11 lifecycle objectives &mdash; each with goal, squad, schedule, artifacts, and acceptance criteria.</p>
 
   <div class="process-flow">
-    <span class="process-step active">1. Clarify Vision</span>
+    <span class="process-step active">0. Select SDLC</span>
+    <span class="process-arrow">&rarr;</span>
+    <span class="process-step">1. Clarify Vision</span>
     <span class="process-arrow">&rarr;</span>
     <span class="process-step">2. Design Solution</span>
     <span class="process-arrow">&rarr;</span>
@@ -54,7 +56,7 @@
     <span class="process-step">7. Operate &amp; Learn</span>
   </div>
 
-  <p>Also includes <strong>Meeting Mode</strong> as a cross-cutting objective.</p>
+  <p>Plus cross-cutting: <strong>Conduct Meeting</strong>, <strong>Execute Campaign</strong>, <strong>Execute People Ops</strong>.</p>
 
   <h2>Request &rarr; Objective Routing</h2>
   <div class="table-wrap">
@@ -106,6 +108,16 @@
           <td>"/meeting brainstorm" / "Meeting on [topic]"</td>
           <td>8. Conduct Meeting</td>
           <td>Meeting Facilitator + dynamic roles</td>
+        </tr>
+        <tr>
+          <td>"Create campaign" / "Launch marketing"</td>
+          <td><span class="tag tag-pink">9. Execute Campaign</span></td>
+          <td>Marketing, Sales, PM</td>
+        </tr>
+        <tr>
+          <td>"Hiring" / "People ops" / "Onboard"</td>
+          <td><span class="tag tag-green">10. Execute People Ops</span></td>
+          <td>HR, Management, EM</td>
         </tr>
       </tbody>
     </table>
@@ -339,6 +351,86 @@ Dev:                Unit Tests &rarr; Integration</code></pre>
   <ul>
     <li><strong>Meeting Facilitator:</strong> Agenda, discussion summary, decision log, action items, minutes</li>
     <li><strong>Dynamic roles:</strong> Ideas, opinions, perspectives, proposals</li>
+  </ul>
+
+  <hr class="section-divider">
+
+  <!-- Objective 0 -->
+  <h2>Objective 0: Select SDLC Model</h2>
+  <p><span class="tag tag-purple">Squad: PM + Architect + EM</span></p>
+  <p>Choose the right software development lifecycle model based on project complexity, risk, and team structure.</p>
+
+  <h3>Supported Models</h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Model</th>
+          <th>Style</th>
+          <th>Best For</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Waterfall</td><td>Linear-sequential</td><td>Stable requirements</td></tr>
+        <tr><td>V-Model</td><td>Verification &amp; Validation parallel</td><td>Safety-critical systems</td></tr>
+        <tr><td>Spiral</td><td>Risk-driven iterative</td><td>High-risk projects</td></tr>
+        <tr><td>Agile (Scrum)</td><td>Iterative-incremental</td><td>Cross-functional teams</td></tr>
+        <tr><td>Iterative</td><td>Repeated refinement</td><td>Evolving requirements</td></tr>
+        <tr><td>Incremental</td><td>Piecewise delivery</td><td>Phased feature delivery</td></tr>
+        <tr><td>Big Bang</td><td>Monolithic delivery</td><td>Very small projects/prototypes</td></tr>
+        <tr><td>RAD</td><td>Rapid prototyping</td><td>Fast user feedback cycles</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="text-muted text-sm">Config: <code>.agentcrew/config/sdlc-models.md</code></p>
+
+  <hr class="section-divider">
+
+  <!-- Objective 9 -->
+  <h2>Objective 9: Execute Campaign</h2>
+  <p><span class="tag tag-pink">Squad: Marketing + Sales + PM</span></p>
+  <p>Plan and execute go-to-market campaigns, generate leads, and drive adoption for product releases.</p>
+
+  <h3>Schedule</h3>
+  <pre><code>Marketing: Research &rarr; Campaign Plan &rarr; Content &rarr; Launch &rarr; Analyze
+Sales:    Pipeline Review &rarr; Outreach &rarr; Close</code></pre>
+
+  <h3>Artifacts</h3>
+  <ul>
+    <li><strong>Marketing:</strong> Campaign plan, content assets, GTM strategy, analytics report</li>
+    <li><strong>Sales:</strong> Pipeline report, outreach sequence, closed deals</li>
+    <li><strong>PM:</strong> Feature messaging, customer insights</li>
+  </ul>
+
+  <h3>Acceptance</h3>
+  <ul>
+    <li>Campaign launched with all assets delivered</li>
+    <li>Pipeline targets met, leads generated</li>
+  </ul>
+
+  <hr class="section-divider">
+
+  <!-- Objective 10 -->
+  <h2>Objective 10: Execute People Ops</h2>
+  <p><span class="tag tag-green">Squad: HR + Management + EM</span></p>
+  <p>Manage hiring, onboarding, performance reviews, and culture initiatives to build and retain a strong team.</p>
+
+  <h3>Schedule</h3>
+  <pre><code>HR:    Requirements &rarr; Sourcing &rarr; Screening &rarr; Offer &rarr; Onboarding
+EM:    Role Definition &rarr; Interviewing &rarr; Ramp Plan</code></pre>
+
+  <h3>Artifacts</h3>
+  <ul>
+    <li><strong>HR:</strong> Hiring plans, job descriptions, onboarding docs, performance review cycle</li>
+    <li><strong>Management:</strong> Headcount plans, org charts, culture initiatives</li>
+    <li><strong>EM:</strong> Ramp plans, team health assessments</li>
+  </ul>
+
+  <h3>Acceptance</h3>
+  <ul>
+    <li>All open roles filled or in active pipeline</li>
+    <li>Onboarding complete, team health green</li>
   </ul>
 
   <hr class="section-divider">

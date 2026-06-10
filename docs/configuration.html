@@ -129,12 +129,12 @@
         </tr>
         <tr>
           <td><strong>Objectives</strong></td>
-          <td>8 with full squads (7 lifecycle + Meeting)</td>
+          <td>11 with full squads</td>
           <td>7 compressed steps</td>
         </tr>
         <tr>
           <td><strong>Roles</strong></td>
-          <td>18 specialized roles</td>
+          <td>33 specialized roles</td>
           <td>Reduced role set</td>
         </tr>
         <tr>
@@ -152,6 +152,99 @@
   </div>
 
   <p>Switch any time. Start with Light &rarr; move to Full as complexity grows.</p>
+
+  <hr class="section-divider">
+
+  <h2>SDLC Models</h2>
+  <p>8 supported SDLC models defined in <code>.agentcrew/config/sdlc-models.md</code>.</p>
+
+  <div class="table-wrap">
+    <table class="compact-table">
+      <thead>
+        <tr>
+          <th>Model</th>
+          <th>Style</th>
+          <th>Best For</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Waterfall</strong></td><td>Linear-sequential</td><td>Stable requirements</td></tr>
+        <tr><td><strong>V-Model</strong></td><td>Verification &amp; Validation parallel</td><td>Safety-critical systems</td></tr>
+        <tr><td><strong>Spiral</strong></td><td>Risk-driven iterative</td><td>High-risk projects</td></tr>
+        <tr><td><strong>Agile (Scrum)</strong></td><td>Iterative-incremental</td><td>Cross-functional teams</td></tr>
+        <tr><td><strong>Iterative</strong></td><td>Repeated refinement</td><td>Evolving requirements</td></tr>
+        <tr><td><strong>Incremental</strong></td><td>Piecewise delivery</td><td>Phased feature delivery</td></tr>
+        <tr><td><strong>Big Bang</strong></td><td>Monolithic delivery</td><td>Very small projects/prototypes</td></tr>
+        <tr><td><strong>RAD</strong></td><td>Rapid prototyping</td><td>Fast user feedback cycles</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Tone &amp; Humor Engine</h2>
+  <p>AgentCrew ships with a configurable tone system and humor engine for personality control.</p>
+
+  <div class="table-wrap">
+    <table class="compact-table">
+      <thead>
+        <tr>
+          <th>Config</th>
+          <th>Location</th>
+          <th>Purpose</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>tone.json</code></td>
+          <td><code>.agentcrew/config/tone.json</code></td>
+          <td>Tone control: <span class="tag tag-purple">professional</span> <span class="tag tag-cyan">casual</span> <span class="tag tag-amber">chaotic</span></td>
+        </tr>
+        <tr>
+          <td><code>humor-data.ps1</code></td>
+          <td><code>.agentcrew/config/humor-data.ps1</code></td>
+          <td>Easter eggs, quotes, progress flavors, retry messages</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <hr class="section-divider">
+
+  <h2>State &amp; Logging System</h2>
+  <p>Real-time progress tracking and structured execution logs.</p>
+
+  <div class="table-wrap">
+    <table class="compact-table">
+      <thead>
+        <tr>
+          <th>System</th>
+          <th>Location</th>
+          <th>Format</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Workflow State</strong></td>
+          <td><code>.agentcrew/state/workflow.json</code></td>
+          <td>JSON (objectives, steps, artifacts, gates)</td>
+        </tr>
+        <tr>
+          <td><strong>State Schema</strong></td>
+          <td><code>.agentcrew/state/schema-workflow.json</code></td>
+          <td>JSON Schema for validation</td>
+        </tr>
+        <tr>
+          <td><strong>Execution Logs</strong></td>
+          <td><code>.agentcrew/logs/&lt;date&gt;/&lt;time&gt;/&lt;slug&gt;/</code></td>
+          <td>Markdown per role per session</td>
+        </tr>
+        <tr>
+          <td><strong>Legacy Logs</strong></td>
+          <td><code>.agentcrew/log/</code></td>
+          <td>Flat directory by objective</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
   <hr class="section-divider">
 
