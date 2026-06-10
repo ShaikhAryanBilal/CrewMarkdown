@@ -1,3 +1,9 @@
+---
+layout: default
+title: Configuration
+nav_active: configuration
+---
+
 # Configuration
 
 Ready-made configuration files for popular AI coding tools, all in `.agentcrew/config/`.

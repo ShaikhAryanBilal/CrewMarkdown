@@ -1,3 +1,9 @@
+---
+layout: default
+title: Home
+nav_active: index
+---
+
 # AgentCrew — Autonomous AI Squads That Ship Production Software
 
 **18 specialized roles · 8 lifecycle objectives · Solo · Squad · Orchestrate · Meeting**

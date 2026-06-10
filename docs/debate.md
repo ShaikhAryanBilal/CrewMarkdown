@@ -1,3 +1,9 @@
+---
+layout: default
+title: Debate Framework
+nav_active: debate
+---
+
 # Debate Framework
 
 Structured decision-making for resolving disagreements with multiple viable options.

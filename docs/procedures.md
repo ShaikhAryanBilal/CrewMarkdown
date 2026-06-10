@@ -1,3 +1,9 @@
+---
+layout: default
+title: Procedures
+nav_active: procedures
+---
+
 # Procedures
 
 Step-by-step guides organized by phase — the how-to references roles use during execution.

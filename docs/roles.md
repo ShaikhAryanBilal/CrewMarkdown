@@ -1,3 +1,9 @@
+---
+layout: default
+title: Roles
+nav_active: roles
+---
+
 # Roles
 
 18 invocable AI roles with YAML-frontmatter contracts and workflows. Solo, squad, meeting, or orchestrated.

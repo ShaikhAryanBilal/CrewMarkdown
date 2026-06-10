@@ -1,0 +1,14 @@
+title: AgentCrew Docs
+description: Autonomous AI Squads That Ship Production Software
+markdown: kramdown
+permalink: pretty
+exclude:
+  - README.md
+  - Gemfile
+  - "*.gemspec"
+  - vendor
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default

@@ -1,3 +1,9 @@
+---
+layout: default
+title: Objectives
+nav_active: objectives
+---
+
 # Objectives
 
 8 lifecycle objectives — each with goal, squad, schedule, artifacts, and acceptance criteria.
