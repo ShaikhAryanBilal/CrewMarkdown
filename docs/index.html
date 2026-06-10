@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AgentCrew Docs — Home</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="index">
+
+<button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">&#9776;</button>
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+<nav class="sidebar">
+  <div class="sidebar-header">
+    <div class="logo">AgentCrew</div>
+    <span class="version">v1.0</span>
+  </div>
+  <div class="nav-section">Docs</div>
+  <ul class="nav-list">
+    <li class="active"><a href="index.html"><span class="nav-icon">&#9679;</span> Home</a></li>
+    <li><a href="configuration.html"><span class="nav-icon">&#9881;</span> Configuration</a></li>
+    <li><a href="objectives.html"><span class="nav-icon">&#9673;</span> Objectives</a></li>
+    <li><a href="roles.html"><span class="nav-icon">&#9733;</span> Roles</a></li>
+    <li><a href="procedures.html"><span class="nav-icon">&#9776;</span> Procedures</a></li>
+    <li><a href="debate.html"><span class="nav-icon">&#9878;</span> Debate</a></li>
+  </ul>
+  <div class="sidebar-footer">
+    <a href="https://github.com/ShaikhAryanBilal/agentcrew" target="_blank">&#128279; GitHub</a>
+    &middot; MIT
+  </div>
+</nav>
+
+<main class="content">
+  <section class="hero">
+    <div class="hero-badge">AI-Native Framework</div>
+    <h1>Autonomous AI Squads That Ship Production Software</h1>
+    <p class="hero-sub">18 specialized roles &middot; 8 lifecycle objectives &middot; Solo &middot; Squad &middot; Orchestrate &middot; Meeting</p>
+
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="num">18</div>
+        <div class="label">Roles</div>
+      </div>
+      <div class="hero-stat">
+        <div class="num">8</div>
+        <div class="label">Objectives</div>
+      </div>
+      <div class="hero-stat">
+        <div class="num">33</div>
+        <div class="label">Procedures</div>
+      </div>
+      <div class="hero-stat">
+        <div class="num">0</div>
+        <div class="label">Dependencies</div>
+      </div>
+    </div>
+
+    <div class="badges">
+      <a href="#"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="MIT"></a>
+      <a href="#"><img src="https://img.shields.io/badge/AI-Ready-8A2BE2" alt="AI Ready"></a>
+      <a href="#"><img src="https://img.shields.io/badge/Dependencies-Zero-success" alt="No Dependencies"></a>
+    </div>
+
+    <div class="demo-box">
+      <span class="line"><span class="prompt">You:</span>       <span class="response">"Build the payment system"</span></span>
+      <span class="line"><span class="arrow">AgentCrew:</span> Orchestrator &rarr; 7 objectives &rarr; squad assembles &rarr; artifacts ship &#10003;</span>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <h2>Why AgentCrew?</h2>
+  <p>AI agents are great at writing code but <strong>terrible at software process</strong>. Without structure, every prompt is a gamble &mdash; you might get code with no tests, no threat model, no PRD, no deploy plan.</p>
+  <p>AgentCrew gives AI agents a <strong>repeatable software engineering brain</strong>. 18 roles with hardened contracts, workflows, and quality gates. Drop it in any project, point your AI at it, and get production-grade results.</p>
+  <p><strong>No SaaS. No API keys. No vendor lock.</strong> Just markdown files any AI agent can read.</p>
+
+  <h2>How It Works</h2>
+  <p><strong>User Request</strong> &rarr; <strong>Objective Match</strong> &rarr; <strong>Squad Assembly</strong> &rarr; <strong>Execute &amp; Verify</strong> &rarr; <strong>Ship &#10003;</strong></p>
+
+  <div class="mode-table">
+    <div class="mode-row">
+      <div class="mode-label">Solo</div>
+      <div class="mode-example">"Architect, design the DB"</div>
+      <div class="mode-desc">Single role, zero orchestration overhead</div>
+    </div>
+    <div class="mode-row">
+      <div class="mode-label">Squad</div>
+      <div class="mode-example">"Team, design the solution"</div>
+      <div class="mode-desc">Multiple roles, one objective, parallel execution</div>
+    </div>
+    <div class="mode-row">
+      <div class="mode-label">Orchestrate</div>
+      <div class="mode-example">"Build the payment system"</div>
+      <div class="mode-desc">Orchestrator &rarr; 7 objectives &rarr; squads &rarr; track &rarr; ship</div>
+    </div>
+    <div class="mode-row">
+      <div class="mode-label">Meeting</div>
+      <div class="mode-example">"/meeting brainstorm [topic]"</div>
+      <div class="mode-desc">Dynamic roles assembled, structured brainstorm, decisions, action items</div>
+    </div>
+  </div>
+
+  <h2>Agent-Centric Format</h2>
+  <p>Every file is a <strong>system prompt for an AI agent</strong> &mdash; YAML metadata + structured instructions, no prose fluff.</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Section</th>
+          <th>Format</th>
+          <th>Agent Benefit</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Needs/Produces, Skills, Rules</td>
+          <td>YAML frontmatter</td>
+          <td>Parse in 1ms, schema-enforced</td>
+        </tr>
+        <tr>
+          <td>System, Instructions, I/O, Rules</td>
+          <td>Structured markdown</td>
+          <td>No prose parsing &mdash; direct to reasoning</td>
+        </tr>
+        <tr>
+          <td>Templates</td>
+          <td>Code blocks</td>
+          <td>Drop-in artifact generation</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="text-muted text-sm"><strong>Zero dependencies.</strong> Every file reads as a prompt.</p>
+
+  <h2>The Crew</h2>
+
+  <div class="role-grid">
+    <div class="role-card">
+      <div class="role-title">Orchestrator</div>
+      <div class="role-superpower">Coordinates full lifecycle</div>
+      <div class="role-produces"><strong>Produces:</strong> Decomposition, squads, status</div>
+    </div>
+    <div class="role-card">
+      <div class="role-title">Product Manager</div>
+      <div class="role-superpower">Requirements, priorities</div>
+      <div class="role-produces"><strong>Produces:</strong> PRD, roadmap, acceptance criteria</div>
+    </div>
+    <div class="role-card">
+      <div class="role-title">Business Analyst</div>
+      <div class="role-superpower">Analysis, user stories</div>
+      <div class="role-produces"><strong>Produces:</strong> Requirements spec, dependency map</div>
+    </div>
+    <div class="role-card">
+      <div class="role-title">Solution Architect</div>
+      <div class="role-superpower">Architecture, tech stack</div>
+      <div class="role-produces"><strong>Produces:</strong> ADRs, system diagrams, tech decisions</div>
+    </div>
+    <div class="role-card">
+      <div class="role-title">Tech Lead</div>
+      <div class="role-superpower">Standards, code quality</div>
+      <div class="role-produces"><strong>Produces:</strong> ADRs, code review, tech debt plan</div>
+    </div>
+    <div class="role-card">
+      <div class="role-title">Frontend Dev</div>
+      <div class="role-superpower">UI, client logic</div>
+      <div class="role-produces"><strong>Produces:</strong> Components, integration, state</div>
+    </div>
+    <div class="role-card">
+      <div class="role-title">Backend Dev</div>
+      <div class="role-superpower">API, data, services</div>
+      <div class="role-produces"><strong>Produces:</strong> APIs, DB schema, business logic</div>
+    </div>
+    <div class="role-card">
+      <div class="role-title">Mobile Dev</div>
+      <div class="role-superpower">iOS/Android</div>
+      <div class="role-produces"><strong>Produces:</strong> Mobile UI, push, offline, store</div>
+    </div>
+    <div class="role-card">
+      <div class="role-title">UX Designer</div>
+      <div class="role-superpower">Research, wireframes</div>
+      <div class="role-produces"><strong>Produces:</strong> Personas, prototypes, design system</div>
+    </div>
+    <div class="role-card">
+      <div class="role-title">Data Engineer</div>
+      <div class="role-superpower">ETL, pipelines</div>
+      <div class="role-produces"><strong>Produces:</strong> Data models, lineage, quality checks</div>
+    </div>
+    <div class="role-card">
+      <div class="role-title">ML Engineer</div>
+      <div class="role-superpower">Models, training, serving</div>
+      <div class="role-produces"><strong>Produces:</strong> Model card, eval report, drift monitor</div>
+    </div>
+    <div class="role-card">
+      <div class="role-title">QA Engineer</div>
+      <div class="role-superpower">Testing, quality</div>
+      <div class="role-produces"><strong>Produces:</strong> Test plan, bug report, sign-off</div>
+    </div>
+    <div class="role-card">
+      <div class="role-title">Security Engineer</div>
+      <div class="role-superpower">Threat model, pentest</div>
+      <div class="role-produces"><strong>Produces:</strong> Threat model, SBOM, scan results</div>
+    </div>
+    <div class="role-card">
+      <div class="role-title">DevOps Engineer</div>
+      <div class="role-superpower">CI/CD, infra</div>
+      <div class="role-produces"><strong>Produces:</strong> Pipeline, deploy plan, runbook</div>
+    </div>
+    <div class="role-card">
+      <div class="role-title">Engineering Manager</div>
+      <div class="role-superpower">Sprint planning, retro</div>
+      <div class="role-produces"><strong>Produces:</strong> Sprint plan, velocity report, retro</div>
+    </div>
+    <div class="role-card">
+      <div class="role-title">Technical Writer</div>
+      <div class="role-superpower">API docs, user guides, release notes</div>
+      <div class="role-produces"><strong>Produces:</strong> Doc-as-code, changelog, onboarding</div>
+    </div>
+    <div class="role-card">
+      <div class="role-title">Meeting Facilitator</div>
+      <div class="role-superpower">Meeting mode, brainstorming</div>
+      <div class="role-produces"><strong>Produces:</strong> Agenda, decisions, action items, minutes</div>
+    </div>
+    <div class="role-card">
+      <div class="role-title">Debate Facilitator</div>
+      <div class="role-superpower">Decision moderation</div>
+      <div class="role-produces"><strong>Produces:</strong> Structured debate, scored options</div>
+    </div>
+  </div>
+
+  <hr class="section-divider">
+
+  <h2>Quick Start</h2>
+  <pre><code><span style="color:var(--text-muted);"># 1. Copy to your project</span>
+cp -r .agentcrew ./your-project/
+
+<span style="color:var(--text-muted);"># 2. Generate codebase map</span>
+./.agentcrew/scripts/generate-codebase-map.ps1
+
+<span style="color:var(--text-muted);"># 3. Configure AI agents</span>
+./.agentcrew/config/setup.ps1        <span style="color:var(--text-muted);"># Windows</span>
+./.agentcrew/config/setup.sh --all   <span style="color:var(--text-muted);"># Linux/macOS</span>
+
+<span style="color:var(--text-muted);"># 4. Make a request</span>
+<span style="color:var(--accent-green);">#    "PM, write a PRD for login"</span>
+<span style="color:var(--accent-green);">#    "Squad (QA, Security), verify quality"</span>
+<span style="color:var(--accent-green);">#    "Build the full e-commerce platform"</span></code></pre>
+
+  <p>Your AI agent reads <code>.agentcrew/00-objectives.md</code>, routes to the right objective, loads the squad, and executes.</p>
+
+  <h2>Project Structure</h2>
+  <pre><code>.agentcrew/
+├── 00-objectives.md       <span style="color:var(--text-muted);"># YAML frontmatter routing table</span>
+├── 00-team.md             <span style="color:var(--text-muted);"># YAML frontmatter crew roster</span>
+├── 00-roles.md            <span style="color:var(--text-muted);"># 18 role definitions</span>
+├── objectives/            <span style="color:var(--text-muted);"># 8 lifecycle objectives</span>
+├── roles/                 <span style="color:var(--text-muted);"># 18 contracts + workflows</span>
+├── procedures/            <span style="color:var(--text-muted);"># Step-by-step guides</span>
+├── debate/                <span style="color:var(--text-muted);"># Decision framework</span>
+├── meeting/               <span style="color:var(--text-muted);"># Meeting mode workflow</span>
+├── custom/                <span style="color:var(--text-muted);"># Per-project overrides</span>
+├── config/                <span style="color:var(--text-muted);"># Agent config templates</span>
+├── light/                 <span style="color:var(--text-muted);"># 7-step compressed variant</span>
+├── animations/            <span style="color:var(--text-muted);"># Retro RPG party screen</span>
+├── scripts/               <span style="color:var(--text-muted);"># State dashboard + utils</span>
+├── log/                   <span style="color:var(--text-muted);"># Execution logs</span>
+└── state/workflow.json    <span style="color:var(--text-muted);"># Progress tracker</span></code></pre>
+
+  <h2>Invocation Modes</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Mode</th>
+          <th>When</th>
+          <th>Pattern</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="tag tag-purple">Solo</span></td>
+          <td>Single role task</td>
+          <td><code>[Role], do [task]</code></td>
+        </tr>
+        <tr>
+          <td><span class="tag tag-cyan">Squad</span></td>
+          <td>Multiple roles, one objective</td>
+          <td><code>Squad ([roles]), achieve [objective]</code></td>
+        </tr>
+        <tr>
+          <td><span class="tag tag-pink">Orchestrate</span></td>
+          <td>Full lifecycle</td>
+          <td><code>Build [feature]</code></td>
+        </tr>
+        <tr>
+          <td><span class="tag tag-amber">Meeting</span></td>
+          <td>Brainstorming, decision-making, retro</td>
+          <td><code>/meeting [topic]</code></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <hr class="section-divider">
+
+  <p class="text-muted text-sm"><em>MIT Licensed &mdash; Built for AI-native development</em></p>
+
+</main>
+
+<script src="js/main.js"></script>
+</body>
+</html>

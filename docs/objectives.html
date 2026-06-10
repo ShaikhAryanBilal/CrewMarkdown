@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AgentCrew Docs — Objectives</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="objectives">
+
+<button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">&#9776;</button>
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+<nav class="sidebar">
+  <div class="sidebar-header">
+    <div class="logo">AgentCrew</div>
+    <span class="version">v1.0</span>
+  </div>
+  <div class="nav-section">Docs</div>
+  <ul class="nav-list">
+    <li><a href="index.html"><span class="nav-icon">&#9679;</span> Home</a></li>
+    <li><a href="configuration.html"><span class="nav-icon">&#9881;</span> Configuration</a></li>
+    <li class="active"><a href="objectives.html"><span class="nav-icon">&#9673;</span> Objectives</a></li>
+    <li><a href="roles.html"><span class="nav-icon">&#9733;</span> Roles</a></li>
+    <li><a href="procedures.html"><span class="nav-icon">&#9776;</span> Procedures</a></li>
+    <li><a href="debate.html"><span class="nav-icon">&#9878;</span> Debate</a></li>
+  </ul>
+  <div class="sidebar-footer">
+    <a href="https://github.com/ShaikhAryanBilal/agentcrew" target="_blank">&#128279; GitHub</a>
+    &middot; MIT
+  </div>
+</nav>
+
+<main class="content">
+  <h1>Objectives</h1>
+  <p class="page-subtitle">8 lifecycle objectives &mdash; each with goal, squad, schedule, artifacts, and acceptance criteria.</p>
+
+  <div class="process-flow">
+    <span class="process-step active">1. Clarify Vision</span>
+    <span class="process-arrow">&rarr;</span>
+    <span class="process-step">2. Design Solution</span>
+    <span class="process-arrow">&rarr;</span>
+    <span class="process-step">3. Plan Work</span>
+    <span class="process-arrow">&rarr;</span>
+    <span class="process-step">4. Build Feature</span>
+    <span class="process-arrow">&rarr;</span>
+    <span class="process-step">5. Verify Quality</span>
+    <span class="process-arrow">&rarr;</span>
+    <span class="process-step">6. Ship Release</span>
+    <span class="process-arrow">&rarr;</span>
+    <span class="process-step">7. Operate &amp; Learn</span>
+  </div>
+
+  <p>Also includes <strong>Meeting Mode</strong> as a cross-cutting objective.</p>
+
+  <h2>Request &rarr; Objective Routing</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>You Say</th>
+          <th>Objective</th>
+          <th>Squad</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>"Define requirements" / "Write PRD"</td>
+          <td><span class="tag tag-purple">1. Clarify Vision</span></td>
+          <td>PM, BA</td>
+        </tr>
+        <tr>
+          <td>"Design the system" / "Architecture"</td>
+          <td><span class="tag tag-cyan">2. Design Solution</span></td>
+          <td>Architect, UX, Security</td>
+        </tr>
+        <tr>
+          <td>"Plan the sprint" / "Break down work"</td>
+          <td><span class="tag tag-amber">3. Plan Work</span></td>
+          <td>EM, PM, Tech Lead</td>
+        </tr>
+        <tr>
+          <td>"Implement X" / "Write code for X"</td>
+          <td><span class="tag tag-green">4. Build Feature</span></td>
+          <td>Dev(s), Tech Lead</td>
+        </tr>
+        <tr>
+          <td>"Test this" / "QA sign-off"</td>
+          <td><span class="tag tag-red">5. Verify Quality</span></td>
+          <td>QA, Security</td>
+        </tr>
+        <tr>
+          <td>"Deploy to prod" / "Release"</td>
+          <td><span class="tag tag-pink">6. Ship Release</span></td>
+          <td>DevOps, PM</td>
+        </tr>
+        <tr>
+          <td>"Set up monitoring" / "Hotfix"</td>
+          <td>7. Operate &amp; Learn</td>
+          <td>DevOps, EM, PM</td>
+        </tr>
+        <tr>
+          <td>"/meeting brainstorm" / "Meeting on [topic]"</td>
+          <td>8. Conduct Meeting</td>
+          <td>Meeting Facilitator + dynamic roles</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Security Gates</h2>
+  <div class="gate-grid">
+    <div class="gate-card">
+      <span class="gate-stage">Gate &mdash; Design Review</span>
+      <span class="gate-label">SG1</span>
+      <span class="gate-desc">Threat model complete, high threats mitigated</span>
+    </div>
+    <div class="gate-card">
+      <span class="gate-stage">Gate &mdash; Merge to Main</span>
+      <span class="gate-label">SG2</span>
+      <span class="gate-desc">SAST + secret scan + dependency scan clean</span>
+    </div>
+    <div class="gate-card">
+      <span class="gate-stage">Gate &mdash; QA Sign-off</span>
+      <span class="gate-label">SG3</span>
+      <span class="gate-desc">DAST + pentest + supply chain scan &mdash; no Critical/High</span>
+    </div>
+    <div class="gate-card">
+      <span class="gate-stage">Gate &mdash; Production Deploy</span>
+      <span class="gate-label">SG4</span>
+      <span class="gate-desc">All scans clean, SBOM verified</span>
+    </div>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- Objective 1 -->
+  <h2>Objective 1: Clarify Vision</h2>
+  <p><span class="tag tag-purple">Squad: PM + BA</span></p>
+  <p>Transform raw stakeholder input into a signed-off PRD with clear scope, priorities, and user stories.</p>
+
+  <h3>Schedule</h3>
+  <pre><code>PM:  Intake &rarr; PRD Draft &rarr; Review &rarr; Sign-off
+BA:  Analysis &rarr; User Stories</code></pre>
+  <p class="text-muted text-sm"><strong>Parallel:</strong> PM gathers requirements while BA analyzes.<br><strong>Sequential:</strong> PRD needs analysis done.</p>
+
+  <h3>Artifacts</h3>
+  <ul>
+    <li><strong>PM:</strong> Structured requirement list, PRD document, sign-off record</li>
+    <li><strong>BA:</strong> Gap analysis, prioritized reqs, P0/P1 user stories</li>
+  </ul>
+
+  <h3>Acceptance</h3>
+  <ul>
+    <li>All requirements captured and classified ([F], [NF], [B], [T], [C])</li>
+    <li>MoSCoW priorities assigned (P0-P3), scope frozen</li>
+    <li>P0/P1 user stories written with 2-3 acceptance criteria each</li>
+    <li>PRD reviewed and signed off</li>
+  </ul>
+
+  <hr class="section-divider">
+
+  <!-- Objective 2 -->
+  <h2>Objective 2: Design Solution</h2>
+  <p><span class="tag tag-cyan">Squad: Architect + UX + Security</span></p>
+  <p>Design system architecture, UX, and security model to satisfy the signed-off PRD.</p>
+
+  <h3>Schedule</h3>
+  <pre><code>Architect: Options &rarr; ADRs &rarr; Tech Spec &rarr; Design Review
+UX:        Research &rarr; Wireframes &rarr; Prototype
+Security:  Threat Model &rarr; Security Reqs</code></pre>
+
+  <h3>Artifacts</h3>
+  <ul>
+    <li><strong>Architect:</strong> ADRs, C4 diagrams, tech spec, DB design, API contracts</li>
+    <li><strong>UX Designer:</strong> User flows, wireframes, prototypes, design assets</li>
+    <li><strong>Security:</strong> Threat model with mitigations</li>
+  </ul>
+
+  <div class="highlight-box">
+    <strong>Security Gate: SG1</strong> &mdash; Threat model must be complete, all high-severity threats must have documented mitigations.
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- Objective 3 -->
+  <h2>Objective 3: Plan Work</h2>
+  <p><span class="tag tag-amber">Squad: EM + PM + Tech Lead</span></p>
+  <p>Break approved design into actionable tasks, assign capacity, create sprint plan.</p>
+
+  <h3>Artifacts</h3>
+  <ul>
+    <li><strong>EM:</strong> Sprint plan with capacity allocation</li>
+    <li><strong>PM:</strong> Prioritized backlog with sprint goal</li>
+    <li><strong>Tech Lead:</strong> Technical task breakdown with estimates</li>
+  </ul>
+
+  <h3>Acceptance</h3>
+  <ul>
+    <li>All tasks estimated, capacity allocated, sprint goal defined</li>
+    <li>Dependencies mapped, team committed</li>
+  </ul>
+
+  <hr class="section-divider">
+
+  <!-- Objective 4 -->
+  <h2>Objective 4: Build Feature</h2>
+  <p><span class="tag tag-green">Squad: Dev(s) + Tech Lead</span></p>
+  <p>Implement, review, unit test, and integrate working code per approved design.</p>
+
+  <h3>Schedule</h3>
+  <pre><code>Dev:  Analysis &rarr; Implementation &rarr; PR
+Tech Lead:                    Code Review &rarr; Merge
+Dev:                Unit Tests &rarr; Integration</code></pre>
+
+  <h3>Artifacts</h3>
+  <ul>
+    <li><strong>Dev:</strong> Implementation code, unit tests (&ge;80% coverage), integration tests</li>
+    <li><strong>Tech Lead:</strong> Code review comments, merge commit</li>
+  </ul>
+
+  <div class="highlight-box">
+    <strong>Security Gate: SG2</strong> &mdash; Before merge to main: SAST, secret detection, dependency scan must pass.
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- Objective 5 -->
+  <h2>Objective 5: Verify Quality</h2>
+  <p><span class="tag tag-red">Squad: QA + Security</span></p>
+  <p>Validate feature meets quality standards through testing, security validation, and acceptance.</p>
+
+  <h3>Artifacts</h3>
+  <ul>
+    <li><strong>QA:</strong> Test plan, test cases, bug reports, execution report, QA sign-off</li>
+    <li><strong>Security:</strong> Pentest report, supply chain scan, SG3 gate status</li>
+  </ul>
+
+  <div class="highlight-box">
+    <strong>Security Gate: SG3</strong> &mdash; DAST + pentest + supply chain scan: no Critical or High findings.
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- Objective 6 -->
+  <h2>Objective 6: Ship Release</h2>
+  <p><span class="tag tag-pink">Squad: DevOps + PM</span></p>
+  <p>Deploy verified build to production with rollout plan, monitoring, and rollback.</p>
+
+  <h3>Artifacts</h3>
+  <ul>
+    <li><strong>PM:</strong> Release plan, release notes</li>
+    <li><strong>DevOps:</strong> Deployment runbook, deployed build, monitoring dashboards</li>
+  </ul>
+
+  <div class="highlight-box">
+    <strong>Security Gate: SG4</strong> &mdash; All scans clean, no Critical/High bugs, SBOM verified before production traffic.
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- Objective 7 -->
+  <h2>Objective 7: Operate &amp; Learn</h2>
+  <p>Squad: DevOps + EM + PM</p>
+  <p>Monitor production system, respond to incidents, gather feedback, plan improvements.</p>
+
+  <h3>Artifacts</h3>
+  <ul>
+    <li><strong>DevOps:</strong> Monitoring dashboards, incident reports, runbooks</li>
+    <li><strong>EM:</strong> Retro reports, velocity metrics, process improvements</li>
+    <li><strong>PM:</strong> User feedback summary, feature requests</li>
+  </ul>
+
+  <hr class="section-divider">
+
+  <!-- Objective 8 -->
+  <h2>Objective 8: Conduct Meeting</h2>
+  <p><span class="tag tag-amber">Squad: Meeting Facilitator + Dynamic Roles</span></p>
+  <p>Run a structured real-time meeting with dynamically assembled roles to brainstorm, decide, and produce action items for a given topic.</p>
+
+  <h3>Schedule</h3>
+  <pre><code>Facilitator: Convene &rarr; Agenda &rarr; Brainstorm &rarr; Decisions &rarr; Action Items &rarr; Minutes</code></pre>
+
+  <h3>Role Selection</h3>
+  <p>Topic keywords determine spawned roles:</p>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Topic Keywords</th>
+          <th>Roles</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>feature, product, roadmap</td>
+          <td>PM, BA, Architect</td>
+        </tr>
+        <tr>
+          <td>architecture, design, tech-stack</td>
+          <td>Architect, Tech Lead, Security, DevOps</td>
+        </tr>
+        <tr>
+          <td>sprint, planning, capacity</td>
+          <td>EM, PM, Tech Lead</td>
+        </tr>
+        <tr>
+          <td>bug, defect, qa, quality</td>
+          <td>QA, Security, relevant Dev</td>
+        </tr>
+        <tr>
+          <td>deploy, release, ci/cd</td>
+          <td>DevOps, PM, Tech Lead</td>
+        </tr>
+        <tr>
+          <td>security, threat</td>
+          <td>Security, Architect, DevOps</td>
+        </tr>
+        <tr>
+          <td>data, pipeline, etl, database</td>
+          <td>Data Engineer, Backend, Architect</td>
+        </tr>
+        <tr>
+          <td>ui, ux, design, frontend</td>
+          <td>UX Designer, Frontend</td>
+        </tr>
+        <tr>
+          <td>general, brainstorm, ideation</td>
+          <td>PM, Architect, Tech Lead</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Artifacts</h3>
+  <ul>
+    <li><strong>Meeting Facilitator:</strong> Agenda, discussion summary, decision log, action items, minutes</li>
+    <li><strong>Dynamic roles:</strong> Ideas, opinions, perspectives, proposals</li>
+  </ul>
+
+  <hr class="section-divider">
+
+  <p class="text-muted text-sm"><em>MIT Licensed &mdash; Built for AI-native development</em></p>
+
+</main>
+
+<script src="js/main.js"></script>
+</body>
+</html>

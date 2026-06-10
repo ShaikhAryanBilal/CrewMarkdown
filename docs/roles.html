@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AgentCrew Docs — Roles</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="roles">
+
+<button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">&#9776;</button>
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+<nav class="sidebar">
+  <div class="sidebar-header">
+    <div class="logo">AgentCrew</div>
+    <span class="version">v1.0</span>
+  </div>
+  <div class="nav-section">Docs</div>
+  <ul class="nav-list">
+    <li><a href="index.html"><span class="nav-icon">&#9679;</span> Home</a></li>
+    <li><a href="configuration.html"><span class="nav-icon">&#9881;</span> Configuration</a></li>
+    <li><a href="objectives.html"><span class="nav-icon">&#9673;</span> Objectives</a></li>
+    <li class="active"><a href="roles.html"><span class="nav-icon">&#9733;</span> Roles</a></li>
+    <li><a href="procedures.html"><span class="nav-icon">&#9776;</span> Procedures</a></li>
+    <li><a href="debate.html"><span class="nav-icon">&#9878;</span> Debate</a></li>
+  </ul>
+  <div class="sidebar-footer">
+    <a href="https://github.com/ShaikhAryanBilal/agentcrew" target="_blank">&#128279; GitHub</a>
+    &middot; MIT
+  </div>
+</nav>
+
+<main class="content">
+  <h1>Roles</h1>
+  <p class="page-subtitle">18 invocable AI roles with YAML-frontmatter contracts and workflows. Solo, squad, meeting, or orchestrated.</p>
+
+  <!-- Orchestrator -->
+  <div class="role-card">
+    <div class="role-title">Orchestrator <span class="tag tag-purple">Meta-role</span></div>
+    <div class="role-superpower">Coordinates full lifecycle</div>
+    <div class="role-produces"><strong>Provides:</strong> Objective breakdown, squad assignments, status reports, risk register, completion report</div>
+    <div class="role-produces"><strong>Consumes:</strong> High-level user request, role roster, objective definitions, previous state</div>
+    <div class="role-produces"><strong>Invoke:</strong> Auto-activated on "build this feature" requests. Single-objective or solo requests bypass.</div>
+    <div class="highlight-box mt-1 mb-0">
+      <strong>Key Workflow:</strong>
+      <pre style="margin-top:0.35rem;margin-bottom:0;"><code>User Request &rarr; Parse &rarr; Map to objectives &rarr; Order by dependencies
+&rarr; For each objective: assign squad &rarr; track &rarr; resolve &rarr; verify
+&rarr; All complete &rarr; Report to user</code></pre>
+    </div>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- Product Manager -->
+  <div class="role-card">
+    <div class="role-title">Product Manager</div>
+    <div class="role-superpower">Requirements, priorities, stakeholder communication, sign-off</div>
+    <div class="role-produces"><strong>Provides:</strong> PRD, priorities, scope decisions, release plan, release notes, UAT sign-off</div>
+    <div class="role-produces"><strong>Consumes:</strong> Stakeholder input, effort estimates (Tech Lead), UAT feedback (QA), team velocity (EM)</div>
+    <div class="role-produces"><strong>Invoke:</strong> <code>"PM, write a PRD for user authentication"</code> &mdash; Solo or Squad with BA</div>
+    <div class="role-produces mt-1"><span class="tag tag-green">Scrum/Kanban</span> <span class="tag tag-purple">MoSCoW</span> <span class="tag tag-cyan">Stakeholder Management</span> <span class="tag tag-amber">User Story Mapping</span></div>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- Business Analyst -->
+  <div class="role-card">
+    <div class="role-title">Business Analyst</div>
+    <div class="role-superpower">Requirements analysis, gap detection, clarification</div>
+    <div class="role-produces"><strong>Provides:</strong> Structured reqs, gap list, user stories, dependency graph</div>
+    <div class="role-produces"><strong>Consumes:</strong> Raw input from stakeholders, domain context</div>
+    <div class="role-produces"><strong>Invoke:</strong> <code>"BA, analyze these requirements"</code> &mdash; Solo or Squad with PM</div>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- Solution Architect -->
+  <div class="role-card">
+    <div class="role-title">Solution Architect</div>
+    <div class="role-superpower">System architecture, tech stack, high-level design</div>
+    <div class="role-produces"><strong>Provides:</strong> Architecture diagram, ADRs, DB design, API contracts, tech spec, design review approval</div>
+    <div class="role-produces"><strong>Consumes:</strong> Signed-off PRD, non-functional requirements, security requirements</div>
+    <div class="role-produces"><strong>Invoke:</strong> <code>"Architect, design the database schema for the payment system"</code></div>
+    <div class="role-produces mt-1"><span class="tag tag-purple">Microservices</span> <span class="tag tag-cyan">C4 Modeling</span> <span class="tag tag-red">Event-Driven</span> <span class="tag tag-amber">ADR</span></div>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- Tech Lead -->
+  <div class="role-card">
+    <div class="role-title">Tech Lead</div>
+    <div class="role-superpower">Coding standards, code quality, technical decisions, ADRs</div>
+    <div class="role-produces"><strong>Provides:</strong> Standards, review approval, technical guidance, tech debt register</div>
+    <div class="role-produces"><strong>Consumes:</strong> Architecture decisions, PRD</div>
+    <div class="role-produces"><strong>Invoke:</strong> <code>"Tech Lead, review PR #42"</code> &mdash; Solo or Squad with Devs</div>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- Frontend Developer -->
+  <div class="role-card">
+    <div class="role-title">Frontend Developer</div>
+    <div class="role-superpower">UI implementation, client logic</div>
+    <div class="role-produces"><strong>Provides:</strong> UI code, component tests, API integration</div>
+    <div class="role-produces"><strong>Consumes:</strong> Designs/wireframes, API contracts, design tokens</div>
+    <div class="role-produces"><strong>Invoke:</strong> <code>"Frontend Dev, implement the user profile component"</code></div>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- Backend Developer -->
+  <div class="role-card">
+    <div class="role-title">Backend Developer</div>
+    <div class="role-superpower">API, services, data layer, business logic</div>
+    <div class="role-produces"><strong>Provides:</strong> API endpoints, business logic, DB migrations, integration tests</div>
+    <div class="role-produces"><strong>Consumes:</strong> API contracts, DB design, tech spec, coding standards</div>
+    <div class="role-produces"><strong>Invoke:</strong> <code>"Backend Dev, implement the order API"</code></div>
+    <div class="role-produces mt-1"><span class="tag tag-purple">REST/GraphQL/gRPC</span> <span class="tag tag-cyan">JWT/OAuth2/RBAC</span> <span class="tag tag-green">Caching</span></div>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- Mobile Developer -->
+  <div class="role-card">
+    <div class="role-title">Mobile Developer</div>
+    <div class="role-superpower">iOS/Android apps, offline support, push notifications, app store submission</div>
+    <div class="role-produces"><strong>Provides:</strong> Mobile app code, UI tests, app store build</div>
+    <div class="role-produces"><strong>Consumes:</strong> Wireframes, API contracts, design tokens</div>
+    <div class="role-produces"><strong>Invoke:</strong> <code>"Mobile Dev, implement the login screen"</code></div>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- UX Designer -->
+  <div class="role-card">
+    <div class="role-title">UX Designer</div>
+    <div class="role-superpower">User research, wireframes, visual design, prototyping</div>
+    <div class="role-produces"><strong>Provides:</strong> Mockups, prototypes, design assets, design system</div>
+    <div class="role-produces"><strong>Consumes:</strong> PRD with personas, brand guidelines</div>
+    <div class="role-produces"><strong>Invoke:</strong> <code>"UX Designer, create wireframes for the dashboard"</code></div>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- Data Engineer -->
+  <div class="role-card">
+    <div class="role-title">Data Engineer</div>
+    <div class="role-superpower">ETL/ELT pipelines, data warehouse/lake, data quality</div>
+    <div class="role-produces"><strong>Provides:</strong> Pipelines, schemas, data catalog, lineage docs</div>
+    <div class="role-produces"><strong>Consumes:</strong> Data requirements, source access, storage infrastructure</div>
+    <div class="role-produces"><strong>Invoke:</strong> <code>"Data Engineer, build the customer analytics pipeline"</code></div>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- ML Engineer -->
+  <div class="role-card">
+    <div class="role-title">ML Engineer</div>
+    <div class="role-superpower">Model training, evaluation, serving, monitoring</div>
+    <div class="role-produces"><strong>Provides:</strong> Trained models, evaluation reports, serving endpoints, drift monitors</div>
+    <div class="role-produces"><strong>Consumes:</strong> ML requirements, training data, compute resources</div>
+    <div class="role-produces"><strong>Invoke:</strong> <code>"ML Engineer, train a fraud detection model"</code></div>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- QA Engineer -->
+  <div class="role-card">
+    <div class="role-title">QA Engineer</div>
+    <div class="role-superpower">Test planning, execution, bug tracking, sign-off</div>
+    <div class="role-produces"><strong>Provides:</strong> Test plan, test cases, bug reports, execution report, QA sign-off</div>
+    <div class="role-produces"><strong>Consumes:</strong> Build artifact, PRD + acceptance criteria, API contracts</div>
+    <div class="role-produces"><strong>Invoke:</strong> <code>"QA, create test cases for the checkout flow"</code></div>
+    <div class="role-produces mt-1"><span class="tag tag-purple">Risk-Based Testing</span> <span class="tag tag-cyan">Playwright</span> <span class="tag tag-green">Cypress</span> <span class="tag tag-amber">Performance</span></div>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- Security Engineer -->
+  <div class="role-card">
+    <div class="role-title">Security Engineer</div>
+    <div class="role-superpower">Threat modeling, security testing, pentest, SBOM</div>
+    <div class="role-produces"><strong>Provides:</strong> Threat model, pentest report, security gate status, SBOM</div>
+    <div class="role-produces"><strong>Consumes:</strong> Architecture diagrams, staging build, dependency list</div>
+    <div class="role-produces"><strong>Invoke:</strong> <code>"Security, review the threat model for the portal"</code></div>
+
+    <h4 class="mt-1 mb-1">Security Gates</h4>
+    <div class="gate-grid" style="margin-bottom:0;">
+      <div class="gate-card">
+        <span class="gate-label">SG1</span>
+        <span class="gate-desc">Design review &mdash; threat model complete</span>
+      </div>
+      <div class="gate-card">
+        <span class="gate-label">SG2</span>
+        <span class="gate-desc">Merge to main &mdash; scans clean</span>
+      </div>
+      <div class="gate-card">
+        <span class="gate-label">SG3</span>
+        <span class="gate-desc">QA sign-off &mdash; no Critical/High</span>
+      </div>
+      <div class="gate-card">
+        <span class="gate-label">SG4</span>
+        <span class="gate-desc">Production &mdash; all clean, SBOM verified</span>
+      </div>
+    </div>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- DevOps Engineer -->
+  <div class="role-card">
+    <div class="role-title">DevOps Engineer</div>
+    <div class="role-superpower">Infrastructure, CI/CD, deployment, monitoring</div>
+    <div class="role-produces"><strong>Provides:</strong> Environments, CI/CD pipelines, deployed builds, monitoring dashboards</div>
+    <div class="role-produces"><strong>Consumes:</strong> Tech stack decisions, build config, secrets, release plan</div>
+    <div class="role-produces"><strong>Invoke:</strong> <code>"DevOps, set up the CI/CD pipeline for this project"</code></div>
+    <div class="role-produces mt-1"><span class="tag tag-purple">GitHub Actions</span> <span class="tag tag-cyan">Docker</span> <span class="tag tag-red">Kubernetes</span> <span class="tag tag-amber">Terraform</span> <span class="tag tag-green">Prometheus</span></div>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- Engineering Manager -->
+  <div class="role-card">
+    <div class="role-title">Engineering Manager</div>
+    <div class="role-superpower">Sprint planning, team process, retrospectives, capacity</div>
+    <div class="role-produces"><strong>Provides:</strong> Sprint plan, capacity allocation, task breakdown, retro report</div>
+    <div class="role-produces"><strong>Consumes:</strong> Team capacity, velocity data, priorities from PM</div>
+    <div class="role-produces"><strong>Invoke:</strong> <code>"EM, plan the sprint for these features"</code></div>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- Technical Writer -->
+  <div class="role-card">
+    <div class="role-title">Technical Writer</div>
+    <div class="role-superpower">User-facing docs, API reference, architecture docs, release notes, onboarding guides</div>
+    <div class="role-produces"><strong>Provides:</strong> API docs, user guides, architecture docs, release notes, README, changelog</div>
+    <div class="role-produces"><strong>Consumes:</strong> Technical specs, architecture diagrams, PRD, UI mockups, release scope</div>
+    <div class="role-produces"><strong>Invoke:</strong> <code>"Technical Writer, write API docs for the payment endpoints"</code></div>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- Debate Facilitator -->
+  <div class="role-card">
+    <div class="role-title">Debate Facilitator <span class="tag tag-amber">Cross-cutting</span></div>
+    <div class="role-superpower">Debate process, neutrality, timebox enforcement, resolution</div>
+    <div class="role-produces"><strong>Provides:</strong> Debate brief, panel assembly, scoring leadership, decision record</div>
+    <div class="role-produces"><strong>Consumes:</strong> Decision question, viable options, role stances</div>
+    <div class="role-produces"><strong>Invoke:</strong> <code>"Facilitator, run debate on tech stack choice"</code></div>
+    <div class="role-produces"><strong>Role:</strong> Neutral arbitrator &mdash; does NOT advocate for any option</div>
+    <div class="highlight-box mt-1 mb-0">
+      <strong>Key Process:</strong>
+      <pre style="margin-top:0.35rem;margin-bottom:0;"><code>Decision question &rarr; Panel assembly &rarr; Opening statements
+&rarr; Cross-examination rounds &rarr; Scoring &rarr; Resolution &rarr; Logging</code></pre>
+    </div>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- Meeting Facilitator -->
+  <div class="role-card">
+    <div class="role-title">Meeting Facilitator <span class="tag tag-cyan">Cross-cutting</span></div>
+    <div class="role-superpower">Meeting mode, agenda setting, brainstorming facilitation, decision capture, action items, minutes</div>
+    <div class="role-produces"><strong>Provides:</strong> Agenda, discussion summary, decision log, action item list, meeting minutes</div>
+    <div class="role-produces"><strong>Consumes:</strong> Meeting topic, role roster, role selection matrix</div>
+    <div class="role-produces"><strong>Invoke:</strong> <code>"/meeting brainstorm the new dashboard"</code></div>
+    <div class="highlight-box mt-1 mb-0">
+      <strong>Key Process:</strong>
+      <pre style="margin-top:0.35rem;margin-bottom:0;"><code>Meeting topic &rarr; Role selection (by topic keywords) &rarr; Agenda &rarr; Brainstorm
+&rarr; Decisions &rarr; Action items &rarr; Minutes &rarr; Logging</code></pre>
+    </div>
+  </div>
+
+  <hr class="section-divider">
+
+  <p class="text-muted text-sm"><em>MIT Licensed &mdash; Built for AI-native development</em></p>
+
+</main>
+
+<script src="js/main.js"></script>
+</body>
+</html>

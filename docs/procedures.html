@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AgentCrew Docs — Procedures</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="procedures">
+
+<button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">&#9776;</button>
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+<nav class="sidebar">
+  <div class="sidebar-header">
+    <div class="logo">AgentCrew</div>
+    <span class="version">v1.0</span>
+  </div>
+  <div class="nav-section">Docs</div>
+  <ul class="nav-list">
+    <li><a href="index.html"><span class="nav-icon">&#9679;</span> Home</a></li>
+    <li><a href="configuration.html"><span class="nav-icon">&#9881;</span> Configuration</a></li>
+    <li><a href="objectives.html"><span class="nav-icon">&#9673;</span> Objectives</a></li>
+    <li><a href="roles.html"><span class="nav-icon">&#9733;</span> Roles</a></li>
+    <li class="active"><a href="procedures.html"><span class="nav-icon">&#9776;</span> Procedures</a></li>
+    <li><a href="debate.html"><span class="nav-icon">&#9878;</span> Debate</a></li>
+  </ul>
+  <div class="sidebar-footer">
+    <a href="https://github.com/ShaikhAryanBilal/agentcrew" target="_blank">&#128279; GitHub</a>
+    &middot; MIT
+  </div>
+</nav>
+
+<main class="content">
+  <h1>Procedures</h1>
+  <p class="page-subtitle">Step-by-step guides organized by phase &mdash; the how-to references roles use during execution.</p>
+
+  <h2>Phase Mapping</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Phase</th>
+          <th>Maps To Objective</th>
+          <th>Used By</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="tag tag-purple">Requirements</span></td>
+          <td>Clarify Vision</td>
+          <td>PM, BA</td>
+        </tr>
+        <tr>
+          <td><span class="tag tag-cyan">Design</span></td>
+          <td>Design Solution</td>
+          <td>Architect, UX, Security</td>
+        </tr>
+        <tr>
+          <td><span class="tag tag-green">Development</span></td>
+          <td>Plan Work + Build Feature</td>
+          <td>EM, Tech Lead, Dev(s)</td>
+        </tr>
+        <tr>
+          <td><span class="tag tag-red">QA</span></td>
+          <td>Verify Quality</td>
+          <td>QA, Security</td>
+        </tr>
+        <tr>
+          <td><span class="tag tag-pink">Deployment</span></td>
+          <td>Ship Release</td>
+          <td>DevOps, PM</td>
+        </tr>
+        <tr>
+          <td><span class="tag tag-amber">Maintenance</span></td>
+          <td>Operate &amp; Learn</td>
+          <td>DevOps, EM, PM</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <hr class="section-divider">
+
+  <h2>Requirements Phase</h2>
+  <p>4 steps guiding PM and BA through gathering, analyzing, documenting, and signing off requirements.</p>
+
+  <ul class="step-list">
+    <li><span class="step-num">1.</span><span class="step-content"><strong>Requirements Gathering</strong> &mdash; <code>01-requirements-gathering.md</code> &mdash; PM</span></li>
+    <li><span class="step-num">2.</span><span class="step-content"><strong>Requirements Analysis</strong> &mdash; <code>02-requirements-analysis.md</code> &mdash; BA</span></li>
+    <li><span class="step-num">3.</span><span class="step-content"><strong>PRD Writing</strong> &mdash; <code>03-prd.md</code> &mdash; PM</span></li>
+    <li><span class="step-num">4.</span><span class="step-content"><strong>Review &amp; Sign-off</strong> &mdash; <code>04-requirements-review-and-signoff.md</code> &mdash; PM</span></li>
+  </ul>
+  <p class="text-muted text-sm">Location: <code>.agentcrew/procedures/01-requirements/</code></p>
+
+  <hr class="section-divider">
+
+  <h2>Design Phase</h2>
+  <p>6 steps guiding Architect, UX, and Security through system design.</p>
+
+  <ul class="step-list">
+    <li><span class="step-num">1.</span><span class="step-content"><strong>System Architecture</strong> &mdash; <code>01-system-architecture.md</code> &mdash; Architect</span></li>
+    <li><span class="step-num">2.</span><span class="step-content"><strong>Technical Specification</strong> &mdash; <code>02-technical-specification.md</code> &mdash; Tech Lead</span></li>
+    <li><span class="step-num">3.</span><span class="step-content"><strong>Database Design</strong> &mdash; <code>03-database-design.md</code> &mdash; Backend</span></li>
+    <li><span class="step-num">4.</span><span class="step-content"><strong>API Design</strong> &mdash; <code>04-api-design.md</code> &mdash; Backend</span></li>
+    <li><span class="step-num">5.</span><span class="step-content"><strong>Design Review</strong> &mdash; <code>05-design-review.md</code> &mdash; Tech Lead</span></li>
+    <li><span class="step-num">6.</span><span class="step-content"><strong>Threat Modeling</strong> &mdash; <code>06-threat-modeling.md</code> &mdash; Security</span></li>
+  </ul>
+  <p class="text-muted text-sm">Location: <code>.agentcrew/procedures/02-design/</code></p>
+
+  <hr class="section-divider">
+
+  <h2>Development Phase</h2>
+  <p>7 steps guiding EM, Tech Lead, and Developers through implementation.</p>
+
+  <ul class="step-list">
+    <li><span class="step-num">1.</span><span class="step-content"><strong>Sprint Planning</strong> &mdash; <code>01-sprint-planning.md</code> &mdash; EM</span></li>
+    <li><span class="step-num">2.</span><span class="step-content"><strong>Codebase Analysis</strong> &mdash; <code>02-codebase-analysis.md</code> &mdash; Tech Lead / Dev</span></li>
+    <li><span class="step-num">3.</span><span class="step-content"><strong>Coding Standards</strong> &mdash; <code>03-coding-standards.md</code> &mdash; Tech Lead</span></li>
+    <li><span class="step-num">4.</span><span class="step-content"><strong>Implementation</strong> &mdash; <code>04-implementation.md</code> &mdash; Dev</span></li>
+    <li><span class="step-num">5.</span><span class="step-content"><strong>Code Review</strong> &mdash; <code>05-code-review.md</code> &mdash; Tech Lead</span></li>
+    <li><span class="step-num">6.</span><span class="step-content"><strong>Unit Testing</strong> &mdash; <code>06-unit-testing.md</code> &mdash; Dev</span></li>
+    <li><span class="step-num">7.</span><span class="step-content"><strong>Integration</strong> &mdash; <code>07-integration.md</code> &mdash; Backend/DevOps</span></li>
+  </ul>
+  <p class="text-muted text-sm">Location: <code>.agentcrew/procedures/03-development/</code></p>
+
+  <hr class="section-divider">
+
+  <h2>QA Phase</h2>
+  <p>9 steps guiding QA and Security through validation.</p>
+
+  <ul class="step-list">
+    <li><span class="step-num">1.</span><span class="step-content"><strong>Test Planning</strong> &mdash; <code>01-test-planning.md</code> &mdash; QA</span></li>
+    <li><span class="step-num">2.</span><span class="step-content"><strong>Test Case Development</strong> &mdash; <code>02-test-case-development.md</code> &mdash; QA</span></li>
+    <li><span class="step-num">3.</span><span class="step-content"><strong>Functional Testing</strong> &mdash; <code>03-functional-testing.md</code> &mdash; QA</span></li>
+    <li><span class="step-num">4.</span><span class="step-content"><strong>Non-Functional Testing</strong> &mdash; <code>04-non-functional-testing.md</code> &mdash; QA</span></li>
+    <li><span class="step-num">5.</span><span class="step-content"><strong>Regression Testing</strong> &mdash; <code>05-regression-testing.md</code> &mdash; QA</span></li>
+    <li><span class="step-num">6.</span><span class="step-content"><strong>Bug Tracking</strong> &mdash; <code>06-bug-tracking.md</code> &mdash; QA</span></li>
+    <li><span class="step-num">7.</span><span class="step-content"><strong>UAT</strong> &mdash; <code>07-uat.md</code> &mdash; PM</span></li>
+    <li><span class="step-num">8.</span><span class="step-content"><strong>QA Sign-off</strong> &mdash; <code>08-qa-signoff.md</code> &mdash; QA</span></li>
+    <li><span class="step-num">9.</span><span class="step-content"><strong>Security Pentest</strong> &mdash; <code>09-security-pentest.md</code> &mdash; Security</span></li>
+  </ul>
+  <p class="text-muted text-sm">Location: <code>.agentcrew/procedures/04-qa/</code></p>
+
+  <hr class="section-divider">
+
+  <h2>Deployment Phase</h2>
+  <p>4 steps guiding DevOps and PM through release.</p>
+
+  <ul class="step-list">
+    <li><span class="step-num">1.</span><span class="step-content"><strong>Release Planning</strong> &mdash; <code>01-release-planning.md</code> &mdash; PM</span></li>
+    <li><span class="step-num">2.</span><span class="step-content"><strong>Staging Deployment</strong> &mdash; <code>02-staging-deployment.md</code> &mdash; DevOps</span></li>
+    <li><span class="step-num">3.</span><span class="step-content"><strong>Production Deployment</strong> &mdash; <code>03-production-deployment.md</code> &mdash; DevOps</span></li>
+    <li><span class="step-num">4.</span><span class="step-content"><strong>Post-Deployment</strong> &mdash; <code>04-post-deployment.md</code> &mdash; DevOps</span></li>
+  </ul>
+  <p class="text-muted text-sm">Location: <code>.agentcrew/procedures/05-deployment/</code></p>
+
+  <hr class="section-divider">
+
+  <h2>Maintenance Phase</h2>
+  <p>3 steps + cross-cutting guides for production operations.</p>
+
+  <ul class="step-list">
+    <li><span class="step-num">1.</span><span class="step-content"><strong>Monitoring &amp; Observability</strong> &mdash; <code>01-monitoring-and-observability.md</code> &mdash; DevOps</span></li>
+    <li><span class="step-num">2.</span><span class="step-content"><strong>Hotfix Process</strong> &mdash; <code>02-hotfix-process.md</code> &mdash; Dev</span></li>
+    <li><span class="step-num">3.</span><span class="step-content"><strong>Feedback Loop</strong> &mdash; <code>03-feedback-loop.md</code> &mdash; EM / PM</span></li>
+  </ul>
+  <p class="text-muted text-sm">Location: <code>.agentcrew/procedures/06-maintenance/</code></p>
+
+  <hr class="section-divider">
+
+  <h2>Cross-Cutting Procedures</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Procedure</th>
+          <th>File</th>
+          <th>Used By</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>ADR Template</strong></td>
+          <td><code>procedures/adr/01-adr-template.md</code></td>
+          <td>Everyone</td>
+        </tr>
+        <tr>
+          <td><strong>ADR Workflow</strong></td>
+          <td><code>procedures/adr/02-adr-workflow.md</code></td>
+          <td>Tech Lead, Architect</td>
+        </tr>
+        <tr>
+          <td><strong>Postmortem Template</strong></td>
+          <td><code>procedures/postmortem/01-postmortem-template.md</code></td>
+          <td>Everyone</td>
+        </tr>
+        <tr>
+          <td><strong>Postmortem Workflow</strong></td>
+          <td><code>procedures/postmortem/02-postmortem-workflow.md</code></td>
+          <td>Facilitator</td>
+        </tr>
+        <tr>
+          <td><strong>Supply Chain Security</strong></td>
+          <td><code>procedures/supply-chain-security.md</code></td>
+          <td>Security, DevOps</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="text-muted text-sm">All 33 procedures are in <code>.agentcrew/procedures/</code> organized by phase.</p>
+
+  <hr class="section-divider">
+
+  <p class="text-muted text-sm"><em>MIT Licensed &mdash; Built for AI-native development</em></p>
+
+</main>
+
+<script src="js/main.js"></script>
+</body>
+</html>
