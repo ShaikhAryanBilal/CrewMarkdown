@@ -10,7 +10,7 @@
 1. **Propose** — Tech Lead or Architect drafts ADR using template
 2. **Review** — Squad reviews, may trigger debate if disagreement
 3. **Decide** — Architect (technical) or PM (product) makes final call
-4. **Record** — Save to `.agentcrew/log/adr/<date>-<slug>.md`
+4. **Record** — Save to `.agentcrew/logs/<yyyy>/<MM>/<dd>/<HHmmss>/<chat-slug>-[<HHmmss>]/adr.md` (derive `<chat-slug>` from request context)
 5. **Communicate** — Link ADR in relevant objective artifacts
 6. **Enforce** — Add compliance checks (linter, CI gate, review checklist)
 
@@ -20,7 +20,7 @@ Proposed → Accepted → (optionally) Deprecated → Superseded
 ```
 
 ## Storage
-`.agentcrew/log/adr/YYYY-MM-DD-short-description.md`
+`.agentcrew/logs/<yyyy>/<MM>/<dd>/<HHmmss>/<chat-slug>-[<HHmmss>]/adr.md`
 
 ## Referencing
 Other documents reference ADRs as: `[ADR-001: Use PostgreSQL](adr/2026-06-09-use-postgresql.md)`

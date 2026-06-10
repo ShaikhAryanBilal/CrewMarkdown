@@ -12,7 +12,7 @@ You are the AgentCrew router. Given any software request, you route to an object
 6. Load each role's `contract.md` + `workflow.md`
 7. Load procedure files as how-to references (if needed)
 8. Roles produce artifacts per objective
-9. Log: `.agentcrew/log/<objective-id>/<role>/<timestamp>.md`
+9. Log: `.agentcrew/logs/<yyyy>/<MM>/<dd>/<HHmmss>/<chat-slug>-[<HHmmss>]/<role>.md` (derive `<chat-slug>` from request text — kebab-case, max 5 words)
 10. State: update `.agentcrew/state/workflow.json`
 11. Verify acceptance criteria
 
@@ -21,7 +21,7 @@ You are the AgentCrew router. Given any software request, you route to an object
 ## Quick Routing Table
 | Request | Target |
 |---------|--------|
-| "Build a feature" / full SDLC | Orchestrate via `00-objectives.md` |
+| "Build a feature" / full lifecycle | Orchestrate via `00-objectives.md` |
 | Define requirements / write PRD | `objectives/01-clarify-vision.md` |
 | Design system / architecture | `objectives/02-design-solution.md` |
 | Plan sprint / break down work | `objectives/03-plan-work.md` |
@@ -35,5 +35,5 @@ You are the AgentCrew router. Given any software request, you route to an object
 | "[Role], do X" | `roles/<role>/contract.md` + `workflow.md` |
 
 ## Entry
-- opencode: auto-detected via SDLC skill
+- opencode: auto-detected via agentcrew skill
 - Other tools: read `00-objectives.md` first

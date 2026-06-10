@@ -37,6 +37,12 @@ param(
   [switch]$Ascii
 )
 
+Set-StrictMode -Version Latest
+$ErrorActionPreference = "Stop"
+
+$humorPath = Join-Path $PSScriptRoot '..\config\humor-data.ps1'
+if (Test-Path $humorPath) { . $humorPath }
+
 # Emoji set (stored in vars to avoid PowerShell 5.1 parser issues with inline emoji)
 $ePM = '📋'; $eBA = '📊'; $eArch = '🏗️'; $eTL = '👨‍💻'; $eFE = '🎨'
 $eBE = '⚙️'; $eMB = '📱'; $eUX = '✏️'; $eDE = '🗄️'; $eML = '🧠'
@@ -134,6 +140,21 @@ function Get-RolePadWidth($roleNames) {
   return [math]::Max(8, [math]::Min(14, $maxLen))
 }
 
+$asciiArtPool = @(
+  @{ title = '🎯 AGENT CREW ASSEMBLED ';  desc = 'default target' }
+  @{ title = '⚔️ SQUAD OF THE REALM  ';   desc = 'rpg sword' }
+  @{ title = '🚀 PARTY READY         ';   desc = 'rocket' }
+  @{ title = '🔥 CREW ON FIRE        ';   desc = 'fire' }
+  @{ title = '🎲 ROLL FOR INITIATIVE ';   desc = 'dice' }
+  @{ title = '🤖 AGENTS ASSEMBLE     ';   desc = 'robot' }
+)
+
+function Get-PartyTitle {
+  $tone = Get-Tone
+  if ($tone -ne 'chaotic') { return $asciiArtPool[0].title }
+  return $asciiArtPool[(Get-Random -Minimum 1 -Maximum $asciiArtPool.Count)].title
+}
+
 $objectiveActions = @{
   'Clarify Vision'      = @('Clarifying scope','Defining success','Aligning stakeholders','Setting priorities')
   'Design Solution'     = @('Architecture design','Component modeling','Interface definition','Pattern selection')
@@ -210,7 +231,7 @@ function Show-Party {
     Write-Host (Box-Char 'v') -NoNewline
     Set-Fg 'white'
     Set-Bg 'blue'
-    $titleText = if ($Ascii) { ' AGENT CREW ASSEMBLED ' } else { ' 🎯 AGENT CREW ASSEMBLED ' }
+    $titleText = if ($Ascii) { ' AGENT CREW ASSEMBLED ' } else { Get-PartyTitle }
     $titlePad = $contentWidth - $titleText.Length
     $leftPad = [math]::Max(0, [math]::Floor($titlePad / 2))
     $rightPad = [math]::Max(0, $titlePad - $leftPad)
@@ -231,6 +252,23 @@ function Show-Party {
     Reset-Color
     Write-Host (Box-Char 'v')
     $y++
+
+    if (Test-Path 'function:Get-ProgressFlavor') {
+      $flavor = Get-ProgressFlavor
+      if ($flavor) {
+        Set-Cursor 1 $y
+        Write-Host (Box-Char 'v') -NoNewline
+        Set-Fg 'dim'
+        $flavorText = "   ~ $flavor ~"
+        Write-Host $flavorText -NoNewline
+        $flavorPad = $contentWidth - $flavorText.Length
+        if ($flavorPad -lt 0) { $flavorPad = 0 }
+        Write-Host (' ' * $flavorPad) -NoNewline
+        Reset-Color
+        Write-Host (Box-Char 'v')
+        $y++
+      }
+    }
 
     Set-Cursor 1 $y
     Set-Fg 'cyan'

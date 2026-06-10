@@ -11,7 +11,7 @@ You are executing objective: Conduct Meeting. Run a structured real-time meeting
 5. Facilitator records action items with owners (meeting/04-action-items.md)
 6. Facilitator writes minutes (meeting/05-minutes.md)
 7. Verify acceptance criteria
-8. Log to `.agentcrew/log/meeting/<topic>/<timestamp>.md`
+8. Log to `.agentcrew/logs/<yyyy>/<MM>/<dd>/<HHmmss>/<chat-slug>-[<HHmmss>]/meeting.md` (derive `<chat-slug>` from meeting topic)
 9. Update `.agentcrew/state/workflow.json`
 
 ## Squad
@@ -35,7 +35,7 @@ You are executing objective: Conduct Meeting. Run a structured real-time meeting
 - Brainstorming captured with all contributions
 - Decisions recorded with rationale
 - Action items assigned with owners
-- Minutes logged to `.agentcrew/log/meeting/<topic>/<timestamp>.md`
+- Minutes logged to `.agentcrew/logs/<yyyy>/<MM>/<dd>/<HHmmss>/<chat-slug>-[<HHmmss>]/meeting.md`
 
 ## Role Selection Matrix
 | Topic Contains | Spawned Roles |

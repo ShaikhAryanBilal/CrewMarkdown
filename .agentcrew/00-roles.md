@@ -21,10 +21,27 @@
 | 16 | Meeting Facilitator | Meeting mode, agenda, decisions | `roles/meeting-facilitator/contract.md` | `roles/meeting-facilitator/workflow.md` | "/meeting [topic]" | Conduct Meeting with dynamic roles |
 | 17 | Debator | Structured debate, scoring, resolution | `roles/debator/contract.md` | `roles/debator/workflow.md` | "Debate [topic]" | Cross-cutting, any objective |
 | 18 | Orchestrator | Multi-objective coordination | `roles/orchestrator/contract.md` | `roles/orchestrator/workflow.md` | Auto on multi-objective requests | Coordinates all objectives |
+| 19 | Marketing | Campaigns, content, brand, GTM | `roles/marketing/contract.md` | `roles/marketing/workflow.md` | "Marketing, [do task]" | Build Feature (GTM) with PM & Sales |
+| 20 | Sales | Pipeline, forecasts, proposals, accounts | `roles/sales/contract.md` | `roles/sales/workflow.md` | "Sales, [do task]" | Build Feature with Marketing |
+| 21 | HR / People | Hiring, onboarding, performance, culture | `roles/hr/contract.md` | `roles/hr/workflow.md` | "HR, [do task]" | Plan Work with EM & PM |
+| 22 | Finance / Operations | Budgets, reporting, compliance, vendors | `roles/finance/contract.md` | `roles/finance/workflow.md` | "Finance, [do task]" | Plan Work with Management |
+| 23 | General Management | OKRs, strategy, resource allocation | `roles/general-management/contract.md` | `roles/general-management/workflow.md` | "Management, [do task]" | Orchestrates all objectives |
+| 24 | SEO Specialist | Technical SEO, keywords, content optimization | `roles/seo-specialist/contract.md` | `roles/seo-specialist/workflow.md` | "SEO Specialist, [do task]" | Build Feature with Content & Marketing |
+| 25 | UX Researcher | User research, testing, personas | `roles/ux-researcher/contract.md` | `roles/ux-researcher/workflow.md` | "UX Researcher, [do task]" | Design Solution with UX & PM |
+| 26 | Data Scientist | Stats, ML, A/B testing | `roles/data-scientist/contract.md` | `roles/data-scientist/workflow.md` | "Data Scientist, [do task]" | Build Feature with ML Engineer |
+| 27 | Growth / Product Marketing | Growth experiments, funnel, activation | `roles/growth-marketing/contract.md` | `roles/growth-marketing/workflow.md` | "Growth, [do task]" | Build Feature with Marketing & PM |
+| 28 | Customer Success Manager | Onboarding, retention, QBRs | `roles/customer-success/contract.md` | `roles/customer-success/workflow.md` | "Customer Success, [do task]" | Ship Release with Sales |
+| 29 | Site Reliability Engineer | SLOs, incidents, capacity | `roles/sre/contract.md` | `roles/sre/workflow.md` | "SRE, [do task]" | Operate & Learn with DevOps |
+| 30 | Legal / Compliance | Contracts, privacy, compliance | `roles/legal/contract.md` | `roles/legal/workflow.md` | "Legal, [do task]" | Plan Work with Management |
+| 31 | Business Development | Partnerships, deals, alliances | `roles/bizdev/contract.md` | `roles/bizdev/workflow.md` | "BizDev, [do task]" | Execute Campaign with Marketing |
+| 32 | Solutions Architect | Pre-sales, solution design, POC | `roles/solutions-architect/contract.md` | `roles/solutions-architect/workflow.md` | "Solutions Architect, [do task]" | Build Feature with Sales & PM |
+| 33 | Content Strategist | Content strategy, editorial, SEO | `roles/content-strategist/contract.md` | `roles/content-strategist/workflow.md` | "Content Strategist, [do task]" | Execute Campaign with Marketing & SEO |
 
 ## Step → Procedure Reference
 | Step ID | Procedure File | Used By |
 |---------|---------------|---------|
+| sdlc/select | `config/sdlc-models.md` | PM, Architect, EM |
+| sdlc/selection-store | `objectives/00-select-sdlc.md` | PM, Architect, EM |
 | req/gather | `procedures/01-requirements/01-requirements-gathering.md` | PM |
 | req/analysis | `procedures/01-requirements/02-requirements-analysis.md` | BA |
 | req/prd | `procedures/01-requirements/03-prd.md` | PM |

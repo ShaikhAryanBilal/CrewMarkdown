@@ -37,7 +37,7 @@ Tech spec + API contracts + UX designs available.
 2. Code review — review for security, performance, and accessibility (SG2).
 3. Unit testing — write component tests and integration tests with API.
 4. Integration — connect to API and verify end-to-end flows.
-5. Log to `.agentcrew/log/frontend/<timestamp>.md`
+5. Log to `.agentcrew/logs/<yyyy>/<MM>/<dd>/<HHmmss>/<chat-slug>-[<HHmmss>]/frontend.md` (derive `<chat-slug>` from request text)
 6. Update `.agentcrew/state/workflow.json`
 
 ## Done When

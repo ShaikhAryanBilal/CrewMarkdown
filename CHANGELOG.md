@@ -4,6 +4,34 @@
 
 ---
 
+## Day 3 — 2026-06-10
+
+### Added
+- **SDLC Model Selection system** (`config/sdlc-models.md`) — 8 models (Waterfall, V-Model, Spiral, Agile, Iterative, Incremental, Big Bang, RAD) with selection criteria, phase maps, gates, risk patterns
+- **16 new business & specialist roles**: Marketing, Sales, HR, Finance, General Management, SEO Specialist, UX Researcher, Data Scientist, Growth Marketing, Customer Success, SRE, Legal, BizDev, Solutions Architect, Content Strategist
+- **New objectives**: `obj/select-sdlc` (optional model selection), `09-execute-campaign.md`, `10-people-ops.md`
+- **Routing** for campaigns, people ops, SDLC selection in `00-objectives.md`
+- **New scripts**: adr-gen, changelog-gen, ci-gen, health-check, issue-sync, markdown-lint, release-prep, scaffold-init, state-diff, step-integrity, template-check, validate-contracts, xref-validator (PS1 + SH)
+- **New config**: `agentcrew.ps1`, `tone.json`, `humor-data.ps1`
+- AgentCrew step index script (`.agentcrew/agentcrew.ps1`) with humor/please/yell modes
+
+### Changed
+- Log path restructured: `.agentcrew/log/` → `.agentcrew/logs/<yyyy>/<MM>/<dd>/<HHmmss>/<chat-slug>/<role>.md`
+- Orchestrator contract & workflow overhaul — multi-objective coordination, phase gate tracking
+- Squad expanded for Plan Work (Finance, HR, Management) and Build Feature (Marketing, Sales)
+- All 18 existing role workflows updated for consistency
+- `validate-workflow.ps1` greatly enhanced (140 lines, comprehensive checks)
+- `write-workflow-log.ps1` / `.sh` updated for new log path
+- `show-party.ps1` enhanced with more animation patterns
+- `opencode.jsonc` agentcrew command updated
+- AGENTS.md, SKILL.md, README.md updated to reflect 33 roles
+
+### Infrastructure
+- `.gitignore` updated for new script artifacts
+- All config files standardized (claude.MD, copilot.instructions, cursor.rules, opencode configs)
+
+---
+
 ## Day 2 — 2026-06-09
 
 ### Added
@@ -18,7 +46,7 @@
 
 ### Added
 - Initial AgentCrew setup: 16 AI roles with contracts, workflows, and procedures
-- Objective-based SDLC routing (7 objectives)
+- Objective-based workflow routing (7 objectives)
 - Retro RPG party screen animation (`show-party.ps1` / `show-party.sh`)
 - `AGENTS.md` entry point for AI agents
 - GitHub Pages site with sidebar, dark theme, and full role/objective/procedure pages

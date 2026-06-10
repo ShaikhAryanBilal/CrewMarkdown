@@ -46,7 +46,7 @@ You end up debugging chaos instead of building.
 
 ## The Solution
 
-AgentCrew gives any AI agent a **repeatable SDLC brain** — 18 specialized roles with hardened contracts, workflows, and quality gates that form squads on demand.
+AgentCrew gives any AI agent a **repeatable software engineering brain** — 18 specialized roles with hardened contracts, workflows, and quality gates that form squads on demand.
 
 > **Zero dependencies. Zero SaaS. Zero vendor lock.**
 > Just markdown files — every AI agent can read them.
@@ -167,7 +167,7 @@ Done. Your AI agent reads `.agentcrew/00-objectives.md`, routes to the matching 
 │   ├── qa/
 │   ├── security/
 │   └── ...               # All 18 roles
-├── procedures/            # How-to guides by SDLC phase
+├── procedures/            # How-to guides by phase
 │   ├── 01-requirements/
 │   ├── 02-design/
 │   ├── 03-development/

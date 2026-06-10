@@ -45,7 +45,7 @@ Signed-off PRD available.
 4. API design — define endpoints, auth, and rate limits.
 5. Threat modeling — run STRIDE per component, produce risk table and mitigations (SG1).
 6. Design review — review all designs, approve or request changes.
-7. Log to `.agentcrew/log/architect/<timestamp>.md`
+7. Log to `.agentcrew/logs/<yyyy>/<MM>/<dd>/<HHmmss>/<chat-slug>-[<HHmmss>]/architect.md` (derive `<chat-slug>` from request text)
 8. Update `.agentcrew/state/workflow.json`
 
 ## Done When

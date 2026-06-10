@@ -3,12 +3,12 @@
 ## What This Is
 
 AgentCrew is a **crew of 18 autonomous AI roles** — each with a contract and workflow.
-Roles work solo or in squads toward shared objectives. Full SDLC lifecycle.
+Roles work solo or in squads toward shared objectives. Full lifecycle.
 
 ## For opencode
 
-Auto-detected via `~/.agents/skills/sdlc/SKILL.md`.
-Trigger phrases: "SDLC", "workflow", "follow the process", `/sdlc`.
+Auto-detected via `~/.agents/skills/agentcrew/SKILL.md`.
+Trigger phrases: "agentcrew", "workflow", "follow the process", `/agentcrew`.
 
 ## For Cursor / Claude Code / Cline / Copilot / Other AI Tools
 
@@ -27,7 +27,7 @@ Role contracts are in `.agentcrew/roles/<role>/contract.md`.
 7. Load relevant role contract.md + workflow.md
 8. Load old step files as procedure references (if needed)
 9. Roles produce artifacts
-10. **Log:** Write `.agentcrew/log/<objective-id>/<role>/<timestamp>.md`
+10. **Log:** Write `.agentcrew/logs/<yyyy>/<MM>/<dd>/<HHmmss>/<chat-slug>-[<HHmmss>]/<role>.md` (derive `<chat-slug>` from request text)
 11. **State:** Update `.agentcrew/state/workflow.json` (achieved objectives, artifacts)
 12. Verify acceptance criteria
 
@@ -38,7 +38,7 @@ Role contracts are in `.agentcrew/roles/<role>/contract.md`.
 | Request | Start Here |
 |---------|-----------|
 | "Who does what?" / "Hiring" / "Role definition" | `.agentcrew/00-roles.md` |
-| "Build a feature" / "Full SDLC" | `.agentcrew/00-objectives.md` (orchestrate) |
+| "Build a feature" / "Full lifecycle" | `.agentcrew/00-objectives.md` (orchestrate) |
 | "Define requirements" / "Write PRD" | Objective: Clarify Vision (`.agentcrew/objectives/01-clarify-vision.md`) |
 | "Design the system" / "Architecture" | Objective: Design Solution (`.agentcrew/objectives/02-design-solution.md`) |
 | "Plan sprint" / "Break down work" | Objective: Plan Work (`.agentcrew/objectives/03-plan-work.md`) |

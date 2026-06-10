@@ -56,7 +56,7 @@ ML requirements defined / labeled data available.
 6. Model packaging — export to standard format (ONNX, MLflow) and version artifacts.
 7. Model serving — deploy inference endpoint with batching, caching, and autoscaling.
 8. Model monitoring — track prediction drift, data drift, and feature distribution shifts.
-9. Log to `.agentcrew/log/ml-engineer/<timestamp>.md`
+9. Log to `.agentcrew/logs/<yyyy>/<MM>/<dd>/<HHmmss>/<chat-slug>-[<HHmmss>]/ml-engineer.md` (derive `<chat-slug>` from request text)
 10. Update `.agentcrew/state/workflow.json`
 
 ## Done When

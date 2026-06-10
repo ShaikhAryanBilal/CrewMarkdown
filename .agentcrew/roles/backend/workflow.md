@@ -39,7 +39,7 @@ Tech spec + DB design available.
 3. Code review — review for security, performance, and error handling (SG2).
 4. Unit testing — write service tests and integration tests.
 5. Integration — verify API ↔ DB and API ↔ external services.
-6. Log to `.agentcrew/log/backend/<timestamp>.md`
+6. Log to `.agentcrew/logs/<yyyy>/<MM>/<dd>/<HHmmss>/<chat-slug>-[<HHmmss>]/backend.md` (derive `<chat-slug>` from request text)
 7. Update `.agentcrew/state/workflow.json`
 
 ## Done When

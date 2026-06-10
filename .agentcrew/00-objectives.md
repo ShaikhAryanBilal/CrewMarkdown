@@ -1,6 +1,10 @@
 ﻿---
 routing:
-  - request: Build this feature / Full SDLC
+  - request: Select SDLC model / Choose methodology
+    objective: Select SDLC Model
+    squad: PM, Architect, EM
+    mode: Squad
+  - request: Build this feature / Full lifecycle
     objective: Orchestrator routes O1→O2→...→O6
     squad: All roles
     mode: Orchestrate
@@ -72,7 +76,23 @@ routing:
     objective: Load role's contract.md directly
     squad: That role only
     mode: Solo
+  - request: Create campaign / Launch marketing
+    objective: Execute Campaign
+    squad: Marketing, Sales, PM
+    mode: Squad
+  - request: Budget planning / Financial review
+    objective: Plan Work
+    squad: Finance, Management, PM
+    mode: Squad
+  - request: Hiring / People ops / Onboard
+    objective: Execute People Ops
+    squad: HR, Management, EM
+    mode: Squad
 objectives_index:
+  - id: obj/select-sdlc
+    file: objectives/00-select-sdlc.md
+    squad: PM, Architect, EM
+    default_mode: Squad
   - id: obj/clarify-vision
     file: objectives/01-clarify-vision.md
     squad: PM, BA
@@ -83,11 +103,11 @@ objectives_index:
     default_mode: Squad
   - id: obj/plan-work
     file: objectives/03-plan-work.md
-    squad: EM, PM, Tech Lead
+    squad: EM, PM, Tech Lead, Finance, HR, General Management
     default_mode: Squad
   - id: obj/build-feature
     file: objectives/04-build-feature.md
-    squad: Dev(s), Mobile Dev, Data Engineer, ML Engineer, Tech Lead, Technical Writer
+    squad: Dev(s), Mobile Dev, Data Engineer, ML Engineer, Tech Lead, Technical Writer, Marketing, Sales
     default_mode: Squad
   - id: obj/verify-quality
     file: objectives/05-verify-quality.md
@@ -96,7 +116,7 @@ objectives_index:
   - id: obj/ship-release
     file: objectives/06-ship-release.md
     squad: DevOps, PM, Technical Writer
-    default_mode: Squad
+    default_mode: Solo/Squad
   - id: obj/operate-learn
     file: objectives/07-operate-learn.md
     squad: DevOps, EM, PM, ML Engineer, Data Engineer
@@ -105,7 +125,18 @@ objectives_index:
     file: objectives/08-conduct-meeting.md
     squad: Meeting Facilitator + dynamic roles
     default_mode: Meeting
+  - id: obj/execute-campaign
+    file: objectives/09-execute-campaign.md
+    squad: Marketing, Sales, PM
+    default_mode: Squad
+  - id: obj/execute-people-ops
+    file: objectives/10-people-ops.md
+    squad: HR, Management, EM
+    default_mode: Squad
 phase_mapping:
+  - phase: config/sdlc-models.md
+    maps_to: Select SDLC Model (optional)
+    used_by: PM, Architect, EM
   - phase: procedures/01-requirements/
     maps_to: Clarify Vision
     used_by: PM, BA
@@ -130,6 +161,21 @@ phase_mapping:
   - phase: meeting/
     maps_to: Meeting mode (any topic)
     used_by: Meeting Facilitator, dynamic roles
+  - phase: roles/marketing/
+    maps_to: Execute Campaign
+    used_by: Marketing, Sales, PM
+  - phase: roles/sales/
+    maps_to: Execute Campaign, Build Feature
+    used_by: Sales, Marketing
+  - phase: roles/hr/
+    maps_to: Execute People Ops, Plan Work
+    used_by: HR, Management, EM
+  - phase: roles/finance/
+    maps_to: Plan Work, Operate & Learn
+    used_by: Finance, Management
+  - phase: roles/general-management/
+    maps_to: Cross-cutting (all objectives)
+    used_by: General Management
 security_gates:
   - gate: SG1
     before: Design review
@@ -149,12 +195,13 @@ security_gates:
     must_pass: All scans clean, no Critical/High bugs, SBOM verified
 ---
 
-# Objective-Based SDLC — Router
+# Objective-Based Workflow — Router
 
 ## Model
 ```
 Request → Objective → Squad(s) → Artifacts → Acceptance → Log → State
 ```
+SDLC model selection (`obj/select-sdlc`) is optional. Only invoked when explicitly requested ("Select SDLC model"). Default objective ordering: O1→O2→...→O8.
 
 ## Modes
 | Mode | Pattern | When |
@@ -165,6 +212,10 @@ Request → Objective → Squad(s) → Artifacts → Acceptance → Log → Stat
 
 ## State
 `.agentcrew/state/workflow.json` tracks: achievedObjectives, currentObjective, artifacts, phaseGates
+`.agentcrew/state/sdlc-selection.json` (optional) tracks: selected model, phase order, gate overrides
 
 ## Logging
-`.agentcrew/log/<objective-id>/<role>/<timestamp>.md`
+`.agentcrew/logs/<yyyy>/<MM>/<dd>/<HHmmss>/<chat-slug>-[<HHmmss>]/<role>.md`
+
+## SDLC Model Routing (optional)
+If `sdlc-selection.json` exists, Orchestrator applies model-specific phase ordering. Otherwise, default sequential order O1→O2→...→O8.

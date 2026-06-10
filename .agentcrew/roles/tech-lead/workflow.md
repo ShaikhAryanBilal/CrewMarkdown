@@ -46,7 +46,7 @@ Architecture approved / sprint started / PR submitted.
 4. Write ADRs — document Architecture Decision Records for significant choices.
 5. Enforce quality gates — ensure CI gates pass before merge (SG2).
 6. Mentor developers — guide on implementation approach and patterns.
-7. Log to `.agentcrew/log/tech-lead/<timestamp>.md`
+7. Log to `.agentcrew/logs/<yyyy>/<MM>/<dd>/<HHmmss>/<chat-slug>-[<HHmmss>]/tech-lead.md` (derive `<chat-slug>` from request text)
 8. Update `.agentcrew/state/workflow.json`
 
 ## Done When

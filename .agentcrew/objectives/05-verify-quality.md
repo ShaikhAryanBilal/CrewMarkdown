@@ -13,7 +13,7 @@ You are executing objective: Verify Quality. Execute complete test coverage (fun
 7. Dev fixes bugs throughout; QA tracks (procedures/04-qa/06-bug-tracking.md)
 8. QA runs UAT (procedures/04-qa/07-uat.md) and obtains sign-off (procedures/04-qa/08-qa-signoff.md)
 9. Verify acceptance criteria (including SG3)
-10. Log to `.agentcrew/log/05-verify-quality/<role>/<timestamp>.md`
+10. Log to `.agentcrew/logs/<yyyy>/<MM>/<dd>/<HHmmss>/<chat-slug>-[<HHmmss>]/<role>.md` (derive `<chat-slug>` from request text)
 11. Update `.agentcrew/state/workflow.json`
 
 ## Squad

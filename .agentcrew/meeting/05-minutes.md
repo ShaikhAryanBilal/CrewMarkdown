@@ -20,8 +20,8 @@
    - Next meeting suggestions
 
 ### 2. Log Minutes
-1. Write minutes to `.agentcrew/log/meeting/<topic-slug>/<timestamp>.md`
-2. Create directory structure: `.agentcrew/log/meeting/<topic-slug>/`
+1. Write minutes to `.agentcrew/logs/<yyyy>/<MM>/<dd>/<HHmmss>/<chat-slug>-[<HHmmss>]/meeting-minutes.md` (derive `<chat-slug>` from meeting topic)
+2. Create directory structure: `.agentcrew/logs/<yyyy>/<MM>/<dd>/<HHmmss>/<chat-slug>-[<HHmmss>]/`
 
 ### 3. Update State
 1. Update `.agentcrew/state/workflow.json` with meeting outcomes

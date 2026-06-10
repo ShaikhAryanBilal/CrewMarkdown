@@ -1,6 +1,6 @@
 # AgentCrew — Claude Code Instructions
 
-This project uses **objective-based SDLC** with invocable roles.
+This project uses **objective-based workflow** with invocable roles.
 
 ## On Any Software Request
 
@@ -10,7 +10,7 @@ This project uses **objective-based SDLC** with invocable roles.
 4. Load relevant role files from `.agentcrew/roles/<role>/`
 5. Load old step files as procedure references if needed
 6. Roles produce artifacts → verify acceptance criteria
-7. Write log to `.agentcrew/log/<objective-id>/<role>/<timestamp>.md`
+7. Write log to `.agentcrew/logs/<yyyy>/<MM>/<dd>/<HHmmss>/<chat-slug>-[<HHmmss>]/<role>.md` (derive `<chat-slug>` from request text)
 8. Update `.agentcrew/state/workflow.json` with achieved objectives
 
 No match? Ask which objective.

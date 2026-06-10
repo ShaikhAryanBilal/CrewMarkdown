@@ -84,7 +84,7 @@ render() {
   local updated; updated=$(echo "$json" | python3 -c "import sys,json; print(json.load(sys.stdin)['updatedAt'])" 2>/dev/null || echo "unknown")
 
   wl '+----------------------------------------------------+' 36
-  wl '|    SDLC STATE DASHBOARD    |' 37
+  wl '|    WORKFLOW STATE DASHBOARD    |' 37
   w "|  Project: " 37; wl "$project" 93
   w "|  Updated: " 90; wl "$updated" 90
   wl '+----------------------------------------------------+' 36

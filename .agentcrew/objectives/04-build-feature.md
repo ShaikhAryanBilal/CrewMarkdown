@@ -13,7 +13,7 @@ You are executing objective: Build Feature. Implement, review, unit test, and in
 7. Dev runs integration (procedures/03-development/07-integration.md) to main
 8. Technical Writer writes API reference docs and user guides
 9. Verify acceptance criteria
-10. Log to `.agentcrew/log/04-build-feature/<role>/<timestamp>.md`
+10. Log to `.agentcrew/logs/<yyyy>/<MM>/<dd>/<HHmmss>/<chat-slug>-[<HHmmss>]/<role>.md` (derive `<chat-slug>` from request text)
 11. Update `.agentcrew/state/workflow.json`
 
 ## Squad

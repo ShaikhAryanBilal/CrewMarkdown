@@ -11,7 +11,7 @@ You are executing objective: Operate & Learn. Maintain production health, respon
 5. EM runs retrospective (Went Well, Went Wrong, To Improve) and creates improvement backlog items
 6. PM produces prioritized feature requests for next cycle; feedback loops back to Clarify Vision
 7. Verify acceptance criteria
-8. Log to `.agentcrew/log/07-operate-learn/<role>/<timestamp>.md`
+8. Log to `.agentcrew/logs/<yyyy>/<MM>/<dd>/<HHmmss>/<chat-slug>-[<HHmmss>]/<role>.md` (derive `<chat-slug>` from request text)
 9. Update `.agentcrew/state/workflow.json`
 
 ## Squad

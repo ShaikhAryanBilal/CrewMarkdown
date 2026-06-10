@@ -23,6 +23,9 @@ param(
   [string]$Tool = ""
 )
 
+Set-StrictMode -Version Latest
+$ErrorActionPreference = "Stop"
+
 $RepoRoot = Split-Path -Parent (Split-Path -Parent $PSScriptRoot)
 $ConfigDir = Join-Path $RepoRoot ".team" "config"
 

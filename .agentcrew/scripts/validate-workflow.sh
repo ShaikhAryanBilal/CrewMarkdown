@@ -5,8 +5,7 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
-WORKFLOW_DIR="$PROJECT_ROOT/.team"
-ROUTER_FILE="$WORKFLOW_DIR/00-router.md"
+WORKFLOW_DIR="$PROJECT_ROOT/.agentcrew"
 
 passed=0
 failed=0
@@ -31,11 +30,6 @@ echo "============================================"
 echo "Project: $PROJECT_ROOT"
 echo ""
 
-# Check 1: Router exists
-check "Router file exists" \
-  bash -c "test -f '$ROUTER_FILE' || echo 'Missing: $ROUTER_FILE'"
-
-# Check 2: Steps exist
 echo "--- Cross-References ---"
 check "All Next → links point to existing files" \
   bash -c "
@@ -49,7 +43,7 @@ check "All Next → links point to existing files" \
           errors=\"\$errors\$rel → \$target\"\$'\n'
         fi
       done < <(grep -n 'Next →' \"\$file\" 2>/dev/null || true)
-    done < <(find \"$WORKFLOW_DIR\" -name '*.md' -not -path '*/log/*' -not -path '*/custom/*' -not -path '*/roles/*' ! -name '00-router.md' -type f)
+    done < <(find \"$WORKFLOW_DIR\" -name '*.md' -not -path '*/log/*' -not -path '*/custom/*' -not -path '*/roles/*' -type f)
     if [ -n \"\$errors\" ]; then echo \"\$errors\"; exit 1; fi
   "
 
@@ -65,11 +59,11 @@ check "All Revert → links point to existing files" \
           errors=\"\$errors\$rel → \$target\"\$'\n'
         fi
       done < <(grep -n 'Revert →' \"\$file\" 2>/dev/null || true)
-    done < <(find \"$WORKFLOW_DIR\" -name '*.md' -not -path '*/log/*' -not -path '*/custom/*' -not -path '*/roles/*' ! -name '00-router.md' -type f)
+    done < <(find \"$WORKFLOW_DIR\" -name '*.md' -not -path '*/log/*' -not -path '*/custom/*' -not -path '*/roles/*' -type f)
     if [ -n \"\$errors\" ]; then echo \"\$errors\"; exit 1; fi
   "
 
-# Check 3: workflow.json validity
+# Check 2: workflow.json validity
 echo "--- State File ---"
 check "workflow.json is valid JSON" \
   bash -c "cat '$WORKFLOW_DIR/state/workflow.json' | python3 -m json.tool > /dev/null 2>&1 || echo 'Invalid JSON'"

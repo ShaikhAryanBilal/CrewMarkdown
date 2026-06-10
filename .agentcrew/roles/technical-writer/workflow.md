@@ -53,7 +53,7 @@ Documentation request received or a built artifact is ready for documentation.
 5. Technical review — hand off to relevant SME (Dev, Architect, Backend) for accuracy check.
 6. Editorial review — review for clarity, consistency, grammar, and tone.
 7. Publish — commit to repo, generate site, or attach to release.
-8. Log to `.agentcrew/log/technical-writer/<timestamp>.md`
+8. Log to `.agentcrew/logs/<yyyy>/<MM>/<dd>/<HHmmss>/<chat-slug>-[<HHmmss>]/technical-writer.md` (derive `<chat-slug>` from request text)
 9. Update `.agentcrew/state/workflow.json`
 
 ## Done When

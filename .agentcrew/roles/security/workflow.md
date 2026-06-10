@@ -47,7 +47,7 @@ Architecture design available.
 5. DAST (staging) — run dynamic scan against the staging build.
 6. Manual pentest — test auth, injection, business logic, and misconfiguration (SG3).
 7. Security gate — review findings, block release if Critical/High findings are open (SG4).
-8. Log to `.agentcrew/log/security/<timestamp>.md`
+8. Log to `.agentcrew/logs/<yyyy>/<MM>/<dd>/<HHmmss>/<chat-slug>-[<HHmmss>]/security.md` (derive `<chat-slug>` from request text)
 9. Update `.agentcrew/state/workflow.json`
 
 ## Done When

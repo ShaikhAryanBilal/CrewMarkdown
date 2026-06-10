@@ -8,13 +8,13 @@
 ## Instructions
 
 ### 1. Archive Debate Artifacts
-Save to `.agentcrew/log/debate/<year>/<month>/<day>/<decision-slug>.md`:
+Save to `.agentcrew/logs/<yyyy>/<MM>/<dd>/<HHmmss>/<chat-slug>-[<HHmmss>]/debate.md` (derive `<chat-slug>` from parent request):
 ```
 ## Debate Archive
 - Decision: [question]
 - Slug: [kebab-case-decision-name]
 - Date: yyyy-mm-dd
-- Phase: [parent SDLC phase]
+- Phase: [parent workflow phase]
 - Parent Step: [step ID where debate originated]
 ### Brief
 [Copy of debate brief]

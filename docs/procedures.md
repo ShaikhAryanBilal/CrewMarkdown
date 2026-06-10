@@ -1,6 +1,6 @@
 # Procedures
 
-Step-by-step guides organized by SDLC phase — the how-to references roles use during execution.
+Step-by-step guides organized by phase — the how-to references roles use during execution.
 
 ## Phase Mapping
 
@@ -125,7 +125,7 @@ Location: `.agentcrew/procedures/06-maintenance/`
 | Postmortem Workflow | `procedures/postmortem/02-postmortem-workflow.md` | Facilitator |
 | Supply Chain Security | `procedures/supply-chain-security.md` | Security, DevOps |
 
-*All 33 procedures are in `.agentcrew/procedures/` organized by SDLC phase.*
+*All 33 procedures are in `.agentcrew/procedures/` organized by phase.*
 
 ---
 

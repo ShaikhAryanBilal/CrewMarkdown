@@ -10,7 +10,7 @@ All changes require maintaining backward compatibility with existing step refere
 - Keep existing step IDs stable (add redirects if renaming)
 
 ## Never Do
-- Break the router contract (step IDs mapped in 00-router.md)
+- Break the objective contract (objectives mapped in 00-objectives.md)
 - Remove a step without updating all Next/Revert references
 
 ## Overrides
@@ -18,5 +18,5 @@ All changes require maintaining backward compatibility with existing step refere
 - Unit testing means validating step integrity (link checks, not code tests)
 
 ## Reference
-- .agentcrew/00-router.md â€” step index
+- .agentcrew/00-objectives.md â€” objective index
 - .agentcrew/scripts/ â€” all automation scripts

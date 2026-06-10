@@ -11,7 +11,7 @@ You are executing objective: Design Solution. Produce a complete, reviewed desig
 5. Security produces STRIDE threat table, asset inventory, compliance checklist
 6. All roles participate in design review (procedures/02-design/05-design-review.md)
 7. Verify acceptance criteria
-8. Log to `.agentcrew/log/02-design-solution/<role>/<timestamp>.md`
+8. Log to `.agentcrew/logs/<yyyy>/<MM>/<dd>/<HHmmss>/<chat-slug>-[<HHmmss>]/<role>.md` (derive `<chat-slug>` from request text)
 9. Update `.agentcrew/state/workflow.json`
 
 ## Squad

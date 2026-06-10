@@ -11,10 +11,10 @@ Checks:
 5. All .step.json files are valid JSON
 #>
 
-$ErrorActionPreference = "Continue"
+Set-StrictMode -Version Latest
+$ErrorActionPreference = "Stop"
 $ProjectRoot = (Resolve-Path "$PSScriptRoot\..\..").Path.TrimEnd('\')
-$WorkflowDir = Join-Path $ProjectRoot ".team"
-$RouterFile = Join-Path $WorkflowDir "00-router.md"
+$WorkflowDir = Join-Path $ProjectRoot ".agentcrew"
 $StateFile = Join-Path $WorkflowDir "state\workflow.json"
 
 $passed = 0
@@ -44,29 +44,7 @@ Write-Host " Workflow Validation" -ForegroundColor Cyan
 Write-Host "============================================" -ForegroundColor Cyan
 Write-Host "Project: $ProjectRoot`n"
 
-# --- Check 1: Router step IDs map to existing files ---
-Write-Host "--- Step References ---" -ForegroundColor Yellow
-Test-Check -Name "Router file exists" -Block {
-  if (Test-Path $RouterFile) { return $true }
-  return "Missing: $RouterFile"
-}
-
-Test-Check -Name "All step IDs in router point to existing files" -Block {
-  $router = Get-Content $RouterFile -Raw
-  $stepRefs = [regex]::Matches($router, '\|\s*([\w/]+)\s*\|\s*(\d+-[\w-]+/\d+-[\w-]+\.md)')
-  $missing = @()
-  foreach ($m in $stepRefs) {
-    $relPath = $m.Groups[2].Value
-    $fullPath = Join-Path $WorkflowDir $relPath
-    if (-not (Test-Path $fullPath)) {
-      $missing += "$relPath (referenced from router)"
-    }
-  }
-  if ($missing.Count -gt 0) { return "Missing files:`n  " + ($missing -join "`n  ") }
-  return $true
-}
-
-# --- Check 2: Cross-references in step files ---
+# --- Check 1: Cross-references in step files ---
 Write-Host "--- Cross-References ---" -ForegroundColor Yellow
 Test-Check -Name "All Next arrow links point to existing files" -Block {
   $stepFiles = Get-ChildItem $WorkflowDir -Recurse -Filter "*.md" | Where-Object { $_.FullName -notlike "*\log\*" -and $_.FullName -notlike "*\custom\*" -and $_.FullName -notlike "*\roles\*" -and $_.FullName -notlike "*\light\*" -and $_.Name -ne "00-router.md" -and $_.Name -ne "00-roles.md" -and $_.Name -ne "README.md" }
@@ -106,8 +84,14 @@ Test-Check -Name "All Revert arrow links point to existing files" -Block {
   return $true
 }
 
-# --- Check 3: workflow.json validity ---
+# --- Check 2: workflow.json validity + schema validation ---
 Write-Host "--- State File ---" -ForegroundColor Yellow
+$SchemaFile = Join-Path $WorkflowDir "state\schema-workflow.json"
+
+Test-Check -Name "schema-workflow.json exists" -Block {
+  return (Test-Path $SchemaFile)
+}
+
 Test-Check -Name "workflow.json is valid JSON" -Block {
   try {
     $state = Get-Content $StateFile -Raw | ConvertFrom-Json
@@ -117,20 +101,83 @@ Test-Check -Name "workflow.json is valid JSON" -Block {
   }
 }
 
-Test-Check -Name "workflow.json has correct schema" -Block {
-  $state = Get-Content $StateFile -Raw | ConvertFrom-Json
-  $required = @('project','currentStepId','currentPhase','startedAt','updatedAt','steps','phaseGates')
-  $missingProps = @()
-  foreach ($prop in $required) {
-    if (-not ($state.PSObject.Properties.Name -contains $prop)) {
-      $missingProps += $prop
+Test-Check -Name "workflow.json matches schema" -Block {
+  try {
+    $state = Get-Content $StateFile -Raw | ConvertFrom-Json
+    $schema = Get-Content $SchemaFile -Raw | ConvertFrom-Json
+  } catch {
+    return "Cannot read files: $_"
+  }
+
+  $errors = @()
+
+  # Version check — handle future migrations
+  if ($state.PSObject.Properties.Name -contains 'version') {
+    if ($state.version -lt 1 -or $state.version -gt 1) {
+      $errors += "Unsupported schema version: $($state.version). Expected: 1"
     }
   }
-  if ($missingProps.Count -gt 0) { return "Missing properties: $($missingProps -join ', ')" }
+
+  # Check required top-level properties
+  foreach ($prop in $schema.required) {
+    if (-not ($state.PSObject.Properties.Name -contains $prop)) {
+      $errors += "Missing required property: $prop"
+    }
+  }
+
+  # currentObjective must be non-empty
+  if ($state.PSObject.Properties.Name -contains 'currentObjective' -and [string]::IsNullOrEmpty($state.currentObjective)) {
+    $errors += "currentObjective must not be empty"
+  }
+
+  # achievedObjectives must be unique strings
+  if ($state.PSObject.Properties.Name -contains 'achievedObjectives') {
+    $dupes = $state.achievedObjectives | Group-Object | Where-Object { $_.Count -gt 1 }
+    foreach ($d in $dupes) { $errors += "Duplicate achievedObjective: $($d.Name)" }
+  }
+
+  # completedSteps must have step/objective/timestamp
+  if ($state.PSObject.Properties.Name -contains 'completedSteps') {
+    foreach ($step in $state.completedSteps) {
+      if (-not $step.step) { $errors += "completedStep missing 'step' field" }
+      if (-not $step.objective) { $errors += "completedStep missing 'objective' field" }
+      if (-not $step.timestamp) { $errors += "completedStep missing 'timestamp' field" }
+      elseif ($step.timestamp -notmatch '^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$') {
+        $errors += "completedStep timestamp not ISO 8601: $($step.timestamp)"
+      }
+    }
+  }
+
+  # phaseGates must have passed + pending
+  if ($state.PSObject.Properties.Name -contains 'phaseGates') {
+    $pg = $state.phaseGates
+    if ($null -eq $pg.passed) { $errors += "phaseGates missing 'passed' array" }
+    if ($null -eq $pg.pending) { $errors += "phaseGates missing 'pending' array" }
+  }
+
+  # artifacts must be unique
+  if ($state.PSObject.Properties.Name -contains 'artifacts') {
+    $dupes = $state.artifacts | Group-Object | Where-Object { $_.Count -gt 1 }
+    foreach ($d in $dupes) { $errors += "Duplicate artifact: $($d.Name)" }
+  }
+
+  # debates entries must have required fields
+  if ($state.PSObject.Properties.Name -contains 'debates' -and $state.debates) {
+    foreach ($deb in $state.debates) {
+      if (-not $deb.slug) { $errors += "debate missing 'slug'" }
+      if (-not $deb.date) { $errors += "debate missing 'date'" }
+      if (-not $deb.question) { $errors += "debate missing 'question'" }
+      if (-not $deb.decision) { $errors += "debate missing 'decision'" }
+      if (-not $deb.method) { $errors += "debate missing 'method'" }
+      if (-not $deb.log) { $errors += "debate missing 'log'" }
+    }
+  }
+
+  if ($errors.Count -gt 0) { return "Schema violations:`n  " + ($errors -join "`n  ") }
   return $true
 }
 
-# --- Check 4: .step.json files ---
+# --- Check 3: .step.json files ---
 Write-Host "--- Step Metadata ---" -ForegroundColor Yellow
 Test-Check -Name "All .step.json files are valid JSON" -Block {
   $stepJsonFiles = Get-ChildItem $WorkflowDir -Recurse -Filter ".step.json"
@@ -147,12 +194,30 @@ Test-Check -Name "All .step.json files are valid JSON" -Block {
   return $true
 }
 
+# --- Check 4: Contract validation (optional, runs if validate-contracts.ps1 exists) ---
+$ContractValidator = Join-Path $WorkflowDir "scripts\validate-contracts.ps1"
+if (Test-Path $ContractValidator) {
+  Test-Check -Name "Role contracts pass validation" -Block {
+    try {
+      $null = & $ContractValidator 2>&1
+      $exitCode = $LASTEXITCODE
+      if ($exitCode -ne 0 -and $null -ne $exitCode) {
+        return "Contract validation failed. Run scripts\validate-contracts.ps1 for details."
+      }
+      return $true
+    } catch {
+      return "Contract validation error: $_"
+    }
+  }
+}
+
 # --- Check 5: Orphan files ---
 Write-Host "--- Orphan Detection ---" -ForegroundColor Yellow
 Test-Check -Name "No orphan step files outside phase dirs" -Block {
   $phaseDirs = @('01-requirements','02-design','03-development','04-qa','05-deployment','06-maintenance','adr','postmortem')
-  $phaseFiles = @('supply-chain-security.md', 'sdlc.ps1')
+  $phaseFiles = @('supply-chain-security.md', 'agentcrew.ps1')
   $allStepFiles = Get-ChildItem $WorkflowDir -Recurse -Filter "*.md" | Where-Object {
+    $_.FullName -notlike "*\logs\*" -and
     $_.FullName -notlike "*\log\*" -and
     $_.FullName -notlike "*\custom\*" -and
     $_.FullName -notlike "*\roles\*" -and
@@ -162,7 +227,8 @@ Test-Check -Name "No orphan step files outside phase dirs" -Block {
     $_.FullName -notlike "*\objectives\*" -and
     $_.FullName -notlike "*\config\*" -and
     $_.FullName -notlike "*\debate\*" -and
-    $_.Name -ne "00-router.md" -and
+    $_.FullName -notlike "*\meeting\*" -and
+    $_.FullName -notlike "*\animations\*" -and
     $_.Name -ne "00-roles.md" -and
     $_.Name -ne "00-objectives.md" -and
     $_.Name -ne "00-team.md"

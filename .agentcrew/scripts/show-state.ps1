@@ -4,7 +4,7 @@
 
 .DESCRIPTION
   Reads .agentcrew/state/workflow.json and displays objectives, gates, logs.
-  Shows at-a-glance status of the full SDLC pipeline.
+  Shows at-a-glance status of the full workflow pipeline.
 
 .PARAMETER Path
   Path to state JSON (default: .agentcrew/state/workflow.json)
@@ -21,6 +21,9 @@ param(
   [string]$Path = '',
   [int]$Watch = 0
 )
+
+Set-StrictMode -Version Latest
+$ErrorActionPreference = "Stop"
 
 if (-not $Path) {
   $Path = Join-Path $PSScriptRoot '..\state\workflow.json'
@@ -80,7 +83,7 @@ do {
   $state = Get-Content $Path -Raw | ConvertFrom-Json
 
   WL '+----------------------------------------------------+' 36
-  W '|    SDLC STATE DASHBOARD    |' 37
+  W '|    WORKFLOW STATE DASHBOARD    |' 37
   WL ''
   W '|  Project: ' 37; WL $state.project 93
   W '|  Updated: ' 90; WL $state.updatedAt 90

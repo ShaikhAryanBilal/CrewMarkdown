@@ -1,6 +1,6 @@
 ﻿# Light Variant — Objective-Based (7-Step)
 
-Trims full SDLC to essentials for small projects / MVPs / prototypes.
+Trims full lifecycle to essentials for small projects / MVPs / prototypes.
 Uses same objective-based routing as full but with compressed scope.
 
 ## Request → Objective

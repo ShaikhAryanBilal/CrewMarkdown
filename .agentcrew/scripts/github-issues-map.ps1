@@ -1,6 +1,6 @@
 ﻿<#
 .SYNOPSIS
-Maps GitHub Issues to SDLC workflow steps.
+Maps GitHub Issues to workflow steps.
 Reads open issues with specific labels and maps them to workflow steps.
 
 .LABEL MAPPING
@@ -13,14 +13,14 @@ deployment â†’ deploy/plan
 hotfix â†’ ops/hotfix
 test â†’ qa/plan
 design â†’ design/arch
-epic â†’ 00-router.md (manual routing)
+epic â†’ 00-objectives.md (manual routing)
 
 .PARAMETER Repo
 GitHub repo in format "owner/repo"
 .PARAMETER Label
 Filter by label (optional)
 .PARAMETER OutputDir
-Where to write the mapping report (default: .agentcrew/log)
+Where to write the mapping report (default: .agentcrew/logs)
 #>
 
 param(
@@ -29,9 +29,12 @@ param(
   [string]$OutputDir = ''
 )
 
+Set-StrictMode -Version Latest
+$ErrorActionPreference = "Stop"
+
 if (-not $OutputDir) {
   $ProjectRoot = (Resolve-Path "$PSScriptRoot\..\..").Path.TrimEnd('\')
-  $OutputDir = Join-Path $ProjectRoot ".team" "log"
+  $OutputDir = Join-Path $ProjectRoot ".agentcrew" "logs"
 }
 
 $labelMap = @{
@@ -132,7 +135,7 @@ $($labelMap.GetEnumerator() | Sort-Object Key | ForEach-Object { "| $($_.Key) | 
 ## Instructions
 
 Agent: For each mapped issue, route to the corresponding workflow step.
-For unmapped issues, ask "Which SDLC phase does this belong to?"
+For unmapped issues, ask "Which workflow phase does this belong to?"
 "@
 
 $content | Out-File $reportFile -Encoding utf8

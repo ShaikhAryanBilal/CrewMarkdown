@@ -42,7 +42,7 @@ Stakeholder input received / PRD draft available.
 3. Dependency mapping — map story dependencies and identify the critical path.
 4. Gap analysis — compare against existing system and flag missing requirements.
 5. Handoff to PM — deliver structured requirements and stories for PRD inclusion.
-6. Log to `.agentcrew/log/ba/<timestamp>.md`
+6. Log to `.agentcrew/logs/<yyyy>/<MM>/<dd>/<HHmmss>/<chat-slug>-[<HHmmss>]/ba.md` (derive `<chat-slug>` from request text)
 7. Update `.agentcrew/state/workflow.json`
 
 ## Done When

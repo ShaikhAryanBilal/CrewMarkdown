@@ -1,7 +1,7 @@
 # AgentCrew — Cursor Rules
 
 ## Discovery
-This project uses `.agentcrew/` for objective-based SDLC. Roles are invocable solo or in squads.
+This project uses `.agentcrew/` for objective-based workflow. Roles are invocable solo or in squads.
 
 ## Behavior
 On any software request (feature, bug, review, deploy, test):
@@ -12,7 +12,7 @@ On any software request (feature, bug, review, deploy, test):
 4. **Role:** Load relevant role contract.md + workflow.md from `.agentcrew/roles/<role>/`
 5. **Custom:** Check `.agentcrew/custom/<phase>.md` for overrides
 6. **Execute:** Roles produce artifacts per objective
-7. **Log:** Write `.agentcrew/log/<objective-id>/<role>/<timestamp>.md`
+7. **Log:** Write `.agentcrew/logs/<yyyy>/<MM>/<dd>/<HHmmss>/<chat-slug>-[<HHmmss>]/<role>.md` (derive `<chat-slug>` from request text)
 8. **State:** Update `.agentcrew/state/workflow.json` with achieved objectives
 
 ## Reference
@@ -20,6 +20,6 @@ On any software request (feature, bug, review, deploy, test):
 - Team: `.agentcrew/00-team.md`
 - Roles: `.agentcrew/00-roles.md`
 - State: `.agentcrew/state/workflow.json`
-- Logs: `.agentcrew/log/`
+- Logs: `.agentcrew/logs/`
 - Custom: `.agentcrew/custom/`
 - Map: `codebase-map.md` (generate: `.agentcrew/scripts/generate-codebase-map.ps1`)

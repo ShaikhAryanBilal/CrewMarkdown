@@ -18,5 +18,5 @@ All design artifacts live in .agentcrew/ directory tree.
 - Threat modeling is lightweight (focus on AI agent prompt injection, data leakage)
 
 ## Reference
-- .agentcrew/00-router.md â€” chain definitions
+- .agentcrew/00-objectives.md â€” objective definitions
 - .agentcrew/00-roles.md â€” ownership matrix

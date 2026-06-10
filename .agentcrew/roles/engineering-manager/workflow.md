@@ -47,7 +47,7 @@ Sprint start / new feature cycle / feedback collected.
 4. Sprint execution — monitor progress, unblock the team, and shield from interruptions.
 5. Retrospective — facilitate blame-free retro collecting Went Well / Went Wrong / To Improve.
 6. Process improvement — turn retro items into actionable improvements and track next sprint.
-7. Log to `.agentcrew/log/engineering-manager/<timestamp>.md`
+7. Log to `.agentcrew/logs/<yyyy>/<MM>/<dd>/<HHmmss>/<chat-slug>-[<HHmmss>]/engineering-manager.md` (derive `<chat-slug>` from request text)
 8. Update `.agentcrew/state/workflow.json`
 
 ## Done When

@@ -5,6 +5,9 @@ Agent reads this to navigate without searching.
 Language-agnostic.
 #>
 
+Set-StrictMode -Version Latest
+$ErrorActionPreference = "Stop"
+
 $ProjectRoot = (Resolve-Path "$PSScriptRoot\..\..").Path.TrimEnd('\')
 $OutFile = Join-Path $ProjectRoot "codebase-map.md"
 

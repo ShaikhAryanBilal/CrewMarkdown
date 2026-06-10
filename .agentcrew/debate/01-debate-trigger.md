@@ -1,7 +1,7 @@
 # Debate Trigger — When to Debate
 
 ## Need
-- Decision point reached in any SDLC phase
+- Decision point reached in any workflow phase
 - Multiple viable solutions exist (not 1 obvious choice)
 - Stakeholders disagree on approach
 - High-risk decision (cost, security, performance, timeline impact)

@@ -49,7 +49,7 @@ Data requirements defined / source systems identified.
 5. Test pipelines — unit test transforms and integration test end-to-end flows.
 6. Document data catalog — tables, columns, lineage, and ownership.
 7. Set up monitoring — pipeline health dashboards and failure alerts.
-8. Log to `.agentcrew/log/data-engineer/<timestamp>.md`
+8. Log to `.agentcrew/logs/<yyyy>/<MM>/<dd>/<HHmmss>/<chat-slug>-[<HHmmss>]/data-engineer.md` (derive `<chat-slug>` from request text)
 9. Update `.agentcrew/state/workflow.json`
 
 ## Done When

@@ -30,7 +30,7 @@
 
 ### 4. Set Agenda
 1. Write a structured agenda with timeboxed items
-2. Write agenda to `.agentcrew/log/meeting/<topic>/<timestamp>-agenda.md`
+2. Write agenda to `.agentcrew/logs/<yyyy>/<MM>/<dd>/<HHmmss>/<chat-slug>-[<HHmmss>]/meeting-agenda.md` (derive `<chat-slug>` from meeting topic)
 3. Confirm timebox with user
 4. Proceed to brainstorm
 

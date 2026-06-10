@@ -9,7 +9,7 @@ You are executing objective: Clarify Vision. Transform raw stakeholder input int
 3. BA writes P0/P1 user stories with 2-3 acceptance criteria each
 4. PM writes PRD (procedures/01-requirements/03-prd.md), reviews, and obtains sign-off (procedures/01-requirements/04-requirements-review-and-signoff.md)
 5. Verify acceptance criteria
-6. Log to `.agentcrew/log/01-clarify-vision/<role>/<timestamp>.md`
+6. Log to `.agentcrew/logs/<yyyy>/<MM>/<dd>/<HHmmss>/<chat-slug>-[<HHmmss>]/<role>.md` (derive `<chat-slug>` from request text)
 7. Update `.agentcrew/state/workflow.json`
 
 ## Squad

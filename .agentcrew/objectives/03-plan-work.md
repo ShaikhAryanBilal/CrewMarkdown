@@ -9,7 +9,7 @@ You are executing objective: Plan Work. Break down approved designs into a commi
 3. EM breaks tasks down (each ≤ 1 dev-day) with Tech Lead providing size estimates (S/M/L/XL)
 4. PM defines sprint goal, EM commits sprint plan (procedures/03-development/01-sprint-planning.md)
 5. Verify acceptance criteria
-6. Log to `.agentcrew/log/03-plan-work/<role>/<timestamp>.md`
+6. Log to `.agentcrew/logs/<yyyy>/<MM>/<dd>/<HHmmss>/<chat-slug>-[<HHmmss>]/<role>.md` (derive `<chat-slug>` from request text)
 7. Update `.agentcrew/state/workflow.json`
 
 ## Squad

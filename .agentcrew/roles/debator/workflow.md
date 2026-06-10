@@ -32,7 +32,7 @@ quality_checklist:
   - Counter-arguments addressed directly, not evaded
   - If no consensus: scores submitted with rationale
   - After resolution: support the outcome, dissent documented in record
-  - Decision logged to `.agentcrew/log/debate/<decision-slug>.md`
+  - Decision logged to `.agentcrew/logs/<yyyy>/<MM>/<dd>/<HHmmss>/<chat-slug>-[<HHmmss>]/debate.md` (derive `<chat-slug>` from request text)
 ---
 
 ## Trigger
@@ -45,7 +45,7 @@ Decision point reached where multiple viable solutions exist.
 4. Rebuttal and closing — address counter-arguments and deliver final recommendation.
 5. Scoring (if no consensus) — score each option against weighted criteria with rationale.
 6. Accept outcome — support the decision even if your option didn't win; dissent must be documented in the record.
-7. Log to `.agentcrew/log/debate/<decision-slug>.md`
+7. Log to `.agentcrew/logs/<yyyy>/<MM>/<dd>/<HHmmss>/<chat-slug>-[<HHmmss>]/debate.md` (derive `<chat-slug>` from request text)
 8. Update `.agentcrew/state/workflow.json`
 
 ## Done When
@@ -66,4 +66,4 @@ Stance written, all rounds participated, final position recorded, consensus or s
 - Counter-arguments addressed directly, not evaded
 - If no consensus: scores submitted with rationale
 - After resolution: support the outcome, dissent documented in record
-- Decision logged to `.agentcrew/log/debate/<decision-slug>.md`
+- Decision logged to `.agentcrew/logs/<yyyy>/<MM>/<dd>/<HHmmss>/<chat-slug>-[<HHmmss>]/debate.md` (derive `<chat-slug>` from request text)

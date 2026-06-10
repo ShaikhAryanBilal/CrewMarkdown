@@ -51,7 +51,7 @@ Wireframes approved / API contracts available.
 5. Set up push notifications — register device tokens and handle foreground/background delivery.
 6. Prepare app store — configure signing, asset catalogs, versioning, and privacy manifests.
 7. Test — write unit tests, widget/component tests, integration tests, and device farm tests.
-8. Log to `.agentcrew/log/mobile-dev/<timestamp>.md`
+8. Log to `.agentcrew/logs/<yyyy>/<MM>/<dd>/<HHmmss>/<chat-slug>-[<HHmmss>]/mobile-dev.md` (derive `<chat-slug>` from request text)
 9. Update `.agentcrew/state/workflow.json`
 
 ## Done When

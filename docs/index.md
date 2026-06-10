@@ -17,7 +17,7 @@ AgentCrew: Orchestrator → 7 objectives → squad assembles → artifacts ship 
 
 AI agents are great at writing code but **terrible at software process**. Without structure, every prompt is a gamble — you might get code with no tests, no threat model, no PRD, no deploy plan.
 
-AgentCrew gives AI agents a **repeatable SDLC brain**. 18 roles with hardened contracts, workflows, and quality gates. Drop it in any project, point your AI at it, and get production-grade results.
+AgentCrew gives AI agents a **repeatable software engineering brain**. 18 roles with hardened contracts, workflows, and quality gates. Drop it in any project, point your AI at it, and get production-grade results.
 
 **No SaaS. No API keys. No vendor lock.** Just markdown files any AI agent can read.
 

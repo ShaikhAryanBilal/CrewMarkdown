@@ -3,8 +3,8 @@
   "skills": { "paths": ["~/.agents/skills"] },
   "command": {
     "agentcrew": {
-      "description": "Load SDLC skill, route request to objective, assign squad",
-      "template": "Load sdlc skill. Read .agentcrew/00-objectives.md → match request → read objective → read 00-team.md → load role contracts → execute → log → update state."
+      "description": "Load AgentCrew skill, route request to objective, assign squad",
+      "template": "Load agentcrew skill. Read .agentcrew/00-objectives.md → match request → read objective → read 00-team.md → load role contracts → execute → log → update state."
     }
   }
 }

@@ -1,8 +1,10 @@
 ﻿<#
 .SYNOPSIS
-Writes workflow step log to date-hierarchy path: .agentcrew/log/<year>/<month>/<day>/<index>-<stepId>-<timestamp>.md
+Writes workflow step log to request-hierarchy path: .agentcrew/logs/<year>/<month>/<day>/<time>/<chatName>-[<time>]/<stepId>.md
 .PARAMETER StepId
 Step identifier (e.g. "req/gather", "dev/impl")
+.PARAMETER ChatName
+Request slug derived from user request (kebab-case, 5 words max). Default: "request"
 .PARAMETER Status
 completed | failed | reverted
 .PARAMETER InputText
@@ -12,40 +14,60 @@ Artifacts produced
 .PARAMETER Notes
 Anything notable during execution
 .EXAMPLE
-.\write-workflow-log.ps1 -StepId "req/gather" -Status "completed" -InputText "User request: build auth" -OutputText "PRD drafted"
+.\write-workflow-log.ps1 -StepId "req/gather" -ChatName "build-login" -Status "completed" -InputText "User request: build auth" -OutputText "PRD drafted"
 #>
 
 param(
   [Parameter(Mandatory)][string]$StepId,
+  [string]$ChatName = 'request',
   [ValidateSet('completed','failed','reverted')][string]$Status = 'completed',
   [string]$InputText = '',
   [string]$OutputText = '',
   [string]$Notes = ''
 )
 
+Set-StrictMode -Version Latest
+$ErrorActionPreference = "Stop"
 $ProjectRoot = (Resolve-Path "$PSScriptRoot\..\..").Path.TrimEnd('\')
-$LogsRoot = Join-Path $ProjectRoot ".team" "log"
+$LogsRoot = Join-Path $ProjectRoot ".agentcrew" "logs"
+$StateFile = Join-Path $ProjectRoot ".agentcrew" "state" "workflow.json"
+$SchemaFile = Join-Path $ProjectRoot ".agentcrew" "state" "schema-workflow.json"
+
+# Guard: validate workflow.json schema before writing
+if (Test-Path $StateFile -and Test-Path $SchemaFile) {
+  try {
+    $state = Get-Content $StateFile -Raw | ConvertFrom-Json
+    $schema = Get-Content $SchemaFile -Raw | ConvertFrom-Json
+    foreach ($prop in $schema.required) {
+      if (-not ($state.PSObject.Properties.Name -contains $prop)) {
+        throw "Schema validation failed: missing required property '$prop' in $StateFile"
+      }
+    }
+  } catch {
+    Write-Host "  [WARN] State validation skipped: $_" -ForegroundColor Yellow
+  }
+}
 
 $now = Get-Date
 $year = $now.ToString('yyyy')
 $month = $now.ToString('MM')
 $day = $now.ToString('dd')
+$time = $now.ToString('HHmmss')
 $timestamp = $now.ToString('yyyyMMddTHHmmss')
 
-$DayDir = Join-Path $LogsRoot $year $month $day
-if (-not (Test-Path $DayDir)) {
-  New-Item -ItemType Directory -Path $DayDir -Force | Out-Null
+$safeChatName = $ChatName -replace '[^a-z0-9-]', ''
+$RequestDir = Join-Path $LogsRoot $year $month $day $time "$safeChatName-[$time]"
+if (-not (Test-Path $RequestDir)) {
+  New-Item -ItemType Directory -Path $RequestDir -Force | Out-Null
 }
 
-$existing = @(Get-ChildItem -Path $DayDir -Filter '*.md' -File)
-$index = $existing.Count + 1
-
 $safeStepId = $StepId -replace '[\\/:]', '-'
-$filename = "$($index.ToString('D4'))-$safeStepId-$timestamp.md"
-$filePath = Join-Path $DayDir $filename
+$filename = "$safeStepId-$timestamp.md"
+$filePath = Join-Path $RequestDir $filename
 
 $content = @"
 # Step: $StepId
+**Request:** $safeChatName
 **Started:** $timestamp
 **Completed:** $timestamp
 **Status:** $Status
@@ -66,7 +88,7 @@ Write-Host "Log written: $filePath" -ForegroundColor Green
 
 return @{
   Path = $filePath
-  Index = $index
   StepId = $StepId
+  ChatName = $safeChatName
   Timestamp = $timestamp
 }

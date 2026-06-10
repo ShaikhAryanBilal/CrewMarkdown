@@ -7,7 +7,7 @@
 ## Instructions
 1. Copy template
 2. Fill each section
-3. Save to `.agentcrew/log/adr/<date>-<slug>.md`
+3. Save to `.agentcrew/logs/<yyyy>/<MM>/<dd>/<HHmmss>/<chat-slug>-[<HHmmss>]/adr.md` (derive `<chat-slug>` from request context)
 
 ## Template
 

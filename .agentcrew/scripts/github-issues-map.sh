@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Maps GitHub Issues to SDLC workflow steps via labels.
+# Maps GitHub Issues to workflow steps via labels.
 # Usage: ./github-issues-map.sh owner/repo [label-filter]
 # Requires: curl, jq
 
@@ -118,7 +118,7 @@ $(for key in "${!LABEL_MAP[@]}"; do echo "| $key | ${LABEL_MAP[$key]} |"; done |
 ## Instructions
 
 Agent: For each mapped issue, route to the corresponding workflow step.
-For unmapped issues, ask "Which SDLC phase does this belong to?"
+For unmapped issues, ask "Which workflow phase does this belong to?"
 EOF
 
 echo "Report written: $REPORT_FILE"

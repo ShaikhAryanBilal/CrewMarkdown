@@ -1,10 +1,10 @@
 ---
-name: sdlc
+name: agentcrew
 description: >
-  AgentCrew — objective-based SDLC crew with 18 invocable AI roles.
+  AgentCrew — objective-based crew with 18 invocable AI roles.
   Every request routes through `.agentcrew/00-objectives.md`. Roles work solo, squad,
   or orchestrated. Each has contract + workflow + skills + templates.
-  Also triggered by: "SDLC", "workflow", "follow the process", /sdlc.
+  Also triggered by: "agentcrew", "workflow", "follow the process", /agentcrew.
 ---
 
 # AgentCrew Skill
@@ -12,7 +12,7 @@ description: >
 ## Detection
 
 1. Check if `.agentcrew/00-objectives.md` exists in project root
-2. If yes → use this skill. If no → skip (not an SDLC-managed project).
+2. If yes → use this skill. If no → skip.
 
 ## Before Routing
 
@@ -28,7 +28,7 @@ description: >
 5. Load relevant old step files (from `.agentcrew/<phase>/`) as procedure references
 6. Read `.agentcrew/custom/<phase>.md` → apply custom overrides
 7. Execute: roles produce artifacts per objective
-8. **Log:** Write `.agentcrew/log/<objective-id>/<role>/<timestamp>.md`
+8. **Log:** Write `.agentcrew/logs/<yyyy>/<MM>/<dd>/<HHmmss>/<chat-slug>-[<HHmmss>]/<role>.md` (derive `<chat-slug>` from request text)
 9. **State:** Update `.agentcrew/state/workflow.json` with achieved objectives
 10. Verify acceptance criteria
 

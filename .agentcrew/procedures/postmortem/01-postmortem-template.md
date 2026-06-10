@@ -8,7 +8,7 @@
 1. Copy template
 2. Fill each section
 3. Review with team
-4. Publish to `.agentcrew/log/postmortem/<date>-<slug>.md`
+4. Publish to `.agentcrew/logs/<yyyy>/<MM>/<dd>/<HHmmss>/<chat-slug>-[<HHmmss>]/postmortem.md` (derive `<chat-slug>` from incident context)
 
 ## Template
 

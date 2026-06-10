@@ -57,7 +57,7 @@ Build deployed to staging.
 8. Security testing — run DAST, verify dependency scan, and check OWASP Top 10.
 9. Bug reporting — log findings with severity, priority, and reproduction steps.
 10. QA sign-off — deliver final report, confirm exit criteria met, provide sign-off.
-11. Log to `.agentcrew/log/qa/<timestamp>.md`
+11. Log to `.agentcrew/logs/<yyyy>/<MM>/<dd>/<HHmmss>/<chat-slug>-[<HHmmss>]/qa.md` (derive `<chat-slug>` from request text)
 12. Update `.agentcrew/state/workflow.json`
 
 ## Done When

@@ -21,7 +21,7 @@ produces:
   - artifact: Action items with owners
     to: Participants
   - artifact: Meeting minutes (full record)
-    to: .agentcrew/log/meeting/
+    to: .agentcrew/logs/<yyyy>/<MM>/<dd>/<HHmmss>/<chat-slug>-[<HHmmss>]/meeting.md
 rules:
   - Stay on agenda — parking lot for tangential topics
   - Every attendee gets airtime — facilitator ensures balanced contribution
@@ -71,7 +71,7 @@ Owns the meeting lifecycle — sets agenda, assigns roles, facilitates discussio
 | Discussion summary | Minutes |
 | Decision log | Archive, state |
 | Action items with owners | Participants |
-| Meeting minutes (full record) | .agentcrew/log/meeting/ |
+| Meeting minutes (full record) | `.agentcrew/logs/<yyyy>/<MM>/<dd>/<HHmmss>/<chat-slug>-[<HHmmss>]/meeting.md` |
 
 ## Skills
 - Meeting facilitation — agenda setting, timeboxing, turn-taking

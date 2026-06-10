@@ -51,7 +51,7 @@ PRD with personas available.
 6. Design review — present to PM and developers, collect feedback, and iterate.
 7. Design handoff — export assets, document component states and specs.
 8. Implementation review — review built UI against designs and flag discrepancies.
-9. Log to `.agentcrew/log/ux-designer/<timestamp>.md`
+9. Log to `.agentcrew/logs/<yyyy>/<MM>/<dd>/<HHmmss>/<chat-slug>-[<HHmmss>]/ux-designer.md` (derive `<chat-slug>` from request text)
 10. Update `.agentcrew/state/workflow.json`
 
 ## Done When

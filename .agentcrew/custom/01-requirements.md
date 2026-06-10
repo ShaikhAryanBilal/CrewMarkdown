@@ -1,7 +1,7 @@
 # Custom: Requirements
 
 ## Context
-Project: AgentCrew — portable SDLC crew for AI agents.
+Project: AgentCrew — portable AI agent crew.
 Target users: Developers using opencode, Cursor, Claude Code, GitHub Copilot.
 Domain: Developer tooling / AI-assisted software delivery.
 

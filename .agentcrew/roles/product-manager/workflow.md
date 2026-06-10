@@ -44,7 +44,7 @@ Stakeholder request / new sprint.
 4. Release planning — prioritize backlog and communicate with stakeholders.
 5. Retrospective — collect feedback and groom backlog.
 6. UAT — coordinate user acceptance testing and obtain sign-off.
-7. Log to `.agentcrew/log/product-manager/<timestamp>.md`
+7. Log to `.agentcrew/logs/<yyyy>/<MM>/<dd>/<HHmmss>/<chat-slug>-[<HHmmss>]/product-manager.md` (derive `<chat-slug>` from request text)
 8. Update `.agentcrew/state/workflow.json`
 
 ## Done When

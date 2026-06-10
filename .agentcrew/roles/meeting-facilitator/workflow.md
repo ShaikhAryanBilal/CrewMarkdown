@@ -45,7 +45,7 @@ User invokes meeting mode: "/meeting [topic]" or "meeting mode [topic]"
 3. Decide — present options, facilitate discussion where each role gives pros/cons from their lens. If clear consensus, record decision with rationale and alternatives. If strong disagreement, escalate to Debate sub-workflow.
 4. Action items — derive items from decisions, assign owner + deliverable + deadline per item, confirm each owner accepts, and summarize.
 5. Minutes — compile the full meeting record.
-6. Log to `.agentcrew/log/meeting/<topic-slug>/<timestamp>.md`
+6. Log to `.agentcrew/logs/<yyyy>/<MM>/<dd>/<HHmmss>/<chat-slug>-[<HHmmss>]/meeting.md` (derive `<chat-slug>` from request/topic text)
 7. Update `.agentcrew/state/workflow.json`
 
 ## Done When

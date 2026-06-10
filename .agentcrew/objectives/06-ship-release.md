@@ -12,7 +12,7 @@ You are executing objective: Ship Release. Plan, deploy, and verify a production
 6. Technical Writer writes release notes / changelog
 7. PM holds rollback approval authority; rollback plan documented and practiced
 8. Verify acceptance criteria
-9. Log to `.agentcrew/log/06-ship-release/<role>/<timestamp>.md`
+9. Log to `.agentcrew/logs/<yyyy>/<MM>/<dd>/<HHmmss>/<chat-slug>-[<HHmmss>]/<role>.md` (derive `<chat-slug>` from request text)
 10. Update `.agentcrew/state/workflow.json`
 
 ## Squad

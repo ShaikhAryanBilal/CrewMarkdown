@@ -54,7 +54,7 @@ Project starts / deployment requested / monitoring alert.
 5. Production deploy — execute deploy plan (SG4), run smoke tests, verify monitoring.
 6. Post-deploy monitoring — maintain 24h hyper-care and respond to incidents.
 7. Hotfix deploy — execute emergency deploy for critical issues.
-8. Log to `.agentcrew/log/devops/<timestamp>.md`
+8. Log to `.agentcrew/logs/<yyyy>/<MM>/<dd>/<HHmmss>/<chat-slug>-[<HHmmss>]/devops.md` (derive `<chat-slug>` from request text)
 9. Update `.agentcrew/state/workflow.json`
 
 ## Done When

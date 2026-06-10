@@ -3,7 +3,7 @@
 ## When to use
 - MVPs, prototypes, small projects
 - Solo dev or 2-person team
-- Projects where full SDLC is overkill
+- Projects where full lifecycle is overkill
 
 ## What's included
 7 objectives covering the full lifecycle (compressed):

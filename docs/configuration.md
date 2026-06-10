@@ -35,7 +35,7 @@ The easiest way to configure AI agents for your project:
   "commands": [
     {
       "name": "agentcrew",
-      "description": "Run AgentCrew SDLC workflow",
+      "description": "Run AgentCrew workflow",
       "command": "opencode --agent .agentcrew/roles/orchestrator/contract.md"
     }
   ]
@@ -55,7 +55,7 @@ A compressed 7-step variant for MVPs, prototypes, and solo development.
 | | Full | Light |
 |--|------|-------|
 | **When** | Production systems, teams | MVPs, solo dev, rapid experiments |
-| **Objectives** | 8 with full squads (7 SDLC + Meeting) | 7 compressed steps |
+| **Objectives** | 8 with full squads (7 lifecycle + Meeting) | 7 compressed steps |
 | **Roles** | 18 specialized roles | Reduced role set |
 | **Ceremony** | Security gates, ADRs, debate | Minimal documentation |
 | **Location** | `.agentcrew/` (default) | `.agentcrew/light/` |

@@ -12,7 +12,7 @@
 3. **Review** — whole team reviews for accuracy, completeness
 4. **Blameless Check** — ensure no individual blame language
 5. **Action Items** — assign owners, link tickets, set deadlines
-6. **Publish** — save to `.agentcrew/log/postmortem/<date>-<slug>.md`
+6. **Publish** — save to `.agentcrew/logs/<yyyy>/<MM>/<dd>/<HHmmss>/<chat-slug>-[<HHmmss>]/postmortem.md` (derive `<chat-slug>` from incident context)
 7. **Track** — action items tracked in sprint/backlog until closed
 
 ## When to Run
