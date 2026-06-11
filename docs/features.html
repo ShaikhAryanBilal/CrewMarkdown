@@ -40,6 +40,16 @@
   <p class="page-subtitle">Cross-cutting capabilities that enhance any lifecycle objective — structured decision-making through debate, dynamic real-time meetings, and per-request role refinement via sub-specialization.</p>
 
   <div class="role-grid">
+    <a href="#zero-config" class="role-card" style="text-decoration:none;color:inherit;cursor:pointer;">
+      <div class="role-title">Zero-Config <span class="tag tag-green">New</span></div>
+      <div class="role-superpower">Single-prompt entry point for any skill level</div>
+      <div class="role-produces"><strong>Use when:</strong> First-time users, entrepreneurs, quick starts</div>
+    </a>
+    <a href="#skill-level" class="role-card" style="text-decoration:none;color:inherit;cursor:pointer;">
+      <div class="role-title">Skill-Level Inference <span class="tag tag-blue">New</span></div>
+      <div class="role-superpower">Auto/Guided/Expert modes adapt to user input depth</div>
+      <div class="role-produces"><strong>5 signals</strong> &middot; specificity score &middot; dynamic switching</div>
+    </a>
     <a href="#debate" class="role-card" style="text-decoration:none;color:inherit;cursor:pointer;">
       <div class="role-title">Debate Framework <span class="tag tag-amber">Cross-cutting</span></div>
       <div class="role-superpower">Structured decision-making for resolving disagreements</div>
@@ -51,16 +61,124 @@
       <div class="role-produces"><strong>Use when:</strong> Brainstorming, retro, decision-making, sync</div>
     </a>
     <a href="#subspec" class="role-card" style="text-decoration:none;color:inherit;cursor:pointer;">
-      <div class="role-title">Sub-Specialization <span class="tag tag-purple">New</span></div>
+      <div class="role-title">Sub-Specialization</div>
       <div class="role-superpower">Per-request role refinement by framework + layer</div>
       <div class="role-produces"><strong>58 sub-specs</strong> across 17 role families</div>
     </a>
   </div>
 
-  <!-- Sub-Spec -->
+  <!-- Zero-Config -->
   <hr class="section-divider">
 
-  <h2 id="subspec">Sub-Specialization <span class="tag tag-purple">New</span></h2>
+  <h2 id="zero-config">Zero-Config Entry <span class="tag tag-green">New</span></h2>
+  <p class="page-subtitle">A single entry point for any user &mdash; describe what you need in plain English, no CrewMarkdown knowledge required.</p>
+
+  <div class="highlight-box">
+    <strong>Who it's for:</strong> Entrepreneurs, founders, product managers, or anyone who wants results without learning about objectives, squads, or role contracts.
+  </div>
+
+  <h3>Usage</h3>
+  <pre><code>./go.ps1
+<span style="color:var(--accent-green);">&gt; Build me a landing page for my SaaS product</span></code></pre>
+
+  <p>Behind the scenes, the full CrewMarkdown pipeline runs: semantic routing, squad assembly, contract loading, workflow execution, quality gates &mdash; all invisible to the user.</p>
+
+  <h3>Key Design</h3>
+  <ul>
+    <li><strong>Jargon-free:</strong> User never sees "objective", "squad", or "contract"</li>
+    <li><strong>Full power under the hood:</strong> Same pipeline powers both zero-config and expert modes</li>
+    <li><strong>Progressive disclosure:</strong> Users can start with zero-config and gradually learn role commands</li>
+    <li><strong>Auto-creates config:</strong> First run generates <code>.crewmarkdown/state/zero-config.json</code></li>
+  </ul>
+
+  <h3>Key Files</h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>File</th><th>Purpose</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><code>go.ps1</code></td><td>Zero-config entry point script (project root)</td></tr>
+        <tr><td><code>.crewmarkdown/state/zero-config.json</code></td><td>Tracks user path (auto-generated on first run)</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- Skill-Level Inference -->
+  <h2 id="skill-level">Skill-Level Inference <span class="tag tag-blue">New</span></h2>
+  <p class="page-subtitle">CrewMarkdown reads your input and adjusts agent autonomy automatically &mdash; same system, different experience per user.</p>
+
+  <div class="highlight-box">
+    <strong>No configuration required.</strong> The agent infers skill level from 5 input signals and adapts mid-session based on your follow-ups.
+  </div>
+
+  <h3>3 Modes</h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Mode</th><th>Agent Autonomy</th><th>User Involvement</th><th>Typical Input</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="tag tag-green">Auto</span></td>
+          <td>Full &mdash; decides objectives, spawns roles, produces all artifacts</td>
+          <td>Passive &mdash; approves/rejects outcomes</td>
+          <td>Vague, high-level, no tech jargon</td>
+        </tr>
+        <tr>
+          <td><span class="tag tag-blue">Guided</span></td>
+          <td>Medium &mdash; proposes plan, explains options, seeks input</td>
+          <td>Active &mdash; chooses between options, provides feedback</td>
+          <td>Goals with plain language or questions</td>
+        </tr>
+        <tr>
+          <td><span class="tag tag-purple">Expert</span></td>
+          <td>Low &mdash; assumes domain knowledge, executes precisely</td>
+          <td>Driving &mdash; gives detailed instructions</td>
+          <td>Role names, tech jargon, explicit commands</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Inference Signals</h3>
+  <p>The agent computes a specificity score (0-100) from 5 weighted signals:</p>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Signal</th><th>Weight</th><th>Auto Signal</th><th>Expert Signal</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Role mention</td><td>30%</td><td>None ("build my app")</td><td>Explicit ("Architect, design")</td></tr>
+        <tr><td>Jargon density</td><td>25%</td><td>0 tech terms</td><td>3+ specific terms</td></tr>
+        <tr><td>Verb specificity</td><td>20%</td><td>"I want", "make"</td><td>"implement", "configure"</td></tr>
+        <tr><td>Scope granularity</td><td>15%</td><td>Whole project</td><td>Specific task</td></tr>
+        <tr><td>Question format</td><td>10%</td><td>Open-ended</td><td>Imperative</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Dynamic Switching</h3>
+  <p>Mode is not static &mdash; it adapts mid-session. If an auto-mode user asks a specific question, the agent flexes toward expert for that exchange. If an expert user says "explain like I'm 5", it flexes toward guided. Recent input is weighted 2x for responsiveness.</p>
+
+  <h3>Key Files</h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>File</th><th>Purpose</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><code>.crewmarkdown/roles/architect/contract.md</code></td><td>Architect spec: signal definitions, thresholds, switching logic</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- Sub-Spec -->
+  <h2 id="subspec">Sub-Specialization</h2>
   <p class="page-subtitle">58 sub-specializations across 17 role families enable per-request role refinement via hybrid keyword resolution — the right contract for the right context, every time.</p>
 
   <div class="highlight-box">

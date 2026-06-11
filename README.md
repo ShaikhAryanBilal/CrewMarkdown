@@ -1,6 +1,8 @@
 # CrewMarkdown
 
-**AI-Native Software Engineering Framework** — 33 roles · 58 sub-specializations · 11 lifecycle objectives · Solo · Squad · Orchestrate · Meeting
+**AI-Native Software Engineering Framework** — 33 roles · 58 sub-specializations · 11 lifecycle objectives · Solo · Squad · Orchestrate · Meeting · Zero-Config
+
+> **For everyone.** Entrepreneur describing an idea. Engineer specifying an API. Same system adapts to your skill level automatically.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
@@ -15,6 +17,8 @@
 CrewMarkdown provides any AI agent with a **repeatable, production-grade software engineering process** — no SaaS, no API keys, no vendor lock. Just markdown files.
 
 Every request is routed to an **objective**, which assembles a **squad** of specialized AI roles. Each role has a hardened **contract**, a **workflow**, quality gates, and artifact templates. The result: consistent, auditable, professional software delivery across the full lifecycle.
+
+**Skill-level agnostic by design.** Describe what you want in plain English — the agent infers your expertise from your input and adjusts autonomy accordingly. Non-tech users get full hand-holding. Power users get direct role access. Same system, no configuration needed.
 
 ---
 
@@ -39,6 +43,18 @@ CrewMarkdown gives any AI agent a structured engineering brain. Drop it into any
 ```
 User Request → Objective Routing → Squad Assembly → Execution & Verification → Ship
 ```
+
+### Skill-Level Inference (Auto/Guided/Expert)
+
+CrewMarkdown reads your input depth and adjusts autonomy automatically:
+
+| Mode | How It Works | Example Input |
+|------|-------------|---------------|
+| **Auto** | Agent does everything, you approve | *"Build me a landing page"* |
+| **Guided** | Agent proposes, you decide at key junctions | *"What stack should I use for my SaaS?"* |
+| **Expert** | Agent executes precisely what you ask | *"Architect, design the database schema"* |
+
+No config. No setup. The same request pipeline adapts to you.
 
 ### Execution Modes
 
@@ -134,7 +150,19 @@ Each role is invocable via `"[Role], do [task]"` for solo execution or assembled
 
 ## Quick Start
 
-Get CrewMarkdown running in any project in under a minute.
+### Zero-Config (for everyone)
+
+```bash
+# 1. Copy to your project
+cp -r .crewmarkdown ./your-project/
+
+# 2. Run the entry point
+./go.ps1
+```
+
+Type what you need in plain English. No docs. No setup. The agent figures out who to assemble and how much help you need.
+
+### Power User Setup
 
 ```bash
 # 1. Copy to your project

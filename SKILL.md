@@ -31,3 +31,19 @@ description: >
 | Solo | "[Role], do [task]" | Single role, self-contained |
 | Squad | "Squad ([roles]), achieve [objective]" | Multiple roles, one objective |
 | Orchestrate | "Build this [feature/system]" | Full lifecycle, multiple objectives |
+| Meeting | "/meeting [topic]" | Structured deliberation, decisions, action items |
+
+## Skill-Level Inference
+CrewMarkdown adapts autonomy to user expertise automatically — no config needed.
+
+| Signal | Auto (0-30) | Guided (31-65) | Expert (66-100) |
+|--------|-------------|----------------|-----------------|
+| Role mention | None | Casual | Explicit |
+| Jargon | 0 tech terms | 1-2 general | 3+ specific |
+| Verb | "I want", "make" | "help me", "should I" | "implement", "configure" |
+| Scope | Whole project | Feature area | Specific task |
+
+Auto → agent delivers, user approves. Guided → agent proposes, user decides. Expert → agent executes precisely.
+
+## Zero-Config Entry
+`go.ps1` at project root provides a jargon-free entry point. Single prompt, full pipeline behind the scenes.

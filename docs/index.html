@@ -38,7 +38,8 @@
   <section class="hero">
     <div class="hero-badge">AI-Native Framework</div>
     <h1>Autonomous AI Squads That Ship Production Software</h1>
-    <p class="hero-sub">33 roles + 58 sub-specializations &middot; 11 lifecycle objectives &middot; Solo &middot; Squad &middot; Orchestrate &middot; Meeting</p>
+    <p class="hero-sub">33 roles + 58 sub-specializations &middot; 11 lifecycle objectives &middot; Solo &middot; Squad &middot; Orchestrate &middot; Meeting &middot; Zero-Config</p>
+    <p class="hero-sub" style="font-size:0.9rem;margin-top:0.25rem;color:var(--accent-green);"><strong>Any skill level.</strong> Describe what you need. The agent adapts.</p>
 
     <div class="hero-stats">
       <div class="hero-stat">
@@ -121,9 +122,30 @@
   <p><strong>No SaaS. No API keys. No vendor lock.</strong> Just plain markdown files that any AI agent can read and execute against.</p>
 
   <h2 id="how-it-works">How It Works</h2>
-  <p><strong>User Request</strong> &rarr; <strong>Objective Match</strong> &rarr; <strong>Squad Assembly</strong> &rarr; <strong>Execute &amp; Verify</strong> &rarr; <strong>Ship &#10003;</strong></p>
-  <p>When you make a request, the routing engine matches your intent against a YAML-defined routing table, identifies the correct lifecycle objective, assembles the appropriate squad of roles, and executes the workflow with built-in quality gates at every phase transition.</p>
+  <p><strong>User Request</strong> &rarr; <strong>Skill-Level Inference</strong> &rarr; <strong>Objective Match</strong> &rarr; <strong>Squad Assembly</strong> &rarr; <strong>Execute &amp; Verify</strong> &rarr; <strong>Ship &#10003;</strong></p>
+  <p>When you make a request, the routing engine first infers your skill level from your input (specificity, jargon, role mentions), then matches your intent against a YAML-defined routing table, identifies the correct lifecycle objective, assembles the appropriate squad of roles, and executes the workflow with built-in quality gates at every phase transition.</p>
 
+  <h3>Skill-Level Inference (Auto/Guided/Expert)</h3>
+  <p>The agent reads your input and adjusts autonomy automatically &mdash; no configuration needed.</p>
+  <div class="mode-table">
+    <div class="mode-row">
+      <div class="mode-label">Auto</div>
+      <div class="mode-example">"Build me a landing page"</div>
+      <div class="mode-desc">Agent handles everything, user approves final output</div>
+    </div>
+    <div class="mode-row">
+      <div class="mode-label">Guided</div>
+      <div class="mode-example">"What stack should I use?"</div>
+      <div class="mode-desc">Agent proposes options, user decides at key junctions</div>
+    </div>
+    <div class="mode-row">
+      <div class="mode-label">Expert</div>
+      <div class="mode-example">"Architect, design the DB schema"</div>
+      <div class="mode-desc">Agent executes precisely what's asked with minimal interpretation</div>
+    </div>
+  </div>
+
+  <h3>Execution Modes</h3>
   <div class="mode-table">
     <div class="mode-row">
       <div class="mode-label">Solo</div>
@@ -187,6 +209,16 @@
   <hr class="section-divider">
 
   <h2 id="quick-start">Quick Start</h2>
+
+  <h3>Zero-Config (for everyone)</h3>
+  <pre><code><span style="color:var(--text-muted);"># 1. Copy to your project</span>
+cp -r .crewmarkdown ./your-project/
+
+<span style="color:var(--text-muted);"># 2. Run the entry point</span>
+./go.ps1</code></pre>
+  <p>Type what you need in plain English. No docs, no setup. The agent handles the rest.</p>
+
+  <h3>Power User Setup</h3>
   <pre><code><span style="color:var(--text-muted);"># 1. Copy to your project</span>
 cp -r .crewmarkdown ./your-project/
 
@@ -234,8 +266,18 @@ cp -r .crewmarkdown ./your-project/
       </thead>
       <tbody>
         <tr>
-          <td><span class="tag tag-purple">Solo</span></td>
-          <td>Single role task</td>
+          <td><span class="tag tag-green">Auto</span></td>
+          <td>Non-tech users, vague input</td>
+          <td><code>Build me [something]</code></td>
+        </tr>
+        <tr>
+          <td><span class="tag tag-blue">Guided</span></td>
+          <td>Mixed expertise, exploring options</td>
+          <td><code>What should I [do]?</code></td>
+        </tr>
+        <tr>
+          <td><span class="tag tag-purple">Expert</span></td>
+          <td>Specific role/task commands</td>
           <td><code>[Role], do [task]</code></td>
         </tr>
         <tr>
@@ -256,6 +298,7 @@ cp -r .crewmarkdown ./your-project/
       </tbody>
     </table>
   </div>
+  <p class="text-muted text-sm">Skill-level inference is automatic &mdash; no flag or config needed. The agent adapts to your input.</p>
 
   <hr class="section-divider">
 
