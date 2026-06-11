@@ -36,6 +36,10 @@ roles:
     contract: roles/data-engineer/contract.md
     workflow: roles/data-engineer/workflow.md
     specialty: ETL/ELT, data warehouse, pipelines
+  - name: Database Administrator (DBA)
+    contract: roles/dba/contract.md
+    workflow: roles/dba/workflow.md
+    specialty: Database ops, performance, backup/recovery, schema management
   - name: ML Engineer
     contract: roles/ml-engineer/contract.md
     workflow: roles/ml-engineer/workflow.md
@@ -56,6 +60,10 @@ roles:
     contract: roles/engineering-manager/contract.md
     workflow: roles/engineering-manager/workflow.md
     specialty: Sprint planning, capacity, retro
+  - name: Scrum Master
+    contract: roles/scrum-master/contract.md
+    workflow: roles/scrum-master/workflow.md
+    specialty: Agile process, impediments, coaching, ceremonies
   - name: Technical Writer
     contract: roles/technical-writer/contract.md
     workflow: roles/technical-writer/workflow.md
