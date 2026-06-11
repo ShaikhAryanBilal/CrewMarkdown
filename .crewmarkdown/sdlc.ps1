@@ -1,7 +1,7 @@
 # CrewMarkdown Step Index
 # Usage: .\sdlc.ps1 -List | -Step <id>
 #
-# AI agents: use .crewmarkdown/00-router.md for routing logic.
+# AI agents: use .crewmarkdown/00-objectives.md for routing logic.
 # This script is a human-readable step index, not the instruction source.
 
 param(
@@ -66,4 +66,4 @@ if ($Step) {
 Write-Host "CrewMarkdown Index"
 Write-Host "  .\sdlc.ps1 -List    (show all steps)"
 Write-Host "  .\sdlc.ps1 -Step id (show step path)"
-Write-Host "`nAI agents: read .crewmarkdown/00-router.md instead." -ForegroundColor Yellow
+Write-Host "`nAI agents: read .crewmarkdown/00-objectives.md instead." -ForegroundColor Yellow

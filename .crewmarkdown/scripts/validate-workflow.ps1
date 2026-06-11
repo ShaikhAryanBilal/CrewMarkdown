@@ -5,7 +5,7 @@ Validates workflow integrity: cross-references, step IDs, file existence, JSON s
 .DESCRIPTION
 Checks:
 1. All Next arrow and Revert arrow links in step files point to existing files
-2. Every step ID in 00-router.md has a matching .md file
+2. Every step ID in 00-objectives.md has a matching .md file
 3. .crewmarkdown/state/workflow.json is valid JSON with correct schema
 4. No orphan .md files outside the step directory structure
 5. All .step.json files are valid JSON
@@ -47,7 +47,7 @@ Write-Host "Project: $ProjectRoot`n"
 # --- Check 1: Cross-references in step files ---
 Write-Host "--- Cross-References ---" -ForegroundColor Yellow
 Test-Check -Name "All Next arrow links point to existing files" -Block {
-  $stepFiles = Get-ChildItem $WorkflowDir -Recurse -Filter "*.md" | Where-Object { $_.FullName -notlike "*\log\*" -and $_.FullName -notlike "*\custom\*" -and $_.FullName -notlike "*\roles\*" -and $_.FullName -notlike "*\light\*" -and $_.Name -ne "00-router.md" -and $_.Name -ne "00-roles.md" -and $_.Name -ne "README.md" }
+  $stepFiles = Get-ChildItem $WorkflowDir -Recurse -Filter "*.md" | Where-Object { $_.FullName -notlike "*\log\*" -and $_.FullName -notlike "*\custom\*" -and $_.FullName -notlike "*\roles\*" -and $_.FullName -notlike "*\light\*" -and $_.Name -ne "00-router.deprecated.md" -and $_.Name -ne "00-roles.md" -and $_.Name -ne "README.md" }
   $missing = @()
   foreach ($file in $stepFiles) {
     $content = Get-Content $file.FullName -Raw
@@ -66,7 +66,7 @@ Test-Check -Name "All Next arrow links point to existing files" -Block {
 }
 
 Test-Check -Name "All Revert arrow links point to existing files" -Block {
-  $stepFiles = Get-ChildItem $WorkflowDir -Recurse -Filter "*.md" | Where-Object { $_.FullName -notlike "*\log\*" -and $_.FullName -notlike "*\custom\*" -and $_.FullName -notlike "*\roles\*" -and $_.FullName -notlike "*\light\*" -and $_.Name -ne "00-router.md" -and $_.Name -ne "00-roles.md" -and $_.Name -ne "README.md" }
+  $stepFiles = Get-ChildItem $WorkflowDir -Recurse -Filter "*.md" | Where-Object { $_.FullName -notlike "*\log\*" -and $_.FullName -notlike "*\custom\*" -and $_.FullName -notlike "*\roles\*" -and $_.FullName -notlike "*\light\*" -and $_.Name -ne "00-router.deprecated.md" -and $_.Name -ne "00-roles.md" -and $_.Name -ne "README.md" }
   $missing = @()
   foreach ($file in $stepFiles) {
     $content = Get-Content $file.FullName -Raw
@@ -111,7 +111,7 @@ Test-Check -Name "workflow.json matches schema" -Block {
 
   $errors = @()
 
-  # Version check — handle future migrations
+  # Version check ï¿½ handle future migrations
   if ($state.PSObject.Properties.Name -contains 'version') {
     if ($state.version -lt 1 -or $state.version -gt 1) {
       $errors += "Unsupported schema version: $($state.version). Expected: 1"

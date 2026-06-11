@@ -16,7 +16,7 @@
   --accent-amber: #fbbf24;
   --accent-red: #f87171;
   --gradient-primary: linear-gradient(135deg, #7c5cfc, #f472b6);
-  --gradiant-hero: linear-gradient(135deg, #7c5cfc 0%, #22d3ee 50%, #f472b6 100%);
+  --gradient-hero: linear-gradient(135deg, #7c5cfc 0%, #22d3ee 50%, #f472b6 100%);
   --glow-purple: 0 0 40px rgba(124, 92, 252, 0.15);
   --glow-pink: 0 0 40px rgba(244, 114, 182, 0.15);
   --radius-sm: 6px;
@@ -78,7 +78,7 @@ body {
   font-size: 1.35rem;
   font-weight: 800;
   letter-spacing: -0.03em;
-  background: var(--gradiant-hero);
+  background: var(--gradient-hero);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -298,7 +298,7 @@ html { scroll-behavior: smooth; }
 .hero h1 {
   font-size: 3rem;
   margin-bottom: 1rem;
-  background: var(--gradiant-hero);
+  background: var(--gradient-hero);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

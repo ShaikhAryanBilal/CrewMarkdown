@@ -63,9 +63,9 @@ You are executing objective: Select SDLC Model. Determine which SDLC methodology
 - User wants custom hybrid model → squad designs hybrid via debate
 
 ## Phase Map Output
-After selection, map SDLC model phases to AgentCraft objectives:
+After selection, map SDLC model phases to CrewMarkdown objectives:
 
-| SDLC Phase → AgentCraft Objective |
+| SDLC Phase → CrewMarkdown Objective |
 |-----------------------------------|
 | See `.crewmarkdown/config/sdlc-models.md` for per-model phase map |
 

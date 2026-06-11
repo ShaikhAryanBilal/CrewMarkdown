@@ -74,7 +74,7 @@ Requirements → Design → Implementation → Testing → Deployment → Mainte
 
 ### Phase Details
 
-| Phase | AgentCraft Objective | Roles | Artifacts | Gates |
+| Phase | CrewMarkdown Objective | Roles | Artifacts | Gates |
 |-------|---------------------|-------|-----------|-------|
 | Requirements | Clarify Vision | PM, BA | PRD, user stories, reqs matrix | SG0: PRD signed off |
 | Design | Design Solution | Architect, UX, Security, Tech Lead | Architecture spec, DB schema, API spec, threat model, wireframes | SG1: Threat model complete |
@@ -116,7 +116,7 @@ Requirements ←→ Acceptance Testing
 
 ### Phase Details
 
-| Phase | Corresponding Test Phase | AgentCraft Objective | Roles | Artifacts | Gates |
+| Phase | Corresponding Test Phase | CrewMarkdown Objective | Roles | Artifacts | Gates |
 |-------|------------------------|---------------------|-------|-----------|-------|
 | Requirements | Acceptance Testing | Clarify Vision + Verify Quality | PM, BA, QA | PRD, acceptance test plan | SG0: Reqs review + test plan |
 | Design (System) | System Testing | Design Solution + Verify Quality | Architect, UX, Security, QA | System arch, system test plan | SG1: Design + test plan review |
@@ -155,7 +155,7 @@ Spiral 2: Plan → Risk Analysis → Refine → Evaluate → Next spiral or done
 
 ### Phase Details (per spiral)
 
-| Spiral Step | AgentCraft Objective | Roles | Artifacts | Gates |
+| Spiral Step | CrewMarkdown Objective | Roles | Artifacts | Gates |
 |-------------|---------------------|-------|-----------|-------|
 | Plan | Plan Work | EM, PM, Tech Lead | Sprint plan, spiral scope, effort estimate | — |
 | Risk Analysis | Design Solution (risk track) | Architect, Security, Tech Lead | Risk register, mitigation plan, prototype spec | Risk evaluation gate |
@@ -189,7 +189,7 @@ Backlog Grooming → Sprint Planning → Sprint (Dev + Test) → Sprint Review �
 
 ### Phase Details (per sprint)
 
-| Sprint Event | AgentCraft Objective | Roles | Artifacts | Gates |
+| Sprint Event | CrewMarkdown Objective | Roles | Artifacts | Gates |
 |-------------|---------------------|-------|-----------|-------|
 | Backlog Grooming | Clarify Vision (ongoing) | PM, BA | Refined backlog, updated user stories | — |
 | Sprint Planning | Plan Work | EM, PM, Tech Lead, Dev(s) | Sprint goal, sprint backlog, task breakdown | Sprint scope frozen |
@@ -227,7 +227,7 @@ Iteration 3: Polish + edge cases
 
 ### Phase Details (per iteration)
 
-| Step | AgentCraft Objective | Roles | Artifacts | Entry Criteria |
+| Step | CrewMarkdown Objective | Roles | Artifacts | Entry Criteria |
 |------|---------------------|-------|-----------|---------------|
 | Plan iteration scope | Plan Work | PM, EM, Tech Lead | Iteration scope, effort estimate | Previous iteration evaluated |
 | Design refinements | Design Solution | Architect, UX | Refined design docs, updated specs | Scope defined |
@@ -264,7 +264,7 @@ Increment 3: Feature set B → Deploy
 
 ### Phase Details (per increment)
 
-| Step | AgentCraft Objective | Roles | Artifacts | Gates |
+| Step | CrewMarkdown Objective | Roles | Artifacts | Gates |
 |------|---------------------|-------|-----------|-------|
 | Plan increment | Plan Work + Design Solution | PM, Architect, EM | Increment scope, design delta, plan | Increment scope frozen |
 | Build | Build Feature | Dev(s), Tech Lead | Working increment features + tests | SG2: Per PR |
@@ -297,7 +297,7 @@ Requirements (light) → Build Everything → Test Everything → Deploy
 
 ### Phase Details
 
-| Phase | AgentCraft Objective | Roles | Artifacts | Gates |
+| Phase | CrewMarkdown Objective | Roles | Artifacts | Gates |
 |-------|---------------------|-------|-----------|-------|
 | Light Requirements | Clarify Vision | PM, BA | Brief scope doc, feature list | SG0: Scope list approved |
 | Build Everything | Build Feature | Dev(s), Tech Lead, All dev roles | Complete source code | SG2: Final code quality sweep |
@@ -331,7 +331,7 @@ Requirements Workshop → Prototype Cycle 1 → User Feedback → Refine → Pro
 
 ### Phase Details
 
-| Phase | AgentCraft Objective | Roles | Artifacts | Gates |
+| Phase | CrewMarkdown Objective | Roles | Artifacts | Gates |
 |-------|---------------------|-------|-----------|-------|
 | Requirements Workshop | Clarify Vision | PM, BA, UX, Stakeholder | Workshop notes, priority list, scope | Scope agreed |
 | Prototype Cycle (each) | Build Feature | Dev(s), UX, Tech Lead | Working prototype, UI mockups | Cycle demo accepted |

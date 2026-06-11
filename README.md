@@ -229,6 +229,6 @@ Your AI agent reads `.crewmarkdown/00-objectives.md`, routes your request to the
 
 [Star on GitHub](https://github.com/ShaikhAryanBilal/CrewMarkdown) · [Report an Issue](https://github.com/ShaikhAryanBilal/CrewMarkdown/issues) · [Contributions Welcome](CONTRIBUTING.md)
 
-[Read the Documentation](docs/index.md)
+[Read the Documentation](docs/index.html)
 
 </div>
