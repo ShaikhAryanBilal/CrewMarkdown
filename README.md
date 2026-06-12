@@ -1,8 +1,8 @@
 # CrewMarkdown
 
-**AI-Native Software Engineering Framework** — 42 roles · 78 sub-specializations · 11 lifecycle objectives · Solo · Squad · Orchestrate · Meeting · Incident · Review · Interview · Negotiation · Retrospective · Hackathon · Onboarding · Zero-Config
+**Universal AI Agent Workflow Framework** — 42 roles · 78 sub-specializations · 11 lifecycle objectives · Solo · Squad · Orchestrate · Meeting · Incident · Review · Interview · Negotiation · Retrospective · Hackathon · Onboarding · Zero-Config
 
-> **For everyone.** Entrepreneur describing an idea. Engineer specifying an API. Same system adapts to your skill level automatically.
+> **For any domain.** Engineer building an API. Marketer launching a campaign. HR onboarding a new hire. Manager planning a budget. Same system adapts to your skill level automatically.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
@@ -14,31 +14,31 @@
 
 ## Overview
 
-CrewMarkdown provides any AI agent with a **repeatable, production-grade software engineering process** — no SaaS, no API keys, no vendor lock. Just markdown files.
+CrewMarkdown provides any AI agent with a **repeatable, production-grade workflow for any domain** — engineering, business, creative, or operations. No SaaS, no API keys, no vendor lock. Just markdown files.
 
-Every request is routed to an **objective**, which assembles a **squad** of specialized AI roles. Each role has a hardened **contract**, a **workflow**, quality gates, and artifact templates. The result: consistent, auditable, professional software delivery across the full lifecycle.
+Every request is routed to an **objective**, which assembles a **squad** of specialized AI roles. Each role has a hardened **contract**, a **workflow**, quality gates, and artifact templates. The result: consistent, auditable, professional delivery across any discipline.
 
-**Skill-level agnostic by design.** Describe what you want in plain English — the agent infers your expertise from your input and adjusts autonomy accordingly. Non-tech users get full hand-holding. Power users get direct role access. Same system, no configuration needed.
+**Skill-level agnostic by design.** Describe what you need in plain English — the agent infers your expertise from your input and adjusts autonomy accordingly. Non-tech users get full hand-holding. Power users get direct role access. Same system, no configuration needed.
 
 ---
 
 ## The Problem
 
-AI agents write great code but lack software engineering process. Without structure, every prompt is a gamble — you might get a feature, but almost never with:
+AI agents are capable but lack structured process. Without a framework, every prompt is a gamble — you might get a result, but almost never with:
 
-- A **PRD** that defines scope and acceptance criteria
-- A **threat model** that catches vulnerabilities early
+- A **plan** that defines scope and acceptance criteria
+- A **threat model** that catches risks early
 - A **test plan** that validates correctness
 - A **deploy plan** that ensures safe rollout
-- An **architecture decision record** that explains *why*
+- A **decision record** that explains *why*
 
-You end up debugging chaos instead of shipping quality.
+You end up fixing chaos instead of shipping quality — whether you're building software, launching a campaign, or hiring a team.
 
 ---
 
 ## The Solution
 
-CrewMarkdown gives any AI agent a structured engineering brain. Drop it into any project, point your AI at `.crewmarkdown/`, and get production-grade results — every time.
+CrewMarkdown gives any AI agent a structured workflow brain. Drop it into any project, point your AI at `.crewmarkdown/`, and get production-grade results — every time.
 
 ```
 User Request → Objective Routing → Squad Assembly → Execution & Verification → Ship
@@ -248,7 +248,7 @@ Your AI agent reads `.crewmarkdown/00-objectives.md`, routes your request to the
 | Variant | When To Use |
 |---------|------------|
 | **Full** (default) | Production systems — 11 objectives, full squads, all quality gates |
-| **Light** (`.crewmarkdown/light/`) | MVPs, prototypes, solo development — 7 compressed steps, reduced ceremony |
+| **Light** (`.crewmarkdown/light/`) | MVPs, prototypes, solo work — 7 compressed steps, reduced ceremony |
 | **Meeting** (`.crewmarkdown/meeting/`) | Brainstorming, retrospectives, decision-making — dynamic role assembly |
 | **Incident** (`.crewmarkdown/incident/`) | Production issue response — SEV triage, diagnose, mitigate, postmortem |
 | **Review** (`.crewmarkdown/review/`) | Structured artifact review — prepare, present, discuss, decide, log |
@@ -273,17 +273,16 @@ Your AI agent reads `.crewmarkdown/00-objectives.md`, routes your request to the
 |-----------|---------------------|-------------------|
 | **Outputs** | Inconsistent, varies per prompt | Standardized artifacts every time |
 | **Quality** | Random, depends on the day | Quality checklists per role, gated |
-| **Security** | Forgotten until incident | Security Engineer gate in every build |
-| **Process** | No repeatable workflow | 11 objectives with defined squads |
+| **Process** | No repeatable workflow | 11+ objectives with defined squads |
 | **Memory** | No cross-session tracking | Logged objectives + state persistence |
 | **Portability** | Tied to one agent or prompt style | Portable markdown — any AI agent reads it |
-| **Architecture** | No decision records | ADRs with rationale and trade-offs |
+| **Scope** | Single domain only | Engineering, business, creative, operations |
 
 ---
 
 <div align="center">
 
-**MIT Licensed** — Built for AI-native software engineering
+**MIT Licensed** — Built for AI-native work across any domain
 
 [Star on GitHub](https://github.com/ShaikhAryanBilal/CrewMarkdown) · [Report an Issue](https://github.com/ShaikhAryanBilal/CrewMarkdown/issues) · [Contributions Welcome](CONTRIBUTING.md)
 

@@ -2,7 +2,7 @@
 
 ## What This Is
 
-CrewMarkdown is a **crew of 18 autonomous AI roles** — each with a contract and workflow.
+CrewMarkdown is a **crew of 42+ autonomous AI roles** spanning engineering, business, creative, and operations — each with a contract and workflow.
 Roles work solo or in squads toward shared objectives. Full lifecycle.
 
 ## For opencode
@@ -18,7 +18,7 @@ Role contracts are in `.crewmarkdown/roles/<role>/contract.md`.
 
 ## How Any AI Agent Should Behave
 
-1. User makes a request about software
+1. User makes a request (engineering, business, creative, or operational)
 2. **Codebase Map:** If `codebase-map.md` exists at root, read it first
 3. **Custom Instructions:** Check `.crewmarkdown/custom/<phase>.md` for project-specific overrides
 4. Consult `.crewmarkdown/00-objectives.md` → find matching objective
@@ -37,17 +37,30 @@ Role contracts are in `.crewmarkdown/roles/<role>/contract.md`.
 
 | Request | Start Here |
 |---------|-----------|
-| "Who does what?" / "Hiring" / "Role definition" | `.crewmarkdown/00-roles.md` |
+| "Who does what?" / "Role definition" | `.crewmarkdown/00-roles.md` |
 | "Build a feature" / "Full lifecycle" | `.crewmarkdown/00-objectives.md` (orchestrate) |
 | "Define requirements" / "Write PRD" | Objective: Clarify Vision (`.crewmarkdown/objectives/01-clarify-vision.md`) |
-| "Design the system" / "Architecture" | Objective: Design Solution (`.crewmarkdown/objectives/02-design-solution.md`) |
-| "Plan sprint" / "Break down work" | Objective: Plan Work (`.crewmarkdown/objectives/03-plan-work.md`) |
-| "Implement X" / "Write code" | Objective: Build Feature (`.crewmarkdown/objectives/04-build-feature.md`) |
-| "Test this" / "QA sign-off" | Objective: Verify Quality (`.crewmarkdown/objectives/05-verify-quality.md`) |
-| "Deploy to prod" / "Release" | Objective: Ship Release (`.crewmarkdown/objectives/06-ship-release.md`) |
-| "Set up monitoring" / "Hotfix" | Objective: Operate & Learn (`.crewmarkdown/objectives/07-operate-learn.md`) |
-| "Review this code" | `.crewmarkdown/roles/architect/workflow.md` (Tech Lead hat) |
-| "Bug found" | `.crewmarkdown/roles/qa/workflow.md` + `.crewmarkdown/procedures/04-qa/06-bug-tracking.md` |
+| "Design system / architecture" | Objective: Design Solution (`.crewmarkdown/objectives/02-design-solution.md`) |
+| "Plan sprint / break down work" | Objective: Plan Work (`.crewmarkdown/objectives/03-plan-work.md`) |
+| "Implement X / Write code" | Objective: Build Feature (`.crewmarkdown/objectives/04-build-feature.md`) |
+| "Write API docs / user guides" | Objective: Build Feature or Execute Campaign |
+| "Test this / QA sign-off" | Objective: Verify Quality (`.crewmarkdown/objectives/05-verify-quality.md`) |
+| "Deploy / release" | Objective: Ship Release (`.crewmarkdown/objectives/06-ship-release.md`) |
+| "Monitor / hotfix" | Objective: Operate & Learn (`.crewmarkdown/objectives/07-operate-learn.md`) |
+| "Meeting / brainstorm" | Objective: Conduct Meeting (`.crewmarkdown/objectives/08-conduct-meeting.md`) |
+| "Marketing campaign / GTM" | Objective: Execute Campaign (`.crewmarkdown/objectives/09-execute-campaign.md`) |
+| "Hiring / people ops" | Objective: Execute People Ops (`.crewmarkdown/objectives/10-people-ops.md`) |
+| "Budget / financial review" | Objective: Plan Work (`.crewmarkdown/objectives/03-plan-work.md`) |
+| "Review this code / design" | `.crewmarkdown/roles/architect/workflow.md` |
+| "Bug found" | `.crewmarkdown/roles/qa/workflow.md` + `procedures/04-qa/06-bug-tracking.md` |
+| /meeting [topic] | Meeting mode → dynamic roles |
+| /incident [signal] | Incident mode → Incident Commander |
+| /review [artifact] | Review mode → Review Facilitator |
+| /interview [topic] | Interview mode → Interviewer |
+| /negotiate [issue] | Negotiation mode → Mediator |
+| /retro [period] | Retrospective mode → Retro Facilitator |
+| /hackathon [theme] | Hackathon mode → Hackathon Champion |
+| /onboard [role] | Onboarding mode → Onboarding Buddy |
 | Solo role: "[Role], do X" | `.crewmarkdown/roles/<role>/contract.md` + `.crewmarkdown/roles/<role>/workflow.md` |
 | Everything else | `.crewmarkdown/00-objectives.md` routing table |
 

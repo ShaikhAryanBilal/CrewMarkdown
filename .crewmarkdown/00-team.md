@@ -170,7 +170,7 @@ roles:
     specialty: New hire onboarding, mentoring, structured ramp-up
 ---
 
-# CrewMarkdown � Crew Orchestration Hub
+# CrewMarkdown — Universal Crew Orchestration Hub
 
 ## Invocation Patterns
 

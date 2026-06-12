@@ -2,7 +2,7 @@
 
 This project uses **objective-based workflow** with invocable roles.
 
-## On Any Software Request
+## On Any Request (engineering, business, creative, or operational)
 
 1. Read `codebase-map.md` if exists (file tree)
 2. Consult `.crewmarkdown/00-objectives.md` → find objective

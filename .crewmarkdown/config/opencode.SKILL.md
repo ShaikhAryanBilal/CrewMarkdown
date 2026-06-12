@@ -1,7 +1,7 @@
 ---
 name: CrewMarkdown
 description: >
-  CrewMarkdown — objective-based crew with 18 invocable AI roles.
+  CrewMarkdown — universal agent router for engineering, business, creative, and operations.
   Every request routes through `.crewmarkdown/00-objectives.md`. Roles work solo, squad,
   or orchestrated. Each has contract + workflow + skills + templates.
   Also triggered by: "CrewMarkdown", "workflow", "follow the process", /CrewMarkdown.
@@ -45,12 +45,33 @@ description: >
 | Solo | "[Role], do [task]" | Single role, self-contained task |
 | Squad | "Squad ([roles]), achieve [objective]" | Multiple roles, one objective |
 | Orchestrate | "Build this [feature/system]" | Multiple objectives, full lifecycle |
+| Meeting | "/meeting [topic]" | Structured deliberation, decisions |
+| Incident | "/incident [signal]" | Production issue, outage, SEV |
+| Review | "/review [artifact]" | Code, design, PRD, docs review |
+| Interview | "/interview [topic]" | User research, stakeholder discovery |
+| Negotiation | "/negotiate [issue]" | Conflict resolution, trade-offs |
+| Retrospective | "/retro [period]" | Sprint/project reflection, improvement |
+| Hackathon | "/hackathon [theme]" | Rapid prototyping, innovation sprint |
+| Onboarding | "/onboard [role]" | New hire ramp-up, guided orientation |
+
+## Domain Scope
+
+CrewMarkdown is not just for coding:
+- **Engineering**: full-stack dev, data pipelines, ML, infra, QA, security
+- **Business**: marketing campaigns, sales strategy, hiring, budgeting, compliance
+- **Creative**: content strategy, UX research, brand, visual design
+- **Operations**: incident response, retrospectives, onboarding, meetings, reviews, negotiations
+- **Strategy**: OKRs, architecture decisions, sprint planning, GTM planning
 
 ## Objectives
 
-```
-Clarify Vision → Design Solution → Plan Work → Build Feature → Verify Quality → Ship Release → Operate & Learn
-```
+Default pipeline (engineering): `Clarify Vision → Design Solution → Plan Work → Build Feature → Verify Quality → Ship Release → Operate & Learn`
+
+Other objectives for non-engineering work:
+- `09-execute-campaign.md` — marketing, GTM, content campaigns
+- `10-people-ops.md` — hiring, onboarding, culture, performance
+- `08-conduct-meeting.md` — meetings, brainstorms, syncs
+- Meeting/Incident/Review/Interview/Negotiation/Retro/Onboarding/Hackathon modes
 
 Each objective has a goal, squad, schedule, artifacts, and acceptance criteria.
 Old step files serve as procedure guides for roles.

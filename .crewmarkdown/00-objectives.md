@@ -334,9 +334,9 @@ security_gates:
 
 ## Model
 ```
-Request ? Objective ? Squad(s) ? Artifacts ? Acceptance ? Log ? State
+Request → Objective → Squad(s) → Artifacts → Acceptance → Log → State
 ```
-SDLC model selection (`obj/select-sdlc`) is optional. Only invoked when explicitly requested ("Select SDLC model"). Default objective ordering: O1?O2?...?O8.
+CrewMarkdown routes any request — engineering, business, creative, or operational — to the right objective. SDLC model selection (`obj/select-sdlc`) is optional. Only invoked when explicitly requested ("Select SDLC model"). Default objective ordering: O1→O2→...→O8 for engineering; non-engineering objectives (campaign, people-ops, meeting modes) route independently.
 
 ## Routing Strategy
 
