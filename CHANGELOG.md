@@ -1,28 +1,38 @@
 # Changelog — CrewMarkdown
 
-> Day-by-day progress of the CrewMarkdown project.
+> Project changelog organized by date.
 
 ---
 
-## Day 5 — 2026-06-12
+## 2026-06-12
 
 ### Added
+- **7 new modes** — incident, review, interview, negotiation, retrospective, hackathon, onboarding — each with 5-step procedure directory, dedicated role with contract+workflow, routing entries, and full doc integration (49 files, 619 lines)
+- **Save-confirmation gate** (`procedures/00-save-confirmation.md`) — asks user before persisting artifacts/logs; supports retroactive save
 - **Tactical Mode** (`/tactical`) — continuous always-on thread mode that stays active for the entire conversation, dynamically dispatching roles per request with persistent context
 - **Tactical Commander role** (`roles/tactical-commander/`) — owns the tactical thread: activate, dispatch, track, decide, summarize with full contract + workflow
 - **5 tactical procedures** (`tactical/01-activate.md` through `05-summarize.md`) — thread state init, role dispatch, action tracking, decision logging, tactical summary generation
 - **43rd role** in all docs and config — Tactical Commander added to routing table, role registry, and execution modes
 
 ### Changed
-- `README.md` — header, execution modes, role count, roles table, project structure, variants updated for tactical mode
-- `docs/index.html` — hero badge, stats (43 roles, 12 objectives), execution modes, invocation modes, project structure updated
-- `docs/objectives.html` — Mermaid diagram (+M9), routing table, subtitle updated
-- `docs/features.html` — tactical mode card and full section added
-- `docs/roles.html` — title/subtitle (42→43), Tactical Commander role card added
+- **Universal scope** — all docs reframed from "software engineering framework" to universal agent workflow for engineering, business, creative, and operations
+- AGENTS.md, SKILL.md, config files — broadened scope language
+- README.md — universal tagline, overview, problem/solution, all counts updated
+- docs/*.html — hero, stats, subtitles, execution modes, invocation modes reflect all domains
+- All 11 objective files — added save-confirmation gate step
 - `CHANGELOG.md` — this entry
+
+### Documentation
+- **Mermaid.js interactive flow charts** added to all 6 HTML doc pages
+- Request→Ship pipeline flow chart on `docs/index.html`
+- Routing engine flow chart (skill-level inference, semantic matching, sub-spec resolution) on `docs/features.html`
+- Objective landscape flow chart on `docs/objectives.html`
+- Dark-theme Mermaid styling with `.mermaid-wrapper` CSS containers
+- Fixed objectives flow chart TD layout for readability
 
 ---
 
-## Day 4 — 2026-06-11
+## 2026-06-11
 
 ### Added
 - **Semantic matching** — `synonyms:` field in all 22 routing entries (`00-objectives.md`), enabling synonym-based (not just keyword) request→objective matching
@@ -42,7 +52,7 @@
 
 ---
 
-## Day 3 — 2026-06-10
+## 2026-06-10
 
 ### Added
 - **SDLC Model Selection system** (`config/sdlc-models.md`) — 8 models (Waterfall, V-Model, Spiral, Agile, Iterative, Incremental, Big Bang, RAD) with selection criteria, phase maps, gates, risk patterns
@@ -70,19 +80,12 @@
 
 ---
 
-## Day 2 — 2026-06-09
+## 2026-06-09
 
 ### Added
 - **Technical Writer role** (`roles/technical-writer/`) — owns API docs, user guides, release notes, onboarding guides with full contract + workflow
 - Routing in `00-objectives.md` for doc requests: `"Write API docs"`, `"Write release notes"`, `"Write user guide"`
 - Integrated Technical Writer into **Build Feature** (API docs) and **Ship Release** (release notes) squads
-- Updated GitHub Pages site to reflect 17 roles (all HTML pages)
-
----
-
-## Day 1 — 2026-06-09
-
-### Added
 - Initial CrewMarkdown setup: 16 AI roles with contracts, workflows, and procedures
 - Objective-based workflow routing (7 objectives)
 - Retro RPG party screen animation (`show-party.ps1` / `show-party.sh`)
@@ -92,6 +95,7 @@
 
 ### Changed
 - README overhaul with problem/solution narrative and FIGlet banner
+- Updated GitHub Pages site to reflect 17 roles (all HTML pages)
 
 ### Infrastructure
 - `.gitignore` configuration
