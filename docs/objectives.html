@@ -62,9 +62,9 @@
   <div class="mermaid-flow-label">Engineering lifecycle, business objectives, and special modes</div>
   <div class="mermaid-wrapper">
   <pre class="mermaid" style="background:transparent;border:none;padding:0;margin:0;text-align:center;">
-flowchart LR
+flowchart TD
     subgraph Engineering["`**Engineering Lifecycle**`"]
-        direction LR
+        direction TB
         O0["Select SDLC"] --> O1["Clarify Vision"]
         O1 --> O2["Design Solution"]
         O2 --> O3["Plan Work"]
@@ -80,6 +80,7 @@ flowchart LR
     end
 
     subgraph Modes["`**Special Modes**`"]
+        direction TB
         M1["/meeting"]
         M2["/incident"]
         M3["/review"]
@@ -90,8 +91,8 @@ flowchart LR
         M8["/onboard"]
     end
 
-    Engineering -.-> Business
-    Business -.-> Modes
+    Engineering --> Business
+    Business --> Modes
 
     style Engineering fill:#111115,stroke:#7c5cfc,color:#f0f0f5,stroke-width:2px
     style Business fill:#111115,stroke:#22d3ee,color:#f0f0f5,stroke-width:2px
