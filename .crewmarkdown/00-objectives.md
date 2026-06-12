@@ -114,6 +114,48 @@ routing:
     squad: That role only
     mode: Solo
     confidence: high
+  - request: Incident mode / /incident [signal]
+    synonyms: incident, outage, sev1, sev2, production issue, down, broken in prod, on-call
+    objective: Respond to Incident
+    squad: Incident Commander + dynamic roles
+    mode: Incident
+    confidence: high
+  - request: Review mode / /review [artifact]
+    synonyms: review, code review, design review, PR review, walkthrough, inspect
+    objective: Conduct Review
+    squad: Review Facilitator + dynamic roles
+    mode: Review
+    confidence: high
+  - request: Interview mode / /interview [topic]
+    synonyms: interview, user research, stakeholder interview, discovery, 1-on-1
+    objective: Conduct Interview
+    squad: Interviewer + dynamic roles
+    mode: Interview
+    confidence: high
+  - request: Negotiation mode / /negotiate [issue]
+    synonyms: negotiate, mediation, conflict, trade-off, dispute, bargaining
+    objective: Facilitate Negotiation
+    squad: Mediator + dynamic roles
+    mode: Negotiation
+    confidence: high
+  - request: Retro mode / /retro [period]
+    synonyms: retro, retrospective, sprint retro, lessons learned, reflect
+    objective: Conduct Retrospective
+    squad: Retro Facilitator + dynamic roles
+    mode: Retrospective
+    confidence: high
+  - request: Hackathon mode / /hackathon [theme]
+    synonyms: hackathon, hack, innovation sprint, buildathon, codefest
+    objective: Run Hackathon
+    squad: Hackathon Champion + dynamic roles
+    mode: Hackathon
+    confidence: high
+  - request: Onboarding mode / /onboard [role]
+    synonyms: onboarding, onboard, new hire, ramp up, orientation, buddy
+    objective: Execute Onboarding
+    squad: Onboarding Buddy + dynamic roles
+    mode: Onboarding
+    confidence: high
   - request: Create campaign / Launch marketing
     synonyms: campaign, marketing, go to market, gtm, content, ad
     objective: Execute Campaign
@@ -177,6 +219,34 @@ objectives_index:
     file: objectives/10-people-ops.md
     squad: HR, Management, EM
     default_mode: Squad
+  - id: obj/respond-incident
+    file: incident/
+    squad: Incident Commander + dynamic roles
+    default_mode: Incident
+  - id: obj/conduct-review
+    file: review/
+    squad: Review Facilitator + dynamic roles
+    default_mode: Review
+  - id: obj/conduct-interview
+    file: interview/
+    squad: Interviewer + dynamic roles
+    default_mode: Interview
+  - id: obj/facilitate-negotiation
+    file: negotiation/
+    squad: Mediator + dynamic roles
+    default_mode: Negotiation
+  - id: obj/conduct-retrospective
+    file: retrospective/
+    squad: Retro Facilitator + dynamic roles
+    default_mode: Retrospective
+  - id: obj/run-hackathon
+    file: hackathon/
+    squad: Hackathon Champion + dynamic roles
+    default_mode: Hackathon
+  - id: obj/execute-onboarding
+    file: onboarding/
+    squad: Onboarding Buddy + dynamic roles
+    default_mode: Onboarding
 phase_mapping:
   - phase: config/sdlc-models.md
     maps_to: Select SDLC Model (optional)
@@ -220,6 +290,27 @@ phase_mapping:
   - phase: roles/general-management/
     maps_to: Cross-cutting (all objectives)
     used_by: General Management
+  - phase: incident/
+    maps_to: Incident response (any objective)
+    used_by: Incident Commander + responders
+  - phase: review/
+    maps_to: Structured review (any artifact)
+    used_by: Review Facilitator + reviewers
+  - phase: interview/
+    maps_to: Structured interview (any topic)
+    used_by: Interviewer + subject
+  - phase: negotiation/
+    maps_to: Facilitated negotiation (any conflict)
+    used_by: Mediator + parties
+  - phase: retrospective/
+    maps_to: Retrospective (any period)
+    used_by: Retro Facilitator + team
+  - phase: hackathon/
+    maps_to: Hackathon (any theme)
+    used_by: Hackathon Champion + participants
+  - phase: onboarding/
+    maps_to: Onboarding (any role)
+    used_by: Onboarding Buddy + newcomer
 security_gates:
   - gate: SG1
     before: Design review
@@ -301,6 +392,15 @@ If user types `/reroute <objective-id>` at any point:
 | Solo | "[Role], do [task]" | Single role |
 | Squad | "Squad ([roles]), achieve [objective]" | Multiple roles, one objective |
 | Orchestrate | "Build this [feature/system]" | Multiple objectives |
+| Meeting | "/meeting [topic]" | Brainstorm, discuss, converge |
+| Debate | "Debate [topic]" | Evidence-based decision from multiple perspectives |
+| Incident | "/incident [signal]" | Production issue, outage, SEV |
+| Review | "/review [artifact]" | Code, design, PRD, test plan, docs review |
+| Interview | "/interview [topic]" | User research, stakeholder discovery |
+| Negotiation | "/negotiate [issue]" | Conflict resolution, trade-off bargaining |
+| Retrospective | "/retro [period]" | Sprint/project reflection, continuous improvement |
+| Hackathon | "/hackathon [theme]" | Rapid prototyping, innovation sprint |
+| Onboarding | "/onboard [role]" | New hire ramp-up, guided orientation |
 
 ## State
 `.crewmarkdown/state/workflow.json` tracks: achievedObjectives, currentObjective, artifacts, phaseGates

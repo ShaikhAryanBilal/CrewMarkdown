@@ -140,6 +140,34 @@ roles:
     contract: roles/content-strategist/contract.md
     workflow: roles/content-strategist/workflow.md
     specialty: Content strategy, editorial calendar, SEO content, brand voice
+  - name: Incident Commander
+    contract: roles/incident-commander/contract.md
+    workflow: roles/incident-commander/workflow.md
+    specialty: Incident response, triage, SEV management, postmortem
+  - name: Review Facilitator
+    contract: roles/review-facilitator/contract.md
+    workflow: roles/review-facilitator/workflow.md
+    specialty: Structured review of code, design, docs, and test plans
+  - name: Interviewer
+    contract: roles/interviewer/contract.md
+    workflow: roles/interviewer/workflow.md
+    specialty: User research, stakeholder interviews, insight synthesis
+  - name: Mediator
+    contract: roles/mediator/contract.md
+    workflow: roles/mediator/workflow.md
+    specialty: Negotiation, conflict resolution, interest-based bargaining
+  - name: Retro Facilitator
+    contract: roles/retro-facilitator/contract.md
+    workflow: roles/retro-facilitator/workflow.md
+    specialty: Retrospectives, root cause analysis, continuous improvement
+  - name: Hackathon Champion
+    contract: roles/hackathon-champion/contract.md
+    workflow: roles/hackathon-champion/workflow.md
+    specialty: Hackathon organization, rapid prototyping, innovation sprints
+  - name: Onboarding Buddy
+    contract: roles/onboarding-buddy/contract.md
+    workflow: roles/onboarding-buddy/workflow.md
+    specialty: New hire onboarding, mentoring, structured ramp-up
 ---
 
 # CrewMarkdown � Crew Orchestration Hub
@@ -162,11 +190,39 @@ Effect: Orchestrator decomposes ? orders objectives ? assigns squads ? monitors 
 Syntax: `"/meeting [topic]" / "brainstorm [topic]"`
 Effect: Load meeting objective ? spawn roles via matrix ? convene ? brainstorm ? decide ? action items ? minutes ? log
 
-### 5. Sub-Spec Invocation
+### 5. Incident
+Syntax: `"/incident [signal]" / "SEV1 in [service]"`
+Effect: Load incident objective ? assign Incident Commander ? triage ? diagnose ? mitigate ? resolve ? postmortem ? log
+
+### 6. Review
+Syntax: `"/review [artifact]" / "review [code/design/PRD]"`
+Effect: Load review objective ? assign Review Facilitator ? prepare ? present ? discuss ? decide ? log
+
+### 7. Interview
+Syntax: `"/interview [topic]" / "interview [stakeholder/subject]"`
+Effect: Load interview objective ? assign Interviewer ? plan ? conduct ? synthesize ? decide ? log
+
+### 8. Negotiation
+Syntax: `"/negotiate [issue]" / "mediate [conflict]"`
+Effect: Load negotiation objective ? assign Mediator ? prepare ? discuss ? negotiate ? agree ? log
+
+### 9. Retrospective
+Syntax: `"/retro [period]" / "retro for [sprint/project]"`
+Effect: Load retrospective objective ? assign Retro Facilitator ? set stage ? gather data ? insights ? actions ? log
+
+### 10. Hackathon
+Syntax: `"/hackathon [theme]" / "hackathon for [topic]"`
+Effect: Load hackathon objective ? assign Hackathon Champion ? pitch ? plan ? build ? demo ? follow-up ? log
+
+### 11. Onboarding
+Syntax: `"/onboard [role]" / "onboard [newcomer]"`
+Effect: Load onboarding objective ? assign Onboarding Buddy ? plan ? orient ? learn ? check ? ramp ? log
+
+### 12. Sub-Spec Invocation
 Syntax: `"[Role]/<subspec>, [task]"` or implicit via keyword match
 Effect: Routing scans `keywords:` in sub-spec contracts → if match found, load sub-spec instead of parent. Parent cached as fallback. Sub-specs live at `roles/<family>/<subspec>/{contract,workflow}.md`
 
-### 6. Reroute
+### 13. Reroute
 Syntax: `"/reroute <objective-id>"` or `"wrong route, should be <objective-id>"`
 Effect: Abandon current objective (log as cancelled) ? load specified objective ? log correction to `state/reroute-feedback.json` ? update `state/routing-cache.json`
 

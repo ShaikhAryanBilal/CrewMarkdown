@@ -1,6 +1,6 @@
 # CrewMarkdown
 
-**AI-Native Software Engineering Framework** — 35 roles · 78 sub-specializations · 11 lifecycle objectives · Solo · Squad · Orchestrate · Meeting · Zero-Config
+**AI-Native Software Engineering Framework** — 42 roles · 78 sub-specializations · 11 lifecycle objectives · Solo · Squad · Orchestrate · Meeting · Incident · Review · Interview · Negotiation · Retrospective · Hackathon · Onboarding · Zero-Config
 
 > **For everyone.** Entrepreneur describing an idea. Engineer specifying an API. Same system adapts to your skill level automatically.
 
@@ -64,10 +64,17 @@ No config. No setup. The same request pipeline adapts to you.
 | **Squad** | *"Squad (QA, Security), verify the release"* | Multiple roles, one objective, parallel execution |
 | **Orchestrate** | *"Build the e-commerce platform"* | Orchestrator decomposes → 11 objectives → squads → track → ship |
 | **Meeting** | *"/meeting brainstorm [topic]"* | Dynamic role assembly, structured deliberation, decisions, action items |
+| **Incident** | *"/incident auth service 5xx"* | Triage, diagnose, mitigate, resolve, postmortem — production response |
+| **Review** | *"/review payment PR #42"* | Structured artifact review with findings classification and sign-off |
+| **Interview** | *"/interview user onboarding friction"* | Plan, conduct, synthesize structured stakeholder/user interviews |
+| **Negotiation** | *"/negotiate scope vs timeline"* | Facilitated trade-off resolution between conflicting parties |
+| **Retrospective** | *"/retro sprint 12"* | Blameless reflection, root cause analysis, improvement experiments |
+| **Hackathon** | *"/hackathon AI tools"* | Pitch, team formation, time-boxed build, demo, judging |
+| **Onboarding** | *"/onboard new backend dev"* | Structured ramp-up from orientation to independent contribution |
 
 ---
 
-## The Crew — 35 Professional Roles
+## The Crew — 42 Professional Roles
 
 Every role ships with a YAML-frontmatter contract, a structured workflow, a quality checklist, and production-grade artifact templates. Roles span the full software delivery lifecycle.
 
@@ -139,14 +146,21 @@ Every role ships with a YAML-frontmatter contract, a structured workflow, a qual
 | **Legal / Compliance** | Contracts, privacy, regulatory compliance | Contract reviews, compliance reports, privacy assessments |
 | **General Management** | OKRs, strategy, resource allocation | OKRs, strategy documents, resource plans, executive summaries |
 
-### Collaboration
+### Collaboration & Special Modes
 
 | Role | Core Competency | Key Deliverables |
 |------|----------------|-----------------|
 | **Meeting Facilitator** | Meeting orchestration, agenda setting, decision capture | Agendas, discussion summaries, decision logs, action item lists, minutes |
 | **Debate Facilitator** | Structured debate, neutrality, resolution | Debate briefs, panel assemblies, scoring leadership, decision records |
+| **Incident Commander** | Incident triage, SEV management, postmortem | Declarations, triage decisions, mitigation plans, postmortems |
+| **Review Facilitator** | Artifact review, findings classification, sign-off | Review packets, discussion summaries, review records, sign-off |
+| **Interviewer** | Structured interviews, synthesis, insights | Question plans, interview summaries, recommendations, action items |
+| **Mediator** | Negotiation facilitation, conflict resolution | Issue definitions, agreement terms, negotiation records |
+| **Retro Facilitator** | Retrospectives, root cause analysis, improvement | Retro records, insight statements, action items, experiments |
+| **Hackathon Champion** | Hackathon organization, mentoring, demo day | Pitch sessions, team formations, judging scores, archives |
+| **Onboarding Buddy** | New hire mentoring, structured ramp-up | Onboarding plans, learning sessions, progress checks, completion reports |
 
-Each role is invocable via `"[Role], do [task]"` for solo execution or assembled dynamically into squads per objective.
+Each role is invocable via `"[Role], do [task]"` for solo execution or assembled dynamically into squads per objective. Special mode roles are invoked via their mode prefix: `/incident`, `/review`, `/interview`, `/negotiate`, `/retro`, `/hackathon`, `/onboard`.
 
 ---
 
@@ -195,9 +209,16 @@ Your AI agent reads `.crewmarkdown/00-objectives.md`, routes your request to the
 ├── 00-roles.md            # All 35 roles at a glance
 ├── 00-team.md             # Invocation patterns with YAML frontmatter
 ├── objectives/            # 11 lifecycle objectives with squads
-├── roles/                 # 35 role contracts + workflows + 78 sub-specializations
+├── roles/                 # 42 role contracts + workflows + 78 sub-specializations
 ├── procedures/            # Step-by-step how-to guides by phase (38 total)
 ├── config/                # AI agent configuration templates
+├── incident/              # Incident response workflow
+├── review/                # Structured review workflow
+├── interview/             # Structured interview workflow
+├── negotiation/           # Facilitated negotiation workflow
+├── retrospective/         # Retrospective workflow
+├── hackathon/             # Hackathon workflow
+├── onboarding/            # New hire onboarding workflow
 ├── debate/                # Structured decision-making framework
 ├── meeting/               # Meeting mode workflow
 ├── custom/                # Project-specific phase overrides
@@ -229,6 +250,13 @@ Your AI agent reads `.crewmarkdown/00-objectives.md`, routes your request to the
 | **Full** (default) | Production systems — 11 objectives, full squads, all quality gates |
 | **Light** (`.crewmarkdown/light/`) | MVPs, prototypes, solo development — 7 compressed steps, reduced ceremony |
 | **Meeting** (`.crewmarkdown/meeting/`) | Brainstorming, retrospectives, decision-making — dynamic role assembly |
+| **Incident** (`.crewmarkdown/incident/`) | Production issue response — SEV triage, diagnose, mitigate, postmortem |
+| **Review** (`.crewmarkdown/review/`) | Structured artifact review — prepare, present, discuss, decide, log |
+| **Interview** (`.crewmarkdown/interview/`) | User/stakeholder research — plan, conduct, synthesize, decide |
+| **Negotiation** (`.crewmarkdown/negotiation/`) | Conflict resolution — discuss, trade-off, agree, document |
+| **Retrospective** (`.crewmarkdown/retrospective/`) | Team reflection — gather data, generate insights, decide actions |
+| **Hackathon** (`.crewmarkdown/hackathon/`) | Innovation sprints — pitch, build, demo, judge, follow-up |
+| **Onboarding** (`.crewmarkdown/onboarding/`) | New hire ramp-up — orient, learn, check, ramp to independence |
 
 ---
 

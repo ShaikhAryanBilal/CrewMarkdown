@@ -38,12 +38,12 @@
   <section class="hero">
     <div class="hero-badge">AI-Native Framework</div>
     <h1>Autonomous AI Squads That Ship Production Software</h1>
-    <p class="hero-sub">35 roles + 78 sub-specializations &middot; 11 lifecycle objectives &middot; Solo &middot; Squad &middot; Orchestrate &middot; Meeting &middot; Zero-Config</p>
+    <p class="hero-sub">42 roles + 78 sub-specializations &middot; 11 lifecycle objectives &middot; Solo &middot; Squad &middot; Orchestrate &middot; Meeting &middot; Incident &middot; Review &middot; Interview &middot; Negotiation &middot; Retrospective &middot; Hackathon &middot; Onboarding &middot; Zero-Config</p>
     <p class="hero-sub" style="font-size:0.9rem;margin-top:0.25rem;color:var(--accent-green);"><strong>Any skill level.</strong> Describe what you need. The agent adapts.</p>
 
     <div class="hero-stats">
       <div class="hero-stat">
-        <div class="num">35</div>
+        <div class="num">42</div>
         <div class="label">Roles</div>
       </div>
       <div class="hero-stat">
@@ -55,7 +55,7 @@
         <div class="label">Objectives</div>
       </div>
       <div class="hero-stat">
-        <div class="num">38</div>
+        <div class="num">73</div>
         <div class="label">Procedures</div>
       </div>
       <div class="hero-stat">
@@ -85,7 +85,7 @@
     <a href="#how-it-works" class="role-card" style="text-decoration:none;color:inherit;cursor:pointer;">
       <div class="role-title">How It Works</div>
       <div class="role-superpower">Request to ship pipeline</div>
-      <div class="role-produces"><strong>Solo, Squad, Orchestrate, Meeting</strong></div>
+      <div class="role-produces"><strong>Solo, Squad, Orchestrate, Meeting + 7 special modes</strong></div>
     </a>
     <a href="#agent-format" class="role-card" style="text-decoration:none;color:inherit;cursor:pointer;">
       <div class="role-title">Agent-Centric Format</div>
@@ -94,7 +94,7 @@
     </a>
     <a href="#the-crew" class="role-card" style="text-decoration:none;color:inherit;cursor:pointer;">
       <div class="role-title">The Crew</div>
-      <div class="role-superpower">35 AI agent roles</div>
+      <div class="role-superpower">42 AI agent roles</div>
       <div class="role-produces"><strong>Contracts, workflows, gates</strong></div>
     </a>
     <a href="#quick-start" class="role-card" style="text-decoration:none;color:inherit;cursor:pointer;">
@@ -118,7 +118,7 @@
 
   <h2 id="why">Why CrewMarkdown?</h2>
   <p>AI agents are exceptionally capable at writing code, but they lack <strong>structured software engineering process</strong>. Without a defined framework, every prompt produces inconsistent results &mdash; code arrives without tests, threat models, PRDs, or deployment plans. The result is unpredictable quality and costly rework.</p>
-  <p>CrewMarkdown solves this by providing any AI agent with a <strong>repeatable, production-grade engineering framework</strong>. 35 specialized roles + 78 sub-specializations, each with hardened contracts, structured workflows, and quality gates. Drop it into any project, point your AI at it, and get consistent, professional results.</p>
+  <p>CrewMarkdown solves this by providing any AI agent with a <strong>repeatable, production-grade engineering framework</strong>. 42 specialized roles + 78 sub-specializations, each with hardened contracts, structured workflows, and quality gates. Drop it into any project, point your AI at it, and get consistent, professional results.</p>
   <p><strong>No SaaS. No API keys. No vendor lock.</strong> Just plain markdown files that any AI agent can read and execute against.</p>
 
   <h2 id="how-it-works">How It Works</h2>
@@ -167,6 +167,41 @@
       <div class="mode-example">"/meeting brainstorm [topic]"</div>
       <div class="mode-desc">Dynamic role assembly with structured deliberation, decisions, and actionable outcomes</div>
     </div>
+    <div class="mode-row">
+      <div class="mode-label">Incident</div>
+      <div class="mode-example">"/incident auth service 5xx"</div>
+      <div class="mode-desc">Triage, diagnose, mitigate, resolve, and learn from production incidents</div>
+    </div>
+    <div class="mode-row">
+      <div class="mode-label">Review</div>
+      <div class="mode-example">"/review payment PR #42"</div>
+      <div class="mode-desc">Structured artifact review with findings classification and sign-off</div>
+    </div>
+    <div class="mode-row">
+      <div class="mode-label">Interview</div>
+      <div class="mode-example">"/interview user onboarding friction"</div>
+      <div class="mode-desc">Plan, conduct, and synthesize structured user or stakeholder interviews</div>
+    </div>
+    <div class="mode-row">
+      <div class="mode-label">Negotiation</div>
+      <div class="mode-example">"/negotiate scope vs timeline"</div>
+      <div class="mode-desc">Facilitated trade-off resolution between conflicting parties</div>
+    </div>
+    <div class="mode-row">
+      <div class="mode-label">Retrospective</div>
+      <div class="mode-example">"/retro sprint 12"</div>
+      <div class="mode-desc">Blameless reflection, root cause analysis, and improvement experiments</div>
+    </div>
+    <div class="mode-row">
+      <div class="mode-label">Hackathon</div>
+      <div class="mode-example">"/hackathon AI tools"</div>
+      <div class="mode-desc">Rapid prototyping sprint with pitch, team formation, demo, and judging</div>
+    </div>
+    <div class="mode-row">
+      <div class="mode-label">Onboarding</div>
+      <div class="mode-example">"/onboard new backend dev"</div>
+      <div class="mode-desc">Guided new hire ramp-up from orientation to independent contribution</div>
+    </div>
   </div>
 
   <h2 id="agent-format">Agent-Centric Format</h2>
@@ -203,8 +238,8 @@
 
   <p class="text-muted text-sm"><strong>Zero dependencies.</strong> Every file is a self-contained prompt.</p>
 
-  <h2 id="the-crew">The Crew <span class="tag tag-purple">35 Roles</span> <span class="tag tag-cyan">78 Sub-Specs</span></h2>
-  <p>35 invocable AI roles spanning engineering, product, design, data, ML, quality, security, operations, business, governance, and collaboration. Each role ships with a YAML-frontmatter contract, structured workflow, quality checklist, and artifact templates. 19 role families offer 78 sub-specializations for framework-specific prompt refinement.</p>
+  <h2 id="the-crew">The Crew <span class="tag tag-purple">42 Roles</span> <span class="tag tag-cyan">78 Sub-Specs</span></h2>
+  <p>42 invocable AI roles spanning engineering, product, design, data, ML, quality, security, operations, business, governance, collaboration, and special modes. Each role ships with a YAML-frontmatter contract, structured workflow, quality checklist, and artifact templates. 19 role families offer 78 sub-specializations for framework-specific prompt refinement.</p>
 
   <hr class="section-divider">
 
@@ -242,8 +277,15 @@ cp -r .crewmarkdown ./your-project/
 ├── 00-team.md             <span style="color:var(--text-muted);"># YAML frontmatter crew roster</span>
 ├── 00-roles.md            <span style="color:var(--text-muted);"># 35 role definitions</span>
 ├── objectives/            <span style="color:var(--text-muted);"># 11 lifecycle objectives</span>
-├── roles/                 <span style="color:var(--text-muted);"># 35 contracts + workflows + 78 subspecs</span>
+├── roles/                 <span style="color:var(--text-muted);"># 42 contracts + workflows + 78 subspecs</span>
 ├── procedures/            <span style="color:var(--text-muted);"># Step-by-step guides</span>
+├── incident/              <span style="color:var(--text-muted);"># Incident response</span>
+├── review/                <span style="color:var(--text-muted);"># Structured review</span>
+├── interview/             <span style="color:var(--text-muted);"># Structured interview</span>
+├── negotiation/           <span style="color:var(--text-muted);"># Facilitated negotiation</span>
+├── retrospective/         <span style="color:var(--text-muted);"># Retrospective</span>
+├── hackathon/             <span style="color:var(--text-muted);"># Hackathon</span>
+├── onboarding/            <span style="color:var(--text-muted);"># Onboarding</span>
 ├── debate/                <span style="color:var(--text-muted);"># Decision framework</span>
 ├── meeting/               <span style="color:var(--text-muted);"># Meeting mode workflow</span>
 ├── custom/                <span style="color:var(--text-muted);"># Per-project overrides</span>
@@ -294,6 +336,41 @@ cp -r .crewmarkdown ./your-project/
           <td><span class="tag tag-amber">Meeting</span></td>
           <td>Brainstorming, decision-making, retro</td>
           <td><code>/meeting [topic]</code></td>
+        </tr>
+        <tr>
+          <td><span class="tag tag-red">Incident</span></td>
+          <td>Production issue, outage, SEV</td>
+          <td><code>/incident [signal]</code></td>
+        </tr>
+        <tr>
+          <td><span class="tag tag-cyan">Review</span></td>
+          <td>Code, design, PRD, test plan, docs</td>
+          <td><code>/review [artifact]</code></td>
+        </tr>
+        <tr>
+          <td><span class="tag tag-purple">Interview</span></td>
+          <td>User research, stakeholder discovery</td>
+          <td><code>/interview [topic]</code></td>
+        </tr>
+        <tr>
+          <td><span class="tag tag-amber">Negotiation</span></td>
+          <td>Conflict resolution, trade-off bargaining</td>
+          <td><code>/negotiate [issue]</code></td>
+        </tr>
+        <tr>
+          <td><span class="tag tag-green">Retrospective</span></td>
+          <td>Sprint/project reflection, improvement</td>
+          <td><code>/retro [period]</code></td>
+        </tr>
+        <tr>
+          <td><span class="tag tag-pink">Hackathon</span></td>
+          <td>Rapid prototyping, innovation sprint</td>
+          <td><code>/hackathon [theme]</code></td>
+        </tr>
+        <tr>
+          <td><span class="tag tag-blue">Onboarding</span></td>
+          <td>New hire ramp-up, guided orientation</td>
+          <td><code>/onboard [role]</code></td>
         </tr>
       </tbody>
     </table>

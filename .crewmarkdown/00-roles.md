@@ -38,6 +38,13 @@
 | 33 | Business Development | Partnerships, deals, alliances | `roles/bizdev/contract.md` | strategic-partnerships, channel, ma | `roles/bizdev/workflow.md` | "BizDev, [do task]" | Execute Campaign with Marketing |
 | 34 | Solutions Architect | Pre-sales, solution design, POC | `roles/solutions-architect/contract.md` | aws, azure, gcp | `roles/solutions-architect/workflow.md` | "Solutions Architect, [do task]" | Build Feature with Sales & PM |
 | 35 | Content Strategist | Content strategy, editorial, SEO | `roles/content-strategist/contract.md` | seo-content, brand-content, technical-content | `roles/content-strategist/workflow.md` | "Content Strategist, [do task]" | Execute Campaign with Marketing & SEO |
+| 36 | Incident Commander | Incident response, triage, SEV management | `roles/incident-commander/contract.md` | — | `roles/incident-commander/workflow.md` | "/incident [signal]" | Respond to Incident with responders |
+| 37 | Review Facilitator | Structured review of code, design, docs | `roles/review-facilitator/contract.md` | — | `roles/review-facilitator/workflow.md` | "/review [artifact]" | Conduct Review with reviewers |
+| 38 | Interviewer | Structured interviews, user research, synthesis | `roles/interviewer/contract.md` | — | `roles/interviewer/workflow.md` | "/interview [topic]" | Conduct Interview with subject |
+| 39 | Mediator | Facilitated negotiation, conflict resolution | `roles/mediator/contract.md` | — | `roles/mediator/workflow.md` | "/negotiate [issue]" | Facilitate Negotiation with parties |
+| 40 | Retro Facilitator | Retrospectives, root cause analysis, improvement | `roles/retro-facilitator/contract.md` | — | `roles/retro-facilitator/workflow.md` | "/retro [period]" | Conduct Retrospective with team |
+| 41 | Hackathon Champion | Hackathon organization, mentoring, demo day | `roles/hackathon-champion/contract.md` | — | `roles/hackathon-champion/workflow.md` | "/hackathon [theme]" | Run Hackathon with participants |
+| 42 | Onboarding Buddy | New hire onboarding, mentoring, ramp-up | `roles/onboarding-buddy/contract.md` | — | `roles/onboarding-buddy/workflow.md` | "/onboard [role]" | Execute Onboarding with newcomer |
 
 ## Step → Procedure Reference
 | Step ID | Procedure File | Used By |
@@ -82,3 +89,38 @@
 | debate/rounds | `debate/03-debate-rounds.md` | Panelists |
 | debate/resolution | `debate/04-debate-resolution.md` | Facilitator |
 | debate/log | `debate/05-debate-log.md` | Scribe |
+| incident/detect | `incident/01-detect-triage.md` | Incident Commander |
+| incident/diagnose | `incident/02-diagnose.md` | Incident Commander |
+| incident/mitigate | `incident/03-mitigate.md` | Incident Commander |
+| incident/resolve | `incident/04-resolve.md` | Incident Commander |
+| incident/postmortem | `incident/05-postmortem.md` | Incident Commander |
+| review/prepare | `review/01-prepare.md` | Review Facilitator |
+| review/present | `review/02-present.md` | Review Facilitator |
+| review/discuss | `review/03-discuss.md` | Review Facilitator |
+| review/decide | `review/04-decide.md` | Review Facilitator |
+| review/log | `review/05-log.md` | Review Facilitator |
+| interview/plan | `interview/01-plan.md` | Interviewer |
+| interview/conduct | `interview/02-conduct.md` | Interviewer |
+| interview/synthesize | `interview/03-synthesize.md` | Interviewer |
+| interview/decide | `interview/04-decide.md` | Interviewer |
+| interview/log | `interview/05-log.md` | Interviewer |
+| negotiation/prepare | `negotiation/01-prepare.md` | Mediator |
+| negotiation/discuss | `negotiation/02-discuss.md` | Mediator |
+| negotiation/negotiate | `negotiation/03-negotiate.md` | Mediator |
+| negotiation/agree | `negotiation/04-agree.md` | Mediator |
+| negotiation/log | `negotiation/05-log.md` | Mediator |
+| retro/set-stage | `retrospective/01-set-stage.md` | Retro Facilitator |
+| retro/gather-data | `retrospective/02-gather-data.md` | Retro Facilitator |
+| retro/insights | `retrospective/03-generate-insights.md` | Retro Facilitator |
+| retro/actions | `retrospective/04-decide-actions.md` | Retro Facilitator |
+| retro/log | `retrospective/05-log.md` | Retro Facilitator |
+| hackathon/pitch | `hackathon/01-pitch.md` | Hackathon Champion |
+| hackathon/plan | `hackathon/02-plan.md` | Hackathon Champion |
+| hackathon/build | `hackathon/03-build.md` | Hackathon Champion |
+| hackathon/demo | `hackathon/04-demo.md` | Hackathon Champion |
+| hackathon/followup | `hackathon/05-followup.md` | Hackathon Champion |
+| onboarding/plan | `onboarding/01-plan.md` | Onboarding Buddy |
+| onboarding/orient | `onboarding/02-orient.md` | Onboarding Buddy |
+| onboarding/learn | `onboarding/03-learn.md` | Onboarding Buddy |
+| onboarding/check | `onboarding/04-check.md` | Onboarding Buddy |
+| onboarding/ramp | `onboarding/05-ramp.md` | Onboarding Buddy |
