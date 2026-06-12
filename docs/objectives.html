@@ -58,6 +58,65 @@
 
   <p>Plus cross-cutting objectives: <strong>Conduct Meeting</strong>, <strong>Execute Campaign</strong>, and <strong>Execute People Ops</strong> enable collaboration, go-to-market, and team growth within the same framework.</p>
 
+  <h3>Objective Landscape</h3>
+  <div class="mermaid-flow-label">Engineering lifecycle, business objectives, and special modes</div>
+  <div class="mermaid-wrapper">
+  <pre class="mermaid" style="background:transparent;border:none;padding:0;margin:0;text-align:center;">
+flowchart LR
+    subgraph Engineering["`**Engineering Lifecycle**`"]
+        direction LR
+        O0["Select SDLC"] --> O1["Clarify Vision"]
+        O1 --> O2["Design Solution"]
+        O2 --> O3["Plan Work"]
+        O3 --> O4["Build Feature"]
+        O4 --> O5["Verify Quality"]
+        O5 --> O6["Ship Release"]
+        O6 --> O7["Operate &amp; Learn"]
+    end
+
+    subgraph Business["`**Business Objectives**`"]
+        C1["Execute Campaign"]
+        C2["Execute People Ops"]
+    end
+
+    subgraph Modes["`**Special Modes**`"]
+        M1["/meeting"]
+        M2["/incident"]
+        M3["/review"]
+        M4["/interview"]
+        M5["/negotiate"]
+        M6["/retro"]
+        M7["/hackathon"]
+        M8["/onboard"]
+    end
+
+    Engineering -.-> Business
+    Business -.-> Modes
+
+    style Engineering fill:#111115,stroke:#7c5cfc,color:#f0f0f5,stroke-width:2px
+    style Business fill:#111115,stroke:#22d3ee,color:#f0f0f5,stroke-width:2px
+    style Modes fill:#111115,stroke:#f472b6,color:#f0f0f5,stroke-width:2px
+    style O0 fill:#18181d,stroke:#7c5cfc,color:#7c5cfc
+    style O1 fill:#18181d,stroke:#7c5cfc,color:#7c5cfc
+    style O2 fill:#18181d,stroke:#7c5cfc,color:#7c5cfc
+    style O3 fill:#18181d,stroke:#7c5cfc,color:#7c5cfc
+    style O4 fill:#18181d,stroke:#7c5cfc,color:#7c5cfc
+    style O5 fill:#18181d,stroke:#7c5cfc,color:#7c5cfc
+    style O6 fill:#18181d,stroke:#7c5cfc,color:#7c5cfc
+    style O7 fill:#18181d,stroke:#7c5cfc,color:#7c5cfc
+    style C1 fill:#18181d,stroke:#22d3ee,color:#22d3ee
+    style C2 fill:#18181d,stroke:#22d3ee,color:#22d3ee
+    style M1 fill:#18181d,stroke:#f472b6,color:#f472b6
+    style M2 fill:#18181d,stroke:#f472b6,color:#f472b6
+    style M3 fill:#18181d,stroke:#f472b6,color:#f472b6
+    style M4 fill:#18181d,stroke:#f472b6,color:#f472b6
+    style M5 fill:#18181d,stroke:#f472b6,color:#f472b6
+    style M6 fill:#18181d,stroke:#f472b6,color:#f472b6
+    style M7 fill:#18181d,stroke:#f472b6,color:#f472b6
+    style M8 fill:#18181d,stroke:#f472b6,color:#f472b6
+</pre>
+  </div>
+
   <div class="role-grid">
     <a href="#routing" class="role-card" style="text-decoration:none;color:inherit;cursor:pointer;">
       <div class="role-title">Routing Table</div>
@@ -545,5 +604,28 @@ EM:    Role Definition &rarr; Interviewing &rarr; Ramp Plan</code></pre>
 </main>
 
 <script src="js/main.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+mermaid.initialize({
+  startOnLoad: true,
+  theme: 'dark',
+  themeVariables: {
+    background: '#111115',
+    primaryColor: '#7c5cfc',
+    primaryTextColor: '#f0f0f5',
+    primaryBorderColor: '#7c5cfc',
+    lineColor: '#353545',
+    secondaryColor: '#18181d',
+    tertiaryColor: '#252530',
+    fontFamily: 'Inter, sans-serif',
+    fontSize: '14px'
+  },
+  flowchart: {
+    useMaxWidth: true,
+    htmlLabels: true,
+    curve: 'basis'
+  }
+});
+</script>
 </body>
 </html>

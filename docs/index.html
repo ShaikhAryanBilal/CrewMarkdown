@@ -125,6 +125,33 @@
   <p><strong>User Request</strong> &rarr; <strong>Skill-Level Inference</strong> &rarr; <strong>Objective Match</strong> &rarr; <strong>Squad Assembly</strong> &rarr; <strong>Execute &amp; Verify</strong> &rarr; <strong>Ship &#10003;</strong></p>
   <p>When you make a request, the routing engine first infers your skill level from your input (specificity, jargon, role mentions), then matches your intent against a YAML-defined routing table, identifies the correct lifecycle objective, assembles the appropriate squad of roles, and executes the workflow with built-in quality gates at every phase transition.</p>
 
+  <h3>Request Pipeline</h3>
+  <div class="mermaid-flow-label">How a request flows through CrewMarkdown</div>
+  <div class="mermaid-wrapper">
+  <pre class="mermaid" style="background:transparent;border:none;padding:0;margin:0;text-align:center;">
+flowchart LR
+    User["`**Your Request**`"]
+    Route["`**Semantic Router**`"]
+    Obj["`**Objective Match**`"]
+    Squad["`**Squad Assembly**`"]
+    Exec["`**Execution &amp; Verification**`"]
+    Ship["`**Artifacts + Log**`"]
+
+    User --> Route
+    Route --> Obj
+    Obj --> Squad
+    Squad --> Exec
+    Exec --> Ship
+
+    style User fill:#7c5cfc,stroke:#7c5cfc,color:#fff
+    style Route fill:#18181d,stroke:#22d3ee,color:#22d3ee
+    style Obj fill:#18181d,stroke:#f472b6,color:#f472b6
+    style Squad fill:#18181d,stroke:#fbbf24,color:#fbbf24
+    style Exec fill:#18181d,stroke:#7c5cfc,color:#7c5cfc
+    style Ship fill:#4ade80,stroke:#4ade80,color:#000
+</pre>
+  </div>
+
   <h3>Skill-Level Inference (Auto/Guided/Expert)</h3>
   <p>The agent reads your input and adjusts autonomy automatically &mdash; no configuration needed.</p>
   <div class="mode-table">
@@ -384,5 +411,28 @@ cp -r .crewmarkdown ./your-project/
 </main>
 
 <script src="js/main.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+mermaid.initialize({
+  startOnLoad: true,
+  theme: 'dark',
+  themeVariables: {
+    background: '#111115',
+    primaryColor: '#7c5cfc',
+    primaryTextColor: '#f0f0f5',
+    primaryBorderColor: '#7c5cfc',
+    lineColor: '#353545',
+    secondaryColor: '#18181d',
+    tertiaryColor: '#252530',
+    fontFamily: 'Inter, sans-serif',
+    fontSize: '14px'
+  },
+  flowchart: {
+    useMaxWidth: true,
+    htmlLabels: true,
+    curve: 'basis'
+  }
+});
+</script>
 </body>
 </html>

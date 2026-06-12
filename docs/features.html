@@ -286,6 +286,63 @@
     </table>
   </div>
 
+  <h2 id="routing-engine">Routing Engine</h2>
+  <p class="page-subtitle">How CrewMarkdown routes any request — engineering, business, creative, or operations — through skill-level inference, semantic matching, and sub-spec resolution.</p>
+
+  <div class="mermaid-flow-label">Request routing flow</div>
+  <div class="mermaid-wrapper">
+  <pre class="mermaid" style="background:transparent;border:none;padding:0;margin:0;text-align:center;">
+flowchart TD
+    Req["`**User Request**`"]
+    Route{"`**Skill-Level** Inference`"}
+    Auto["Auto — Full Autonomy"]
+    Guided["Guided — Propose &amp; Decide"]
+    Expert["Expert — Precise Execution"]
+    Semantic["`**Semantic Matcher**`"]
+    Cache{Routing Cache}
+    Direct["Direct Route"]
+    Scan["Scan Routing Table"]
+    Match["Objective Matched"]
+    SubSpec{Sub-Spec Keywords}
+    LoadSub["Load Sub-Spec Contract"]
+    LoadParent["Load Parent Contract"]
+    Exec["`**Execute Workflow**`"]
+
+    Req --> Route
+    Route -->|Vague, no jargon| Auto
+    Route -->|Questions, mixed| Guided
+    Route -->|Role names, specific| Expert
+    Auto --> Semantic
+    Guided --> Semantic
+    Expert --> Semantic
+    Semantic --> Cache
+    Cache -->|Exact past match| Direct
+    Cache -->|No match| Scan
+    Direct --> Exec
+    Scan --> Match
+    Match --> SubSpec
+    SubSpec -->|Keyword hit| LoadSub
+    SubSpec -->|No match| LoadParent
+    LoadSub --> Exec
+    LoadParent --> Exec
+
+    style Req fill:#7c5cfc,stroke:#7c5cfc,color:#fff,stroke-width:2px
+    style Route fill:#18181d,stroke:#fbbf24,color:#fbbf24,stroke-width:2px
+    style Auto fill:#18181d,stroke:#4ade80,color:#4ade80
+    style Guided fill:#18181d,stroke:#22d3ee,color:#22d3ee
+    style Expert fill:#18181d,stroke:#f472b6,color:#f472b6
+    style Semantic fill:#252530,stroke:#7c5cfc,color:#f0f0f5
+    style Cache fill:#18181d,stroke:#fbbf24,color:#fbbf24
+    style Direct fill:#18181d,stroke:#4ade80,color:#4ade80
+    style Scan fill:#18181d,stroke:#22d3ee,color:#22d3ee
+    style Match fill:#252530,stroke:#f472b6,color:#f0f0f5
+    style SubSpec fill:#18181d,stroke:#fbbf24,color:#fbbf24
+    style LoadSub fill:#18181d,stroke:#4ade80,color:#4ade80
+    style LoadParent fill:#18181d,stroke:#6b6b80,color:#6b6b80
+    style Exec fill:#4ade80,stroke:#4ade80,color:#000,stroke-width:2px
+</pre>
+  </div>
+
   <hr class="section-divider">
 
   <!-- Debate -->
@@ -674,5 +731,28 @@
 </main>
 
 <script src="js/main.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+mermaid.initialize({
+  startOnLoad: true,
+  theme: 'dark',
+  themeVariables: {
+    background: '#111115',
+    primaryColor: '#7c5cfc',
+    primaryTextColor: '#f0f0f5',
+    primaryBorderColor: '#7c5cfc',
+    lineColor: '#353545',
+    secondaryColor: '#18181d',
+    tertiaryColor: '#252530',
+    fontFamily: 'Inter, sans-serif',
+    fontSize: '14px'
+  },
+  flowchart: {
+    useMaxWidth: true,
+    htmlLabels: true,
+    curve: 'basis'
+  }
+});
+</script>
 </body>
 </html>
