@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CrewMarkdown Docs — Home</title>
+<title>CrewMarkdown Docs</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
@@ -35,107 +35,68 @@
 </nav>
 
 <main class="content">
+
   <section class="hero">
     <div class="hero-badge">Universal AI Workflow Framework</div>
-    <h1>Autonomous AI Squads That Ship Any Domain</h1>
-    <p class="hero-sub">43 roles + 78 sub-specializations &middot; 12 lifecycle objectives &middot; Solo &middot; Squad &middot; Orchestrate &middot; Meeting &middot; Incident &middot; Review &middot; Interview &middot; Negotiation &middot; Retrospective &middot; Hackathon &middot; Onboarding &middot; Tactical &middot; Zero-Config</p>
-    <p class="hero-sub" style="font-size:0.9rem;margin-top:0.25rem;color:var(--accent-green);"><strong>Any domain, any skill level.</strong> Engineer, marketer, HR, manager &mdash; describe what you need. The agent adapts.</p>
-
-    <div class="hero-stats">
-      <div class="hero-stat">
-        <div class="num">43</div>
-        <div class="label">Roles</div>
-      </div>
-      <div class="hero-stat">
-        <div class="num">78</div>
-        <div class="label">Sub-Specs</div>
-      </div>
-      <div class="hero-stat">
-        <div class="num">12</div>
-        <div class="label">Objectives</div>
-      </div>
-      <div class="hero-stat">
-        <div class="num">73</div>
-        <div class="label">Procedures</div>
-      </div>
-      <div class="hero-stat">
-        <div class="num">0</div>
-        <div class="label">Dependencies</div>
-      </div>
-    </div>
-
-    <div class="badges">
-      <a href="#"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="MIT"></a>
-      <a href="#"><img src="https://img.shields.io/badge/AI-Ready-8A2BE2" alt="AI Ready"></a>
-      <a href="#"><img src="https://img.shields.io/badge/Dependencies-Zero-success" alt="No Dependencies"></a>
-    </div>
-
+    <h1>AI agents with structure, not chaos</h1>
+    <p class="hero-sub">Drop .crewmarkdown into any project. Your AI agent handles planning, execution, verification, and delivery — consistently, every time.</p>
+    <p class="hero-sub" style="font-size:0.9rem;margin-top:0.25rem;color:var(--accent-green);"><strong>Any domain, any skill level.</strong> Engineering, marketing, hiring, budgeting — describe what you need. The agent adapts.</p>
     <div class="demo-box">
-      <span class="line"><span class="prompt">You:</span>       <span class="response">"Build the payment system"</span></span>
-      <span class="line"><span class="arrow">CrewMarkdown:</span> Orchestrator decomposes &rarr; 11 objectives &rarr; squads assemble &rarr; artifacts verified &rarr; ship &#10003;</span>
+      <span class="line"><span class="prompt">You:</span>       <span class="response">"Build a landing page"</span></span>
+      <span class="line"><span class="arrow">Agent:</span> Plans, routes, assembles squad, executes, verifies, ships</span>
     </div>
   </section>
 
-  <div class="role-grid">
-    <a href="#why" class="role-card" style="text-decoration:none;color:inherit;cursor:pointer;">
-      <div class="role-title">Why CrewMarkdown?</div>
-      <div class="role-superpower">The problem it solves</div>
-      <div class="role-produces"><strong>No SaaS. No vendor lock.</strong></div>
-    </a>
-    <a href="#how-it-works" class="role-card" style="text-decoration:none;color:inherit;cursor:pointer;">
-      <div class="role-title">How It Works</div>
-      <div class="role-superpower">Request to ship pipeline</div>
-      <div class="role-produces"><strong>Solo, Squad, Orchestrate, Meeting + 8 special modes</strong></div>
-    </a>
-    <a href="#agent-format" class="role-card" style="text-decoration:none;color:inherit;cursor:pointer;">
-      <div class="role-title">Agent-Centric Format</div>
-      <div class="role-superpower">Every file is a system prompt</div>
-      <div class="role-produces"><strong>YAML + structured markdown</strong></div>
-    </a>
-    <a href="#the-crew" class="role-card" style="text-decoration:none;color:inherit;cursor:pointer;">
-      <div class="role-title">The Crew</div>
-      <div class="role-superpower">43 AI agent roles</div>
-      <div class="role-produces"><strong>Contracts, workflows, gates</strong></div>
-    </a>
-    <a href="#quick-start" class="role-card" style="text-decoration:none;color:inherit;cursor:pointer;">
-      <div class="role-title">Quick Start</div>
-      <div class="role-superpower">Running in under a minute</div>
-      <div class="role-produces"><strong>Copy, generate, configure, go</strong></div>
-    </a>
-    <a href="#project-structure" class="role-card" style="text-decoration:none;color:inherit;cursor:pointer;">
-      <div class="role-title">Project Structure</div>
-      <div class="role-superpower">What ships in .crewmarkdown</div>
-      <div class="role-produces"><strong>Objectives, roles, procedures</strong></div>
-    </a>
-    <a href="#invocation-modes" class="role-card" style="text-decoration:none;color:inherit;cursor:pointer;">
-      <div class="role-title">Invocation Modes</div>
-      <div class="role-superpower">How to call the crew</div>
-      <div class="role-produces"><strong>Patterns for every use case</strong></div>
-    </a>
-  </div>
+  <hr class="section-divider">
+
+  <h2>Why CrewMarkdown?</h2>
+  <p>AI agents are capable but lack process. Without a framework, every prompt produces unpredictable results — no plan, no quality checks, no audit trail.</p>
+  <p>CrewMarkdown fixes this. It's a set of markdown files that give any AI agent a repeatable, production-grade workflow. 40+ specialized roles with contracts, workflows, and quality gates. Zero setup required.</p>
+  <p><strong>No SaaS. No API keys. No vendor lock.</strong> Just plain markdown files any AI agent can read.</p>
 
   <hr class="section-divider">
 
-  <h2 id="why">Why CrewMarkdown?</h2>
-  <p>AI agents are exceptionally capable, but they lack <strong>structured process</strong> — whether building software, launching a campaign, or planning a budget. Without a defined framework, every prompt produces inconsistent results. Work arrives without planning, risk assessment, quality checks, or deployment strategy. The result is unpredictable quality and costly rework.</p>
-  <p>CrewMarkdown solves this by providing any AI agent with a <strong>repeatable, production-grade workflow for any domain</strong> — engineering, business, creative, and operations. 43 specialized roles + 78 sub-specializations, each with hardened contracts, structured workflows, and quality gates. Drop it into any project, point your AI at it, and get consistent, professional results.</p>
-  <p><strong>No SaaS. No API keys. No vendor lock.</strong> Just plain markdown files that any AI agent can read and execute against.</p>
+  <h2>Quick Start</h2>
 
-  <h2 id="how-it-works">How It Works</h2>
-  <p><strong>User Request</strong> &rarr; <strong>Skill-Level Inference</strong> &rarr; <strong>Objective Match</strong> &rarr; <strong>Squad Assembly</strong> &rarr; <strong>Execute &amp; Verify</strong> &rarr; <strong>Ship &#10003;</strong></p>
-  <p>When you make a request, the routing engine first infers your skill level from your input (specificity, jargon, role mentions), then matches your intent against a YAML-defined routing table, identifies the correct lifecycle objective, assembles the appropriate squad of roles, and executes the workflow with built-in quality gates at every phase transition.</p>
+  <h3>For Everyone</h3>
+  <pre><code><span style="color:var(--text-muted);"># 1. Copy to your project</span>
+cp -r .crewmarkdown ./your-project/
 
-  <h3>Request Pipeline</h3>
-  <div class="mermaid-flow-label">How a request flows through CrewMarkdown</div>
+<span style="color:var(--text-muted);"># 2. Run the entry point</span>
+./go.ps1</code></pre>
+  <p>Type what you need in plain English. No docs to read. The agent handles everything.</p>
+
+  <h3>Power User Setup</h3>
+  <pre><code><span style="color:var(--text-muted);"># 1. Copy to your project</span>
+cp -r .crewmarkdown ./your-project/
+
+<span style="color:var(--text-muted);"># 2. Generate codebase map</span>
+./.crewmarkdown/scripts/generate-codebase-map.ps1
+
+<span style="color:var(--text-muted);"># 3. Configure your AI agent</span>
+./.crewmarkdown/config/setup.ps1        <span style="color:var(--text-muted);"># Windows</span>
+./.crewmarkdown/config/setup.sh --all   <span style="color:var(--text-muted);"># Linux/macOS</span>
+
+<span style="color:var(--text-muted);"># 4. Make your first request</span>
+<span style="color:var(--accent-green);">#    "PM, write a PRD for user authentication"</span>
+<span style="color:var(--accent-green);">#    "Squad (QA, Security), verify the release build"</span>
+<span style="color:var(--accent-green);">#    "Build the full platform"</span></code></pre>
+  <p>Your AI agent reads <code>.crewmarkdown/00-objectives.md</code>, routes your request to the matching objective, assembles the squad, and executes the workflow with quality gates.</p>
+
+  <hr class="section-divider">
+
+  <h2>How It Works</h2>
+
+  <div class="mermaid-flow-label">Request flow</div>
   <div class="mermaid-wrapper">
   <pre class="mermaid" style="background:transparent;border:none;padding:0;margin:0;text-align:center;">
 flowchart LR
     User["`**Your Request**`"]
-    Route["`**Semantic Router**`"]
-    Obj["`**Objective Match**`"]
-    Squad["`**Squad Assembly**`"]
-    Exec["`**Execution &amp; Verification**`"]
-    Ship["`**Artifacts + Log**`"]
+    Route["`**Router**`"]
+    Obj["`**Objective**`"]
+    Squad["`**Squad**`"]
+    Exec["`**Execute &amp; Verify**`"]
+    Ship["`**Artifacts**`"]
 
     User --> Route
     Route --> Obj
@@ -152,23 +113,23 @@ flowchart LR
 </pre>
   </div>
 
-  <h3>Skill-Level Inference (Auto/Guided/Expert)</h3>
-  <p>The agent reads your input and adjusts autonomy automatically &mdash; no configuration needed.</p>
+  <h3>Skill-Level Inference</h3>
+  <p>The agent reads your input and adjusts how much it does automatically — no configuration needed.</p>
   <div class="mode-table">
     <div class="mode-row">
       <div class="mode-label">Auto</div>
       <div class="mode-example">"Build me a landing page"</div>
-      <div class="mode-desc">Agent handles everything, user approves final output</div>
+      <div class="mode-desc">Agent handles everything, you approve</div>
     </div>
     <div class="mode-row">
       <div class="mode-label">Guided</div>
       <div class="mode-example">"What stack should I use?"</div>
-      <div class="mode-desc">Agent proposes options, user decides at key junctions</div>
+      <div class="mode-desc">Agent proposes, you decide</div>
     </div>
     <div class="mode-row">
       <div class="mode-label">Expert</div>
       <div class="mode-example">"Architect, design the DB schema"</div>
-      <div class="mode-desc">Agent executes precisely what's asked with minimal interpretation</div>
+      <div class="mode-desc">Agent executes precisely what you ask</div>
     </div>
   </div>
 
@@ -177,247 +138,84 @@ flowchart LR
     <div class="mode-row">
       <div class="mode-label">Solo</div>
       <div class="mode-example">"Architect, design the DB"</div>
-      <div class="mode-desc">Single role executes independently with zero orchestration overhead</div>
+      <div class="mode-desc">Single role, no overhead</div>
     </div>
     <div class="mode-row">
       <div class="mode-label">Squad</div>
       <div class="mode-example">"Squad (PM, BA), clarify requirements"</div>
-      <div class="mode-desc">Multiple roles collaborate on one objective with parallel execution paths</div>
+      <div class="mode-desc">Multiple roles, one objective</div>
     </div>
     <div class="mode-row">
       <div class="mode-label">Orchestrate</div>
       <div class="mode-example">"Build the payment system"</div>
-      <div class="mode-desc">Orchestrator decomposes into objectives, assigns squads, tracks progress, coordinates delivery</div>
+      <div class="mode-desc">Full lifecycle, multiple objectives</div>
     </div>
     <div class="mode-row">
       <div class="mode-label">Meeting</div>
-      <div class="mode-example">"/meeting brainstorm [topic]"</div>
-      <div class="mode-desc">Dynamic role assembly with structured deliberation, decisions, and actionable outcomes</div>
+      <div class="mode-example">"/meeting brainstorm topic"</div>
+      <div class="mode-desc">Structured discussion, decisions, actions</div>
     </div>
     <div class="mode-row">
       <div class="mode-label">Incident</div>
       <div class="mode-example">"/incident auth service 5xx"</div>
-      <div class="mode-desc">Triage, diagnose, mitigate, resolve, and learn from production incidents</div>
+      <div class="mode-desc">Triage, diagnose, mitigate, postmortem</div>
     </div>
     <div class="mode-row">
       <div class="mode-label">Review</div>
       <div class="mode-example">"/review payment PR #42"</div>
-      <div class="mode-desc">Structured artifact review with findings classification and sign-off</div>
+      <div class="mode-desc">Structured review with sign-off</div>
     </div>
     <div class="mode-row">
       <div class="mode-label">Interview</div>
-      <div class="mode-example">"/interview user onboarding friction"</div>
-      <div class="mode-desc">Plan, conduct, and synthesize structured user or stakeholder interviews</div>
+      <div class="mode-example">"/interview onboarding friction"</div>
+      <div class="mode-desc">Plan, conduct, synthesize interviews</div>
     </div>
     <div class="mode-row">
       <div class="mode-label">Negotiation</div>
       <div class="mode-example">"/negotiate scope vs timeline"</div>
-      <div class="mode-desc">Facilitated trade-off resolution between conflicting parties</div>
+      <div class="mode-desc">Trade-off resolution</div>
     </div>
     <div class="mode-row">
-      <div class="mode-label">Retrospective</div>
+      <div class="mode-label">Retro</div>
       <div class="mode-example">"/retro sprint 12"</div>
-      <div class="mode-desc">Blameless reflection, root cause analysis, and improvement experiments</div>
+      <div class="mode-desc">Reflection, root cause, improvements</div>
     </div>
     <div class="mode-row">
       <div class="mode-label">Hackathon</div>
       <div class="mode-example">"/hackathon AI tools"</div>
-      <div class="mode-desc">Rapid prototyping sprint with pitch, team formation, demo, and judging</div>
+      <div class="mode-desc">Rapid prototyping, demo, judging</div>
     </div>
     <div class="mode-row">
       <div class="mode-label">Onboarding</div>
       <div class="mode-example">"/onboard new backend dev"</div>
-      <div class="mode-desc">Guided new hire ramp-up from orientation to independent contribution</div>
+      <div class="mode-desc">Structured ramp-up to independence</div>
     </div>
     <div class="mode-row">
       <div class="mode-label">Tactical</div>
       <div class="mode-example">"/tactical"</div>
-      <div class="mode-desc">Continuous always-on thread, dynamic role dispatch per request</div>
+      <div class="mode-desc">Continuous thread, dynamic roles</div>
     </div>
   </div>
 
-  <h2 id="agent-format">Agent-Centric Format</h2>
-  <p>Every file in CrewMarkdown is designed as a <strong>system prompt for an AI agent</strong> &mdash; YAML metadata for rapid parsing, structured markdown for direct reasoning, and code-block templates for drop-in artifact generation.</p>
-
-  <div class="table-wrap">
-    <table>
-      <thead>
-        <tr>
-          <th>Section</th>
-          <th>Format</th>
-          <th>Agent Benefit</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Needs/Produces, Skills, Rules</td>
-          <td>YAML frontmatter</td>
-          <td>Parse in 1ms, schema-enforced</td>
-        </tr>
-        <tr>
-          <td>System, Instructions, I/O, Rules</td>
-          <td>Structured markdown</td>
-          <td>No prose parsing &mdash; direct to reasoning</td>
-        </tr>
-        <tr>
-          <td>Templates</td>
-          <td>Code blocks</td>
-          <td>Drop-in artifact generation</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <p class="text-muted text-sm"><strong>Zero dependencies.</strong> Every file is a self-contained prompt. Works across engineering, business, creative, and operations domains.</p>
-
-  <h2 id="the-crew">The Crew <span class="tag tag-purple">42 Roles</span> <span class="tag tag-cyan">78 Sub-Specs</span></h2>
-  <p>42 invocable AI roles spanning engineering, product, design, data, ML, quality, security, operations, business, governance, collaboration, and special modes. Each role ships with a YAML-frontmatter contract, structured workflow, quality checklist, and artifact templates. 19 role families offer 78 sub-specializations for domain-specific prompt refinement &mdash; from React frontends to marketing campaigns to HR onboarding.</p>
-
   <hr class="section-divider">
 
-  <h2 id="quick-start">Quick Start</h2>
-
-  <h3>Zero-Config (for everyone)</h3>
-  <pre><code><span style="color:var(--text-muted);"># 1. Copy to your project</span>
-cp -r .crewmarkdown ./your-project/
-
-<span style="color:var(--text-muted);"># 2. Run the entry point</span>
-./go.ps1</code></pre>
-  <p>Type what you need in plain English. No docs, no setup. The agent handles the rest.</p>
-
-  <h3>Power User Setup</h3>
-  <pre><code><span style="color:var(--text-muted);"># 1. Copy to your project</span>
-cp -r .crewmarkdown ./your-project/
-
-<span style="color:var(--text-muted);"># 2. Generate codebase map</span>
-./.crewmarkdown/scripts/generate-codebase-map.ps1
-
-<span style="color:var(--text-muted);"># 3. Configure AI agents</span>
-./.crewmarkdown/config/setup.ps1        <span style="color:var(--text-muted);"># Windows</span>
-./.crewmarkdown/config/setup.sh --all   <span style="color:var(--text-muted);"># Linux/macOS</span>
-
-<span style="color:var(--text-muted);"># 4. Make a request</span>
-<span style="color:var(--accent-green);">#    "PM, write a PRD for login"</span>
-<span style="color:var(--accent-green);">#    "Squad (QA, Security), verify quality"</span>
-<span style="color:var(--accent-green);">#    "Build the full e-commerce platform"</span></code></pre>
-
-  <p>Your AI agent reads <code>.crewmarkdown/00-objectives.md</code>, routes your request to the correct objective using the YAML-defined routing table, loads the appropriate squad contracts and workflows, and executes with built-in quality gates.</p>
-
-  <h2 id="project-structure">Project Structure</h2>
+  <h2>Project Structure</h2>
   <pre><code>.crewmarkdown/
-├── 00-objectives.md       <span style="color:var(--text-muted);"># YAML frontmatter routing table</span>
-├── 00-team.md             <span style="color:var(--text-muted);"># YAML frontmatter crew roster</span>
-├── 00-roles.md            <span style="color:var(--text-muted);"># 35 role definitions</span>
-├── objectives/            <span style="color:var(--text-muted);"># 11 lifecycle objectives</span>
-├── roles/                 <span style="color:var(--text-muted);"># 43 contracts + workflows + 78 subspecs</span>
-├── procedures/            <span style="color:var(--text-muted);"># Step-by-step guides</span>
-├── incident/              <span style="color:var(--text-muted);"># Incident response</span>
-├── review/                <span style="color:var(--text-muted);"># Structured review</span>
-├── interview/             <span style="color:var(--text-muted);"># Structured interview</span>
-├── negotiation/           <span style="color:var(--text-muted);"># Facilitated negotiation</span>
-├── retrospective/         <span style="color:var(--text-muted);"># Retrospective</span>
-├── hackathon/             <span style="color:var(--text-muted);"># Hackathon</span>
-├── onboarding/            <span style="color:var(--text-muted);"># Onboarding</span>
-├── tactical/              <span style="color:var(--text-muted);"># Tactical thread</span>
-├── debate/                <span style="color:var(--text-muted);"># Decision framework</span>
-├── meeting/               <span style="color:var(--text-muted);"># Meeting mode workflow</span>
-├── custom/                <span style="color:var(--text-muted);"># Per-project overrides</span>
-├── config/                <span style="color:var(--text-muted);"># Agent config templates</span>
-├── light/                 <span style="color:var(--text-muted);"># 7-step compressed variant</span>
-├── animations/            <span style="color:var(--text-muted);"># Retro RPG party screen</span>
-├── scripts/               <span style="color:var(--text-muted);"># State dashboard + utils</span>
-├── log/                   <span style="color:var(--text-muted);"># Execution logs</span>
-└── state/workflow.json    <span style="color:var(--text-muted);"># Progress tracker</span></code></pre>
-
-  <h2 id="invocation-modes">Invocation Modes</h2>
-  <div class="table-wrap">
-    <table>
-      <thead>
-        <tr>
-          <th>Mode</th>
-          <th>When</th>
-          <th>Pattern</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><span class="tag tag-green">Auto</span></td>
-          <td>Non-tech users, vague input</td>
-          <td><code>Build me [something]</code></td>
-        </tr>
-        <tr>
-          <td><span class="tag tag-blue">Guided</span></td>
-          <td>Mixed expertise, exploring options</td>
-          <td><code>What should I [do]?</code></td>
-        </tr>
-        <tr>
-          <td><span class="tag tag-purple">Expert</span></td>
-          <td>Specific role/task commands</td>
-          <td><code>[Role], do [task]</code></td>
-        </tr>
-        <tr>
-          <td><span class="tag tag-cyan">Squad</span></td>
-          <td>Multiple roles, one objective</td>
-          <td><code>Squad ([roles]), achieve [objective]</code></td>
-        </tr>
-        <tr>
-          <td><span class="tag tag-pink">Orchestrate</span></td>
-          <td>Full lifecycle</td>
-          <td><code>Build [feature]</code></td>
-        </tr>
-        <tr>
-          <td><span class="tag tag-amber">Meeting</span></td>
-          <td>Brainstorming, decision-making, retro</td>
-          <td><code>/meeting [topic]</code></td>
-        </tr>
-        <tr>
-          <td><span class="tag tag-red">Incident</span></td>
-          <td>Production issue, outage, SEV</td>
-          <td><code>/incident [signal]</code></td>
-        </tr>
-        <tr>
-          <td><span class="tag tag-cyan">Review</span></td>
-          <td>Code, design, PRD, test plan, docs</td>
-          <td><code>/review [artifact]</code></td>
-        </tr>
-        <tr>
-          <td><span class="tag tag-purple">Interview</span></td>
-          <td>User research, stakeholder discovery</td>
-          <td><code>/interview [topic]</code></td>
-        </tr>
-        <tr>
-          <td><span class="tag tag-amber">Negotiation</span></td>
-          <td>Conflict resolution, trade-off bargaining</td>
-          <td><code>/negotiate [issue]</code></td>
-        </tr>
-        <tr>
-          <td><span class="tag tag-green">Retrospective</span></td>
-          <td>Sprint/project reflection, improvement</td>
-          <td><code>/retro [period]</code></td>
-        </tr>
-        <tr>
-          <td><span class="tag tag-pink">Hackathon</span></td>
-          <td>Rapid prototyping, innovation sprint</td>
-          <td><code>/hackathon [theme]</code></td>
-        </tr>
-        <tr>
-          <td><span class="tag tag-blue">Onboarding</span></td>
-          <td>New hire ramp-up, guided orientation</td>
-          <td><code>/onboard [role]</code></td>
-        </tr>
-        <tr>
-          <td><span class="tag tag-pink">Tactical</span></td>
-          <td>Continuous always-on thread, dynamic role dispatch</td>
-          <td><code>/tactical</code></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  <p class="text-muted text-sm">Skill-level inference is automatic &mdash; no flag or config needed. The agent adapts to your input.</p>
+├── 00-objectives.md       # Routes requests to objectives
+├── 00-team.md             # Crew roster
+├── objectives/            # Lifecycle objectives with squads
+├── roles/                 # Role contracts + workflows
+├── procedures/            # Step-by-step guides
+├── incident/              # Incident response
+├── review/                # Structured review
+├── meeting/               # Meeting mode
+├── scripts/               # State dashboard + utilities
+├── state/workflow.json    # Progress tracker
+└── logs/                  # Execution history</code></pre>
 
   <hr class="section-divider">
 
-  <p class="text-muted text-sm"><em>MIT Licensed &mdash; Built for AI-native work across any domain</em></p>
+  <p class="text-muted text-sm"><em>MIT Licensed — Built for AI-native work across any domain</em></p>
 
 </main>
 

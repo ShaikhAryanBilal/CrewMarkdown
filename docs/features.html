@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CrewMarkdown Docs — Special Features</title>
+<title>CrewMarkdown Docs — Features</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
@@ -36,752 +36,98 @@
 
 <main class="content">
 
-  <h1>Special Features</h1>
-  <p class="page-subtitle">Cross-cutting capabilities that enhance any objective across engineering, business, creative, and operations — structured decision-making through debate, dynamic real-time meetings, production incident response, artifact review, stakeholder interviews, facilitated negotiation, team retrospectives, innovation hackathons, new hire onboarding, and per-request role refinement via sub-specialization.</p>
+  <h1>Features</h1>
+  <p class="page-subtitle">Cross-cutting capabilities that enhance any objective — zero-config, skill-level inference, sub-specialization, and 10 special modes.</p>
 
-  <div class="role-grid">
-    <a href="#zero-config" class="role-card" style="text-decoration:none;color:inherit;cursor:pointer;">
-      <div class="role-title">Zero-Config <span class="tag tag-green">New</span></div>
-      <div class="role-superpower">Single-prompt entry point for any skill level</div>
-      <div class="role-produces"><strong>Use when:</strong> First-time users, entrepreneurs, quick starts</div>
-    </a>
-    <a href="#skill-level" class="role-card" style="text-decoration:none;color:inherit;cursor:pointer;">
-      <div class="role-title">Skill-Level Inference <span class="tag tag-blue">New</span></div>
-      <div class="role-superpower">Auto/Guided/Expert modes adapt to user input depth</div>
-      <div class="role-produces"><strong>5 signals</strong> &middot; specificity score &middot; dynamic switching</div>
-    </a>
-    <a href="#debate" class="role-card" style="text-decoration:none;color:inherit;cursor:pointer;">
-      <div class="role-title">Debate Framework <span class="tag tag-amber">Cross-cutting</span></div>
-      <div class="role-superpower">Structured decision-making for resolving disagreements</div>
-      <div class="role-produces"><strong>Use when:</strong> Multiple valid approaches, need documented trade-offs</div>
-    </a>
-    <a href="#meeting" class="role-card" style="text-decoration:none;color:inherit;cursor:pointer;">
-      <div class="role-title">Meeting Mode <span class="tag tag-cyan">Cross-cutting</span></div>
-      <div class="role-superpower">Dynamic real-time meetings with role assembly</div>
-      <div class="role-produces"><strong>Use when:</strong> Brainstorming, retro, decision-making, sync</div>
-    </a>
-    <a href="#incident-mode" class="role-card" style="text-decoration:none;color:inherit;cursor:pointer;">
-      <div class="role-title">Incident <span class="tag tag-red">New</span></div>
-      <div class="role-superpower">Production SEV triage to postmortem</div>
-      <div class="role-produces"><strong>/incident [signal]</strong></div>
-    </a>
-    <a href="#review-mode" class="role-card" style="text-decoration:none;color:inherit;cursor:pointer;">
-      <div class="role-title">Review <span class="tag tag-cyan">New</span></div>
-      <div class="role-superpower">Artifact review with findings &amp; sign-off</div>
-      <div class="role-produces"><strong>/review [artifact]</strong></div>
-    </a>
-    <a href="#interview-mode" class="role-card" style="text-decoration:none;color:inherit;cursor:pointer;">
-      <div class="role-title">Interview <span class="tag tag-purple">New</span></div>
-      <div class="role-superpower">Research &amp; stakeholder discovery</div>
-      <div class="role-produces"><strong>/interview [topic]</strong></div>
-    </a>
-    <a href="#negotiation-mode" class="role-card" style="text-decoration:none;color:inherit;cursor:pointer;">
-      <div class="role-title">Negotiation <span class="tag tag-amber">New</span></div>
-      <div class="role-superpower">Trade-off &amp; conflict resolution</div>
-      <div class="role-produces"><strong>/negotiate [issue]</strong></div>
-    </a>
-    <a href="#retro-mode" class="role-card" style="text-decoration:none;color:inherit;cursor:pointer;">
-      <div class="role-title">Retrospective <span class="tag tag-green">New</span></div>
-      <div class="role-superpower">Team reflection &amp; improvement</div>
-      <div class="role-produces"><strong>/retro [period]</strong></div>
-    </a>
-    <a href="#hackathon-mode" class="role-card" style="text-decoration:none;color:inherit;cursor:pointer;">
-      <div class="role-title">Hackathon <span class="tag tag-pink">New</span></div>
-      <div class="role-superpower">Innovation sprint &amp; rapid prototyping</div>
-      <div class="role-produces"><strong>/hackathon [theme]</strong></div>
-    </a>
-    <a href="#onboarding-mode" class="role-card" style="text-decoration:none;color:inherit;cursor:pointer;">
-      <div class="role-title">Onboarding <span class="tag tag-blue">New</span></div>
-      <div class="role-superpower">New hire ramp-up to independence</div>
-      <div class="role-produces"><strong>/onboard [role]</strong></div>
-    </a>
-    <a href="#tactical-mode" class="role-card" style="text-decoration:none;color:inherit;cursor:pointer;">
-      <div class="role-title">Tactical <span class="tag tag-pink">New</span></div>
-      <div class="role-superpower">Continuous always-on thread, dynamic dispatch</div>
-      <div class="role-produces"><strong>/tactical</strong></div>
-    </a>
-    <a href="#subspec" class="role-card" style="text-decoration:none;color:inherit;cursor:pointer;">
-      <div class="role-title">Sub-Specialization</div>
-      <div class="role-superpower">Per-request role refinement by framework + layer</div>
-      <div class="role-produces"><strong>58 sub-specs</strong> across 17 role families</div>
-    </a>
-  </div>
-
-  <!-- Zero-Config -->
-  <hr class="section-divider">
-
-  <h2 id="zero-config">Zero-Config Entry <span class="tag tag-green">New</span></h2>
-  <p class="page-subtitle">A single entry point for any user &mdash; describe what you need in plain English, no CrewMarkdown knowledge required.</p>
-
-  <div class="highlight-box">
-    <strong>Who it's for:</strong> Entrepreneurs, founders, product managers, or anyone who wants results without learning about objectives, squads, or role contracts.
-  </div>
-
-  <h3>Usage</h3>
+  <h2 id="zero-config">Zero-Config Entry</h2>
+  <p>Describe what you need in plain English. No CrewMarkdown knowledge required. The agent routes your request, assembles the squad, and executes — all invisible.</p>
   <pre><code>./go.ps1
 <span style="color:var(--accent-green);">&gt; Build me a landing page for my SaaS product</span></code></pre>
-
-  <p>Behind the scenes, the full CrewMarkdown pipeline runs: semantic routing, squad assembly, contract loading, workflow execution, quality gates &mdash; all invisible to the user.</p>
-
-  <h3>Key Design</h3>
-  <ul>
-    <li><strong>Jargon-free:</strong> User never sees "objective", "squad", or "contract"</li>
-    <li><strong>Full power under the hood:</strong> Same pipeline powers both zero-config and expert modes</li>
-    <li><strong>Progressive disclosure:</strong> Users can start with zero-config and gradually learn role commands</li>
-    <li><strong>Auto-creates config:</strong> First run generates <code>.crewmarkdown/state/zero-config.json</code></li>
-  </ul>
-
-  <h3>Key Files</h3>
-  <div class="table-wrap">
-    <table>
-      <thead>
-        <tr><th>File</th><th>Purpose</th></tr>
-      </thead>
-      <tbody>
-        <tr><td><code>go.ps1</code></td><td>Zero-config entry point script (project root)</td></tr>
-        <tr><td><code>.crewmarkdown/state/zero-config.json</code></td><td>Tracks user path (auto-generated on first run)</td></tr>
-      </tbody>
-    </table>
-  </div>
+  <p><strong>Progressive disclosure:</strong> Start with zero-config, gradually learn role commands as you go.</p>
 
   <hr class="section-divider">
 
-  <!-- Skill-Level Inference -->
-  <h2 id="skill-level">Skill-Level Inference <span class="tag tag-blue">New</span></h2>
-  <p class="page-subtitle">CrewMarkdown reads your input and adjusts agent autonomy automatically &mdash; same system, different experience per user.</p>
-
-  <div class="highlight-box">
-    <strong>No configuration required.</strong> The agent infers skill level from 5 input signals and adapts mid-session based on your follow-ups.
-  </div>
-
-  <h3>3 Modes</h3>
+  <h2 id="skill-level">Skill-Level Inference</h2>
+  <p>CrewMarkdown reads your input and adjusts autonomy automatically. Same system, different experience per user.</p>
   <div class="table-wrap">
     <table>
       <thead>
-        <tr><th>Mode</th><th>Agent Autonomy</th><th>User Involvement</th><th>Typical Input</th></tr>
+        <tr><th>Mode</th><th>Agent Autonomy</th><th>User Involvement</th><th>Example Input</th></tr>
       </thead>
       <tbody>
-        <tr>
-          <td><span class="tag tag-green">Auto</span></td>
-          <td>Full &mdash; decides objectives, spawns roles, produces all artifacts</td>
-          <td>Passive &mdash; approves/rejects outcomes</td>
-          <td>Vague, high-level, no tech jargon</td>
-        </tr>
-        <tr>
-          <td><span class="tag tag-blue">Guided</span></td>
-          <td>Medium &mdash; proposes plan, explains options, seeks input</td>
-          <td>Active &mdash; chooses between options, provides feedback</td>
-          <td>Goals with plain language or questions</td>
-        </tr>
-        <tr>
-          <td><span class="tag tag-purple">Expert</span></td>
-          <td>Low &mdash; assumes domain knowledge, executes precisely</td>
-          <td>Driving &mdash; gives detailed instructions</td>
-          <td>Role names, tech jargon, explicit commands</td>
-        </tr>
+        <tr><td>Auto</td><td>Full — decides objectives, spawns roles</td><td>Passive — approves outcomes</td><td>"Build my app"</td></tr>
+        <tr><td>Guided</td><td>Medium — proposes plan, seeks input</td><td>Active — chooses between options</td><td>"What stack should I use?"</td></tr>
+        <tr><td>Expert</td><td>Low — assumes domain knowledge</td><td>Driving — gives detailed instructions</td><td>"Architect, design the DB schema"</td></tr>
       </tbody>
     </table>
   </div>
-
-  <h3>Inference Signals</h3>
-  <p>The agent computes a specificity score (0-100) from 5 weighted signals:</p>
-  <div class="table-wrap">
-    <table>
-      <thead>
-        <tr><th>Signal</th><th>Weight</th><th>Auto Signal</th><th>Expert Signal</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>Role mention</td><td>30%</td><td>None ("build my app")</td><td>Explicit ("Architect, design")</td></tr>
-        <tr><td>Jargon density</td><td>25%</td><td>0 tech terms</td><td>3+ specific terms</td></tr>
-        <tr><td>Verb specificity</td><td>20%</td><td>"I want", "make"</td><td>"implement", "configure"</td></tr>
-        <tr><td>Scope granularity</td><td>15%</td><td>Whole project</td><td>Specific task</td></tr>
-        <tr><td>Question format</td><td>10%</td><td>Open-ended</td><td>Imperative</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <h3>Dynamic Switching</h3>
-  <p>Mode is not static &mdash; it adapts mid-session. If an auto-mode user asks a specific question, the agent flexes toward expert for that exchange. If an expert user says "explain like I'm 5", it flexes toward guided. Recent input is weighted 2x for responsiveness.</p>
-
-  <h3>Key Files</h3>
-  <div class="table-wrap">
-    <table>
-      <thead>
-        <tr><th>File</th><th>Purpose</th></tr>
-      </thead>
-      <tbody>
-        <tr><td><code>.crewmarkdown/roles/architect/contract.md</code></td><td>Architect spec: signal definitions, thresholds, switching logic</td></tr>
-      </tbody>
-    </table>
-  </div>
+  <p>The agent computes a specificity score from 5 signals: role mention (30%), jargon density (25%), verb specificity (20%), scope granularity (15%), and question format (10%). Mode adapts mid-session based on your follow-ups.</p>
 
   <hr class="section-divider">
 
-  <!-- Sub-Spec -->
   <h2 id="subspec">Sub-Specialization</h2>
-  <p class="page-subtitle">58 sub-specializations across 17 role families enable per-request role refinement via hybrid keyword resolution — the right contract for the right context, every time.</p>
+  <p>78 sub-specializations across 19 role families. The routing engine scans your request for framework/layer keywords and loads the matching sub-spec contract — falling back to the generic parent if no match found.</p>
+  <p><strong>Example:</strong> "Build a React dashboard" loads the Frontend/UI-React sub-spec. "Deploy to AWS" loads the DevOps/AWS sub-spec.</p>
 
-  <div class="highlight-box">
-    <strong>Rationale:</strong> A "Frontend Developer" working with React requires a fundamentally different system prompt than one working with Svelte. Sub-specs load the appropriate contract per request without bloating or duplicating the parent role definition.
-  </div>
-
-  <h3>Resolution Algorithm</h3>
-  <p>The routing engine implements a hybrid resolution strategy: scan request for <code>keywords:</code> in each sub-spec's YAML frontmatter, apply layer &times; framework matching, and fall back to the generic parent contract when no sub-spec match is found &mdash; ensuring zero flow interruption.</p>
-  <ol>
-    <li><strong>Keyword scanning</strong> &mdash; Agent scans request text against <code>keywords:</code> fields in each sub-spec's YAML frontmatter</li>
-    <li><strong>Layer &times; Framework matching</strong> &mdash; Match on both architectural layer and specific framework/technology for precise resolution</li>
-    <li><strong>Sub-spec loading</strong> &mdash; Exact match loads sub-spec <code>contract.md</code> + <code>workflow.md</code>; parent role cached as fallback</li>
-    <li><strong>Graceful fallback</strong> &mdash; No match resolves to generic parent contract (never breaks execution flow)</li>
-  </ol>
-  <p class="text-muted text-sm">Full algorithm documented in <code>.crewmarkdown/procedures/role-subspec.md</code></p>
-
-  <h3>Sub-Specializations by Role Family</h3>
   <div class="table-wrap">
     <table>
       <thead>
-        <tr><th>Role Family</th><th>Sub-Specializations</th></tr>
+        <tr><th>Role Family</th><th>Sub-Specs</th></tr>
       </thead>
       <tbody>
-        <tr><td>Legal</td><td>contracts, privacy, ip, employment, corporate</td></tr>
-        <tr><td>Marketing</td><td>brand, performance, content, social, product-marketing</td></tr>
-        <tr><td>HR / People</td><td>recruiting, learning-dev, comp-benefits, employee-relations, hr-ops</td></tr>
-        <tr><td>Finance / Ops</td><td>fpa, accounting, audit, procurement</td></tr>
-        <tr><td>ML Engineer</td><td>nlp, cv, recsys, mlops</td></tr>
-        <tr><td>Data Engineer</td><td>batch-etl, streaming, warehouse, data-lake</td></tr>
-        <tr><td>Product Manager</td><td>b2b, b2c, growth, platform</td></tr>
-        <tr><td>SEO Specialist</td><td>technical, on-page, off-page, local</td></tr>
-        <tr><td>Sales</td><td>enterprise, smb, channel</td></tr>
-        <tr><td>Mobile Dev</td><td>ios-swift, android-kotlin, cross-platform-rn</td></tr>
-        <tr><td>Customer Success</td><td>enterprise, smb, technical</td></tr>
-        <tr><td>Content Strategist</td><td>seo-content, brand-content, technical-content</td></tr>
-        <tr><td>BizDev</td><td>strategic-partnerships, channel, ma</td></tr>
-        <tr><td>Solutions Architect</td><td>aws, azure, gcp</td></tr>
-        <tr><td>DevOps</td><td>aws, azure, gcp</td></tr>
-        <tr><td>Frontend</td><td>ui-react</td></tr>
-        <tr><td>Backend</td><td>api-express</td></tr>
+        <tr><td>Frontend</td><td>React, HTML-CSS, Vue, Angular, Svelte, Vanilla</td></tr>
+        <tr><td>Backend</td><td>Express, PHP, Node, Python, Go, Java, Rust, .NET</td></tr>
+        <tr><td>Mobile Dev</td><td>iOS-Swift, Android-Kotlin, Cross-Platform-RN</td></tr>
+        <tr><td>DevOps</td><td>AWS, Azure, GCP</td></tr>
+        <tr><td>Data Engineer</td><td>Batch-ETL, Streaming, Warehouse, Data-Lake</td></tr>
+        <tr><td>ML Engineer</td><td>NLP, CV, RecSys, MLOps</td></tr>
+        <tr><td>Marketing</td><td>Brand, Performance, Content, Social, Product-Marketing</td></tr>
+        <tr><td>Sales</td><td>Enterprise, SMB, Channel</td></tr>
+        <tr><td>Product Manager</td><td>B2B, B2C, Platform, Growth</td></tr>
+        <tr><td>HR</td><td>Recruiting, Learning-Dev, Comp-Benefits, Employee-Relations, HR-Ops</td></tr>
+        <tr><td>Finance</td><td>FPA, Accounting, Audit, Procurement</td></tr>
+        <tr><td>Legal</td><td>Contracts, Privacy, IP, Employment, Corporate</td></tr>
+        <tr><td>SEO</td><td>Technical, On-Page, Off-Page, Local</td></tr>
+        <tr><td>Customer Success</td><td>Enterprise, SMB, Technical</td></tr>
+        <tr><td>Content Strategist</td><td>SEO-Content, Brand-Content, Technical-Content</td></tr>
+        <tr><td>BizDev</td><td>Strategic-Partnerships, Channel, M&A</td></tr>
+        <tr><td>Solutions Architect</td><td>AWS, Azure, GCP</td></tr>
+        <tr><td>Scrum Master</td><td>Scrum, Kanban, SAFe, Agile-Coach</td></tr>
+        <tr><td>DBA</td><td>Relational, NoSQL, Cloud, Data-Warehouse</td></tr>
       </tbody>
     </table>
   </div>
-
-  <h3>Request Routing Examples</h3>
-  <pre><code><span style="color:var(--text-muted);"># Resolves to Frontend/UI-React sub-spec</span>
-"Build a React dashboard"
-
-<span style="color:var(--text-muted);"># Resolves to DevOps/AWS sub-spec</span>
-"Deploy to AWS"
-
-<span style="color:var(--text-muted);"># Resolves to ML Engineer/NLP sub-spec</span>
-"Train an NLP model"
-
-<span style="color:var(--text-muted);"># No sub-spec match — loads generic parent role</span>
-"Build a feature"</code></pre>
-
-  <h3>Key Files</h3>
-  <div class="table-wrap">
-    <table>
-      <thead>
-        <tr><th>File</th><th>Purpose</th></tr>
-      </thead>
-      <tbody>
-        <tr><td><code>.crewmarkdown/procedures/role-subspec.md</code></td><td>Sub-spec schema, inheritance model, resolution algorithm</td></tr>
-        <tr><td><code>.crewmarkdown/procedures/role-subspec-security.md</code></td><td>Threat model, session isolation, access control matrix</td></tr>
-        <tr><td><code>.crewmarkdown/roles/&lt;family&gt;/&lt;subspec&gt;/contract.md</code></td><td>Sub-spec contract with extends and keywords frontmatter</td></tr>
-        <tr><td><code>.crewmarkdown/roles/&lt;family&gt;/&lt;subspec&gt;/workflow.md</code></td><td>Sub-spec workflow with specialization-specific focus areas</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <h2 id="routing-engine">Routing Engine</h2>
-  <p class="page-subtitle">How CrewMarkdown routes any request — engineering, business, creative, or operations — through skill-level inference, semantic matching, and sub-spec resolution.</p>
-
-  <div class="mermaid-flow-label">Request routing flow</div>
-  <div class="mermaid-wrapper">
-  <pre class="mermaid" style="background:transparent;border:none;padding:0;margin:0;text-align:center;">
-flowchart TD
-    Req["`**User Request**`"]
-    Route{"`**Skill-Level** Inference`"}
-    Auto["Auto — Full Autonomy"]
-    Guided["Guided — Propose &amp; Decide"]
-    Expert["Expert — Precise Execution"]
-    Semantic["`**Semantic Matcher**`"]
-    Cache{Routing Cache}
-    Direct["Direct Route"]
-    Scan["Scan Routing Table"]
-    Match["Objective Matched"]
-    SubSpec{Sub-Spec Keywords}
-    LoadSub["Load Sub-Spec Contract"]
-    LoadParent["Load Parent Contract"]
-    Exec["`**Execute Workflow**`"]
-
-    Req --> Route
-    Route -->|Vague, no jargon| Auto
-    Route -->|Questions, mixed| Guided
-    Route -->|Role names, specific| Expert
-    Auto --> Semantic
-    Guided --> Semantic
-    Expert --> Semantic
-    Semantic --> Cache
-    Cache -->|Exact past match| Direct
-    Cache -->|No match| Scan
-    Direct --> Exec
-    Scan --> Match
-    Match --> SubSpec
-    SubSpec -->|Keyword hit| LoadSub
-    SubSpec -->|No match| LoadParent
-    LoadSub --> Exec
-    LoadParent --> Exec
-
-    style Req fill:#7c5cfc,stroke:#7c5cfc,color:#fff,stroke-width:2px
-    style Route fill:#18181d,stroke:#fbbf24,color:#fbbf24,stroke-width:2px
-    style Auto fill:#18181d,stroke:#4ade80,color:#4ade80
-    style Guided fill:#18181d,stroke:#22d3ee,color:#22d3ee
-    style Expert fill:#18181d,stroke:#f472b6,color:#f472b6
-    style Semantic fill:#252530,stroke:#7c5cfc,color:#f0f0f5
-    style Cache fill:#18181d,stroke:#fbbf24,color:#fbbf24
-    style Direct fill:#18181d,stroke:#4ade80,color:#4ade80
-    style Scan fill:#18181d,stroke:#22d3ee,color:#22d3ee
-    style Match fill:#252530,stroke:#f472b6,color:#f0f0f5
-    style SubSpec fill:#18181d,stroke:#fbbf24,color:#fbbf24
-    style LoadSub fill:#18181d,stroke:#4ade80,color:#4ade80
-    style LoadParent fill:#18181d,stroke:#6b6b80,color:#6b6b80
-    style Exec fill:#4ade80,stroke:#4ade80,color:#000,stroke-width:2px
-</pre>
-  </div>
+  <p class="text-muted text-sm">Full algorithm: <code>.crewmarkdown/procedures/role-subspec.md</code></p>
 
   <hr class="section-divider">
 
-  <!-- Debate -->
-  <h2 id="debate">Debate Framework</h2>
-  <p class="page-subtitle">Structured decision-making framework for resolving disagreements when multiple viable options exist. Ensures all perspectives are evaluated on merit with documented rationale.</p>
-
-  <div class="highlight-box">
-    <strong>Cross-cutting:</strong> Can be activated at decision points within <em>any</em> lifecycle objective.
-  </div>
-
-  <h3>Purpose</h3>
-  <p>When multiple valid approaches exist for a decision, the debate framework ensures all perspectives are systematically evaluated, trade-offs are explicitly documented, and the optimal option is selected based on agreed scoring criteria rather than bias or recency.</p>
-
-  <h3>Process Flow</h3>
-
-  <div class="process-flow">
-    <span class="process-step active">1. Debate Trigger</span>
-    <span class="process-arrow">&rarr;</span>
-    <span class="process-step">2. Panel Assembly</span>
-    <span class="process-arrow">&rarr;</span>
-    <span class="process-step">3. Opening Statements</span>
-    <span class="process-arrow">&rarr;</span>
-    <span class="process-step">4. Cross-Examination</span>
-    <span class="process-arrow">&rarr;</span>
-    <span class="process-step">5. Scoring</span>
-    <span class="process-arrow">&rarr;</span>
-    <span class="process-step">6. Resolution</span>
-  </div>
-
-  <ol>
-    <li><strong>Debate Trigger</strong> &mdash; A decision point is identified with multiple viable options. The objective lead calls for a structured debate.</li>
-    <li><strong>Panel Assembly</strong> &mdash; Facilitator assembles roles with a stake in the decision. Each panelist represents their domain perspective.</li>
-    <li><strong>Opening Statements</strong> &mdash; Each panelist presents their position with supporting evidence and reasoning.</li>
-    <li><strong>Cross-Examination</strong> &mdash; Structured rounds of rebuttal, questioning, and evidence presentation.</li>
-    <li><strong>Scoring</strong> &mdash; Panelists evaluate options against agreed criteria using a weighted scoring system. Highest aggregate score wins.</li>
-    <li><strong>Resolution</strong> &mdash; Decision is formally recorded with rationale, rejected alternatives, and expected consequences.</li>
-  </ol>
-
-  <h3>Common Debate Triggers by Objective</h3>
+  <h2 id="special-modes">Special Modes</h2>
+  <p>Cross-cutting modes activated by prefix commands. Each mode has a dedicated role and structured workflow.</p>
   <div class="table-wrap">
     <table>
       <thead>
-        <tr>
-          <th>Objective</th>
-          <th>Typical Debate Topic</th>
-          <th>Panel Composition</th>
-        </tr>
+        <tr><th>Mode</th><th>Command</th><th>Purpose</th><th>Key Role</th></tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Clarify Vision</td>
-          <td>Scope trade-offs, priority conflicts</td>
-          <td>PM, BA, Architect</td>
-        </tr>
-        <tr>
-          <td>Design Solution</td>
-          <td>Tech stack selection, architecture fork</td>
-          <td>Architect, Backend, Frontend, Security</td>
-        </tr>
-        <tr>
-          <td>Plan Work</td>
-          <td>Sprint scope, capacity allocation</td>
-          <td>EM, PM, Tech Lead</td>
-        </tr>
-        <tr>
-          <td>Build Feature</td>
-          <td>Implementation approach, library selection</td>
-          <td>Tech Lead, Dev, QA</td>
-        </tr>
-        <tr>
-          <td>Verify Quality</td>
-          <td>Test strategy, automation approach</td>
-          <td>QA, Dev, DevOps</td>
-        </tr>
-        <tr>
-          <td>Ship Release</td>
-          <td>Rollout strategy, rollback approach</td>
-          <td>DevOps, PM, Tech Lead</td>
-        </tr>
-        <tr>
-          <td>Operate &amp; Learn</td>
-          <td>Refactor vs rewrite, tooling decisions</td>
-          <td>Tech Lead, Architect, DevOps</td>
-        </tr>
-        <tr>
-          <td>Conduct Meeting</td>
-          <td>Decision points, brainstorm topics, retrospectives</td>
-          <td>Meeting Facilitator + dynamic roles</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <h3>Key Files</h3>
-  <div class="table-wrap">
-    <table>
-      <thead>
-        <tr>
-          <th>File</th>
-          <th>Purpose</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><code>.crewmarkdown/debate/01-debate-trigger.md</code></td>
-          <td>When and how to trigger a structured debate</td>
-        </tr>
-        <tr>
-          <td><code>.crewmarkdown/debate/02-debate-panel.md</code></td>
-          <td>Panel composition rules and role selection</td>
-        </tr>
-        <tr>
-          <td><code>.crewmarkdown/debate/03-debate-rounds.md</code></td>
-          <td>Debate round structure, timing, and moderation</td>
-        </tr>
-        <tr>
-          <td><code>.crewmarkdown/debate/04-debate-resolution.md</code></td>
-          <td>Scoring criteria, weighted evaluation, and resolution process</td>
-        </tr>
-        <tr>
-          <td><code>.crewmarkdown/debate/05-debate-log.md</code></td>
-          <td>Logging format and archival for debate records</td>
-        </tr>
+        <tr><td>Meeting</td><td><code>/meeting [topic]</code></td><td>Brainstorm, decisions, action items</td><td>Meeting Facilitator</td></tr>
+        <tr><td>Incident</td><td><code>/incident [signal]</code></td><td>Production SEV triage to postmortem</td><td>Incident Commander</td></tr>
+        <tr><td>Review</td><td><code>/review [artifact]</code></td><td>Code, design, PRD, docs review with sign-off</td><td>Review Facilitator</td></tr>
+        <tr><td>Interview</td><td><code>/interview [topic]</code></td><td>User research, stakeholder discovery</td><td>Interviewer</td></tr>
+        <tr><td>Negotiation</td><td><code>/negotiate [issue]</code></td><td>Trade-off and conflict resolution</td><td>Mediator</td></tr>
+        <tr><td>Retrospective</td><td><code>/retro [period]</code></td><td>Team reflection and improvement</td><td>Retro Facilitator</td></tr>
+        <tr><td>Hackathon</td><td><code>/hackathon [theme]</code></td><td>Innovation sprints, rapid prototyping</td><td>Hackathon Champion</td></tr>
+        <tr><td>Onboarding</td><td><code>/onboard [role]</code></td><td>New hire ramp-up to independence</td><td>Onboarding Buddy</td></tr>
+        <tr><td>Tactical</td><td><code>/tactical</code></td><td>Continuous always-on thread</td><td>Tactical Commander</td></tr>
       </tbody>
     </table>
   </div>
 
   <hr class="section-divider">
 
-  <!-- Meeting -->
-  <h2 id="meeting">Meeting Mode</h2>
-  <p class="page-subtitle">Dynamic real-time meetings with intelligent role assembly, structured brainstorming, formal decision-making, and actionable outcome tracking.</p>
-
-  <div class="highlight-box">
-    <strong>Cross-cutting:</strong> Activated via <code>/meeting [topic]</code> at any point in the lifecycle for ad-hoc or scheduled collaboration.
-  </div>
-
-  <h3>Execution Schedule</h3>
-  <pre><code>Facilitator: Convene &rarr; Agenda &rarr; Brainstorm &rarr; Decisions &rarr; Action Items &rarr; Minutes</code></pre>
-
-  <h3>Dynamic Role Assembly</h3>
-  <p>Topic keywords in the meeting request determine which roles are automatically assembled. The facilitator dynamically adjusts the roster based on the conversation's evolution:</p>
-  <div class="table-wrap">
-    <table>
-      <thead>
-        <tr>
-          <th>Topic Keywords</th>
-          <th>Assembled Roles</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>feature, product, roadmap</td>
-          <td>PM, BA, Architect</td>
-        </tr>
-        <tr>
-          <td>architecture, design, tech-stack</td>
-          <td>Architect, Tech Lead, Security, DevOps</td>
-        </tr>
-        <tr>
-          <td>sprint, planning, capacity</td>
-          <td>EM, PM, Tech Lead</td>
-        </tr>
-        <tr>
-          <td>bug, defect, qa, quality</td>
-          <td>QA, Security, relevant Dev</td>
-        </tr>
-        <tr>
-          <td>deploy, release, ci/cd</td>
-          <td>DevOps, PM, Tech Lead</td>
-        </tr>
-        <tr>
-          <td>security, threat</td>
-          <td>Security, Architect, DevOps</td>
-        </tr>
-        <tr>
-          <td>data, pipeline, etl, database</td>
-          <td>Data Engineer, Backend, Architect</td>
-        </tr>
-        <tr>
-          <td>ui, ux, design, frontend</td>
-          <td>UX Designer, Frontend</td>
-        </tr>
-        <tr>
-          <td>general, brainstorm, ideation</td>
-          <td>PM, Architect, Tech Lead</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <h3>Deliverable Artifacts</h3>
-  <ul>
-    <li><strong>Meeting Facilitator:</strong> Agenda, discussion summary, decision log, action item list, meeting minutes</li>
-    <li><strong>Dynamic roles:</strong> Ideas, domain perspectives, proposals, risk assessments</li>
-  </ul>
-
-  <hr class="section-divider">
-
-  <!-- New Special Mode Cards -->
-  <h2>New Special Modes <span class="tag tag-green">8 New</span></h2>
-  <p class="page-subtitle">In addition to Debate and Meeting, CrewMarkdown now includes 8 new cross-cutting modes for production response, quality assurance, research, conflict resolution, team growth, innovation, and continuous operations.</p>
-
-  <div class="role-grid">
-    <a href="#incident-mode" class="role-card" style="text-decoration:none;color:inherit;cursor:pointer;">
-      <div class="role-title">Incident Response</div>
-      <div class="role-superpower">Production SEV management from triage to postmortem</div>
-      <div class="role-produces"><strong>/incident [signal]</strong></div>
-    </a>
-    <a href="#review-mode" class="role-card" style="text-decoration:none;color:inherit;cursor:pointer;">
-      <div class="role-title">Structured Review</div>
-      <div class="role-superpower">Code, design, PRD, and test plan review with sign-off</div>
-      <div class="role-produces"><strong>/review [artifact]</strong></div>
-    </a>
-    <a href="#interview-mode" class="role-card" style="text-decoration:none;color:inherit;cursor:pointer;">
-      <div class="role-title">Structured Interview</div>
-      <div class="role-superpower">User research and stakeholder discovery with synthesis</div>
-      <div class="role-produces"><strong>/interview [topic]</strong></div>
-    </a>
-    <a href="#negotiation-mode" class="role-card" style="text-decoration:none;color:inherit;cursor:pointer;">
-      <div class="role-title">Facilitated Negotiation</div>
-      <div class="role-superpower">Trade-off resolution between conflicting parties</div>
-      <div class="role-produces"><strong>/negotiate [issue]</strong></div>
-    </a>
-    <a href="#retro-mode" class="role-card" style="text-decoration:none;color:inherit;cursor:pointer;">
-      <div class="role-title">Retrospective</div>
-      <div class="role-superpower">Blameless reflection with root cause analysis and experiments</div>
-      <div class="role-produces"><strong>/retro [period]</strong></div>
-    </a>
-    <a href="#hackathon-mode" class="role-card" style="text-decoration:none;color:inherit;cursor:pointer;">
-      <div class="role-title">Hackathon</div>
-      <div class="role-superpower">Innovation sprints with pitch, build, demo, and judging</div>
-      <div class="role-produces"><strong>/hackathon [theme]</strong></div>
-    </a>
-    <a href="#onboarding-mode" class="role-card" style="text-decoration:none;color:inherit;cursor:pointer;">
-      <div class="role-title">Onboarding</div>
-      <div class="role-superpower">Guided new hire ramp-up to independent contribution</div>
-      <div class="role-produces"><strong>/onboard [role]</strong></div>
-    </a>
-    <a href="#tactical-mode" class="role-card" style="text-decoration:none;color:inherit;cursor:pointer;">
-      <div class="role-title">Tactical</div>
-      <div class="role-superpower">Continuous always-on thread, dynamic role dispatch</div>
-      <div class="role-produces"><strong>/tactical</strong></div>
-    </a>
-  </div>
-
-  <!-- Incident -->
-  <hr class="section-divider">
-  <h2 id="incident-mode">Incident Response Mode</h2>
-  <p class="page-subtitle">Production incident management from first signal through resolution and blameless postmortem. Activated via <code>/incident [signal]</code>.</p>
-  <div class="highlight-box"><strong>Cross-cutting:</strong> Can be activated at any point when a production issue is detected.</div>
-  <h3>Process Flow</h3>
-  <div class="process-flow">
-    <span class="process-step active">1. Detect &amp; Triage</span>
-    <span class="process-arrow">&rarr;</span>
-    <span class="process-step">2. Diagnose</span>
-    <span class="process-arrow">&rarr;</span>
-    <span class="process-step">3. Mitigate</span>
-    <span class="process-arrow">&rarr;</span>
-    <span class="process-step">4. Resolve</span>
-    <span class="process-arrow">&rarr;</span>
-    <span class="process-step">5. Postmortem</span>
-  </div>
-  <h3>Key Files</h3>
-  <div class="table-wrap"><table><thead><tr><th>File</th><th>Purpose</th></tr></thead><tbody>
-    <tr><td><code>.crewmarkdown/incident/01-detect-triage.md</code></td><td>Detection, severity classification (SEV1-4), initial assessment</td></tr>
-    <tr><td><code>.crewmarkdown/incident/02-diagnose.md</code></td><td>Root cause analysis, hypothesis testing, blast radius assessment</td></tr>
-    <tr><td><code>.crewmarkdown/incident/03-mitigate.md</code></td><td>Mitigation strategies, execution, stakeholder communication</td></tr>
-    <tr><td><code>.crewmarkdown/incident/04-resolve.md</code></td><td>Post-mitigation monitoring, verification, incident closure</td></tr>
-    <tr><td><code>.crewmarkdown/incident/05-postmortem.md</code></td><td>Timeline, root cause, what went well/didn't, action items</td></tr>
-  </tbody></table></div>
-
-  <!-- Review -->
-  <hr class="section-divider">
-  <h2 id="review-mode">Structured Review Mode</h2>
-  <p class="page-subtitle">Synchronous or asynchronous review of any artifact type with findings classification, discussion, and formal sign-off. Activated via <code>/review [artifact]</code>.</p>
-  <div class="highlight-box"><strong>Cross-cutting:</strong> Applicable to code, architecture, design, PRDs, test plans, documentation, and security artifacts.</div>
-  <h3>Process Flow</h3>
-  <div class="process-flow">
-    <span class="process-step active">1. Prepare</span>
-    <span class="process-arrow">&rarr;</span>
-    <span class="process-step">2. Present</span>
-    <span class="process-arrow">&rarr;</span>
-    <span class="process-step">3. Discuss</span>
-    <span class="process-arrow">&rarr;</span>
-    <span class="process-step">4. Decide</span>
-    <span class="process-arrow">&rarr;</span>
-    <span class="process-step">5. Log</span>
-  </div>
-  <p>Findings classified as <strong>Blocking</strong> (must fix), <strong>Major</strong> (should fix), <strong>Suggestion</strong> (nice to have), or <strong>Question</strong> (clarification). Outcomes: Approved, Changes Required, or Rejected.</p>
-
-  <!-- Interview -->
-  <hr class="section-divider">
-  <h2 id="interview-mode">Structured Interview Mode</h2>
-  <p class="page-subtitle">Plan, conduct, and synthesize structured interviews with users, stakeholders, or subject matter experts. Activated via <code>/interview [topic]</code>.</p>
-  <div class="highlight-box"><strong>Cross-cutting:</strong> Supports user research, stakeholder discovery, hiring interviews, and expert consultations.</div>
-  <h3>Process Flow</h3>
-  <div class="process-flow">
-    <span class="process-step active">1. Plan</span>
-    <span class="process-arrow">&rarr;</span>
-    <span class="process-step">2. Conduct</span>
-    <span class="process-arrow">&rarr;</span>
-    <span class="process-step">3. Synthesize</span>
-    <span class="process-arrow">&rarr;</span>
-    <span class="process-step">4. Decide</span>
-    <span class="process-arrow">&rarr;</span>
-    <span class="process-step">5. Log</span>
-  </div>
-  <p>Supports structured, semi-structured, and unstructured formats. Produces interview summaries with key insights, themes, notable quotes, and actionable recommendations.</p>
-
-  <!-- Negotiation -->
-  <hr class="section-divider">
-  <h2 id="negotiation-mode">Facilitated Negotiation Mode</h2>
-  <p class="page-subtitle">Structured negotiation between parties with conflicting interests to reach mutually acceptable agreements. Activated via <code>/negotiate [issue]</code>.</p>
-  <div class="highlight-box"><strong>Cross-cutting:</strong> Useful for scope vs timeline trade-offs, budget allocation, resource conflicts, and technical approach disagreements.</div>
-  <h3>Process Flow</h3>
-  <div class="process-flow">
-    <span class="process-step active">1. Prepare</span>
-    <span class="process-arrow">&rarr;</span>
-    <span class="process-step">2. Discuss</span>
-    <span class="process-arrow">&rarr;</span>
-    <span class="process-step">3. Negotiate</span>
-    <span class="process-arrow">&rarr;</span>
-    <span class="process-step">4. Agree</span>
-    <span class="process-arrow">&rarr;</span>
-    <span class="process-step">5. Log</span>
-  </div>
-  <p>Uses principled negotiation techniques: interest-based bargaining, BATNA analysis, objective criteria, and trade-off packaging. Produces documented agreement terms with sign-off.</p>
-
-  <!-- Retrospective -->
-  <hr class="section-divider">
-  <h2 id="retro-mode">Retrospective Mode</h2>
-  <p class="page-subtitle">Blameless team retrospectives for sprints, releases, or project phases. Activated via <code>/retro [period]</code>.</p>
-  <div class="highlight-box"><strong>Cross-cutting:</strong> Can run at any cadence — sprint, release, quarterly, or ad-hoc after incidents.</div>
-  <h3>Process Flow</h3>
-  <div class="process-flow">
-    <span class="process-step active">1. Set Stage</span>
-    <span class="process-arrow">&rarr;</span>
-    <span class="process-step">2. Gather Data</span>
-    <span class="process-arrow">&rarr;</span>
-    <span class="process-step">3. Generate Insights</span>
-    <span class="process-arrow">&rarr;</span>
-    <span class="process-step">4. Decide Actions</span>
-    <span class="process-arrow">&rarr;</span>
-    <span class="process-step">5. Log</span>
-  </div>
-  <p>Supports multiple formats: Start/Stop/Continue, Glad/Sad/Mad, 4 L's, Sailboat, Timeline. Root cause analysis via 5 Whys and fishbone diagrams. Produces SMART action items and improvement experiments.</p>
-
-  <!-- Hackathon -->
-  <hr class="section-divider">
-  <h2 id="hackathon-mode">Hackathon Mode</h2>
-  <p class="page-subtitle">Time-boxed innovation sprints with pitch, team formation, build, demo, and judging. Activated via <code>/hackathon [theme]</code>.</p>
-  <div class="highlight-box"><strong>Cross-cutting:</strong> Ideal for innovation weeks, internal tool development, proof-of-concept sprints, and team building.</div>
-  <h3>Process Flow</h3>
-  <div class="process-flow">
-    <span class="process-step active">1. Pitch &amp; Form Teams</span>
-    <span class="process-arrow">&rarr;</span>
-    <span class="process-step">2. Plan &amp; Setup</span>
-    <span class="process-arrow">&rarr;</span>
-    <span class="process-step">3. Build</span>
-    <span class="process-arrow">&rarr;</span>
-    <span class="process-step">4. Demo &amp; Judge</span>
-    <span class="process-arrow">&rarr;</span>
-    <span class="process-step">5. Follow-up</span>
-  </div>
-  <p>Judging criteria: Innovation (25%), Impact (25%), Execution (25%), Presentation (15%), Teamwork (10%). Special categories for Best Technical Achievement, Most Creative, Best UX, People's Choice.</p>
-
-  <!-- Tactical -->
-  <hr class="section-divider">
-  <h2 id="tactical-mode">Tactical Mode</h2>
-  <p class="page-subtitle">Continuous always-on mode that stays active for the entire thread, dynamically dispatching roles per request with persistent context. Activated via <code>/tactical</code>.</p>
-  <div class="highlight-box"><strong>Cross-cutting:</strong> Once activated, remains live across the whole conversation — routes every request to the right role(s), maintains thread state, logs decisions, and produces tactical summaries.</div>
-  <h3>Process Flow</h3>
-  <div class="process-flow">
-    <span class="process-step active">1. Activate</span>
-    <span class="process-arrow">&rarr;</span>
-    <span class="process-step">2. Dispatch</span>
-    <span class="process-arrow">&rarr;</span>
-    <span class="process-step">3. Track</span>
-    <span class="process-arrow">&rarr;</span>
-    <span class="process-step">4. Decide</span>
-    <span class="process-arrow">&rarr;</span>
-    <span class="process-step">5. Summarize</span>
-  </div>
-  <p>The Tactical Commander initializes thread state on activation, dispatches roles dynamically for each request, maintains an action register and decision log, and produces tactical summaries on demand or thread end.</p>
-
-  <!-- Onboarding -->
-  <hr class="section-divider">
-  <h2 id="onboarding-mode">Onboarding Mode</h2>
-  <p class="page-subtitle">Structured new hire ramp-up from day 1 through independent contribution. Activated via <code>/onboard [role]</code>.</p>
-  <div class="highlight-box"><strong>Cross-cutting:</strong> Works for any role — engineer, designer, PM, marketer, or executive.</div>
-  <h3>Process Flow</h3>
-  <div class="process-flow">
-    <span class="process-step active">1. Plan</span>
-    <span class="process-arrow">&rarr;</span>
-    <span class="process-step">2. Orient</span>
-    <span class="process-arrow">&rarr;</span>
-    <span class="process-step">3. Learn</span>
-    <span class="process-arrow">&rarr;</span>
-    <span class="process-step">4. Check</span>
-    <span class="process-arrow">&rarr;</span>
-    <span class="process-step">5. Ramp</span>
-  </div>
-  <p>Weekly milestones: Week 1 — setup + first task, Week 2 — first PR merged, Week 3 — picks up tasks independently, Month 1 — owns small feature end-to-end, Month 2 — unblocks self. Produces onboarding completion report with feedback for team improvement.</p>
-
-  <hr class="section-divider">
-
-  <p class="text-muted text-sm"><em>MIT Licensed &mdash; Built for AI-native work across any domain</em></p>
+  <p class="text-muted text-sm"><em>MIT Licensed — Built for AI-native work across any domain</em></p>
 
 </main>
 
 <script src="js/main.js"></script>
-<script type="module">
-import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-mermaid.initialize({
-  startOnLoad: true,
-  theme: 'dark',
-  themeVariables: {
-    background: '#111115',
-    primaryColor: '#7c5cfc',
-    primaryTextColor: '#f0f0f5',
-    primaryBorderColor: '#7c5cfc',
-    lineColor: '#353545',
-    secondaryColor: '#18181d',
-    tertiaryColor: '#252530',
-    fontFamily: 'Inter, sans-serif',
-    fontSize: '14px'
-  },
-  flowchart: {
-    useMaxWidth: true,
-    htmlLabels: true,
-    curve: 'basis'
-  }
-});
-</script>
 </body>
 </html>
